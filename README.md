@@ -36,4 +36,5 @@
 
 ---
 
-**CodeNub** is your gateway to coding and development excellence, combining simplicity and depth in a single platform.
+**CodeNub** is your gateway to coding and development excellence, combining simplicity and depth in a single platform. 
+ This is first version of CodeNub . While we are working to implement the real robust implementation.
