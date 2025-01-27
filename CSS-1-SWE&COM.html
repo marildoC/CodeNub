@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Css</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output-box {
+      border: 2px solid #000;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .output-box pre {
+      white-space: pre-wrap; 
+    }
+    
+    
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+      padding: 16px;
+      background-color: white; 
+      height: 100%;
+      margin-left: 10%; 
+      margin-top: 3%;
+      color: #000000; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+
+    <div class="header">
+      <a  href="index.html">Home</a>
+      <a href="SWE&COM_Java1.html">Java</a>
+      <a href="Html-1-SWE&COM.html">HTML</a>
+      <a class="active" href="CSS-1-SWE&COM.html">CSS</a>
+      <a href="JS-1-SWE&COM.html">JavaScript</a>
+      <a href="SQL-1-SWE&COM.html">SQL</a>
+      <a href="C-1-SWE&COM.html">C</a>
+      <a href="Python-1-SWE&COM.html">Python</a>
+      <a href="DSA-1-SWE&COM.html">DSA</a>
+    </div>
+    
+    <div class="menu">
+       
+        <a class="active" href="CSS-1-SWE&COM.html">Introduction to CSS</a> <hr>
+        <a href="CSS-2-SWE&COM.html">Selectors and Styling</a> <hr>
+        <a href="CSS-3-SWE&COM.html">Box Model</a> <hr>
+        <a href="CSS-4-SWE&COM.html">Layouts</a> <hr>
+        <a href="CSS-5-SWE&COM.html">Responsive Design</a> <hr>
+        <a href="CSS-6-SWE&COM.html">Typography</a> <hr>
+        <a href="CSS-7-SWE&COM.html">Colors and Backgrounds</a> <hr>
+        <a href="CSS-8-SWE&COM.html">Transitions and Animations</a> <hr>   <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <italic>
+        <h1>CSS</h1>
+        <h2>Introduction to CSS</h2>
+        <p>Welcome to the comprehensive course on Cascading Style Sheets (CSS)! In this module, we'll delve into the fundamental concepts of CSS and explore its role in modern web development.</p>
+        
+        <h3>Understanding CSS</h3>
+        <p>CSS, or Cascading Style Sheets, is a style sheet language used to define the presentation and layout of HTML documents. It enables developers to control the appearance of web pages, including aspects such as fonts, colors, spacing, and positioning.</p>
+        
+        <h3>Importance of CSS</h3>
+        <p>CSS plays a crucial role in web development for several reasons:</p>
+        <ul>
+            <li><b>Separation of Concerns:</b> CSS allows for the separation of content (HTML) and presentation (CSS), making it easier to maintain and update websites.</li>
+            <li><b>Consistent Design:</b> With CSS, developers can create consistent design elements across multiple pages, ensuring a cohesive user experience.</li>
+            <li><b>Accessibility:</b> CSS provides tools for enhancing accessibility, such as improving text readability and providing alternative styles for different devices.</li>
+            <li><b>Responsive Design:</b> CSS enables the creation of responsive layouts that adapt to various screen sizes and devices, ensuring optimal viewing experiences for users.</li>
+        </ul>
+        
+        <h3>Basic Syntax and Structure</h3>
+        <p>CSS rules consist of a selector and a declaration block:</p>
+        <pre>
+            <code style="color: rgba(51, 23, 207, 0.767);">
+    selector {
+        property: value;
+    }
+            </code>
+        </pre>
+        <p>Here, the <code style="color: rgba(51, 23, 207, 0.767);">selector</code> targets HTML elements, and the <code style="color: rgba(51, 23, 207, 0.767);">property: value</code> pairs define the styling rules for those elements.</p>
+        
+        <h3>Linking CSS to HTML</h3>
+        <p>There are three primary methods for linking CSS to HTML documents:</p>
+        <ul>
+            <li><b>Inline CSS:</b> CSS rules are applied directly to HTML elements using the <code style="color: rgba(51, 23, 207, 0.767);">style</code> attribute.</li>
+            <li><b>Internal CSS:</b> CSS rules are embedded within the <code style="color: rgba(51, 23, 207, 0.767);">&lt;style&gt;</code> element in the HTML document's <code>&lt;head&gt;</code> section.</li>
+            <li><b>External CSS:</b> CSS rules are stored in separate external files with a <code style="color: rgba(51, 23, 207, 0.767);">.css</code> extension and linked to HTML documents using the <code style="color: rgba(51, 23, 207, 0.767);">&lt;link&gt;</code> element.</li>
+        </ul>
+        
+        <h3>Selectors and Styling</h3>
+        <p>CSS selectors determine which elements in an HTML document will be styled, and CSS properties define how those elements will be styled. Common selectors include:</p>
+        <ul>
+            <li><b>Element Selector:</b> Targets HTML elements by their tag name (e.g., <code style="color: rgba(51, 23, 207, 0.767);">p</code> for paragraphs).</li>
+            <li><b>Class Selector:</b> Targets elements with a specific class attribute (e.g., <code style="color: rgba(51, 23, 207, 0.767);">.classname</code>).</li>
+            <li><b>ID Selector:</b> Targets a single element with a specific ID attribute (e.g., <code style="color: rgba(51, 23, 207, 0.767);">#idname</code>).</li>
+        </ul>
+        
+        <h3>Box Model</h3>
+        <p>The CSS box model describes the spacing and layout of HTML elements. It consists of the content area, padding, border, and margin:</p>
+        <ul>
+            <li><b>Content:</b> The actual content of the element.</li>
+            <li><b>Padding:</b> The space between the content and the element's border.</li>
+            <li><b>Border:</b> The border surrounding the padding and content.</li>
+            <li><b>Margin:</b> The space outside the border, separating the element from other elements.</li>
+        </ul>
+        
+        <h3>Layouts</h3>
+        <p>CSS provides various layout techniques for positioning and arranging elements on a web page. These include:</p>
+        <ul>
+            <li><b>Normal Flow:</b> Elements are displayed in the order they appear in the HTML document, flowing from left to right and top to bottom.</li>
+            <li><b>Floats:</b> Elements can be floated to the left or right, allowing other elements to wrap around them.</li>
+            <li><b>Flexbox:</b> A one-dimensional layout model that provides powerful alignment and distribution capabilities for elements in a container.</li>
+            <li><b>Grid:</b> A two-dimensional layout model that divides the page into rows and columns, allowing precise control over element positioning.</li>
+            <li><b>Positioning:</b> Elements can be positioned using properties such as <code style="color: rgba(51, 23, 207, 0.767);">position: relative</code>, <code style="color: rgba(51, 23, 207, 0.767);">position: absolute</code>, and <code style="color: rgba(51, 23, 207, 0.767);">position: fixed</code>.</li>
+        </ul>
+        
+        <h3>Responsive Design</h3>
+        <p>Responsive design is a key concept in modern web development, ensuring that websites adapt to various screen sizes and devices. CSS media queries are used to apply different styles based on factors such as screen width, height, and orientation.</p>
+        
+        <h3>Typography</h3>
+        <p>CSS provides extensive control over typography, including font families, sizes, weights, styles, and spacing. Key properties for styling text include <code style="color: rgba(51, 23, 207, 0.767);">font-family</code>, <code style="color: rgba(51, 23, 207, 0.767);">font-size</code>, <code style="color: rgba(51, 23, 207, 0.767);">font-weight</code>, <code style="color: rgba(51, 23, 207, 0.767);">line-height</code>, <code style="color: rgba(51, 23, 207, 0.767);">text-align</code>, and <code style="color: rgba(51, 23, 207, 0.767);">text-decoration</code>.</p>
+        
+        <h3>Colors and Backgrounds</h3>
+        <p>CSS allows developers to specify colors and backgrounds for elements using various color formats, including hexadecimal, RGB, RGBA, HSL, and HSLA. Background properties include <code style="color: rgba(51, 23, 207, 0.767);">background-color</code>, <code style="color: rgba(51, 23, 207, 0.767);">background-image</code>, <code style="color: rgba(51, 23, 207, 0.767);">background-repeat</code>, and <code style="color: rgba(51, 23, 207, 0.767);">background-position</code>.</p>
+        
+        <h3>Transitions and Animations</h3>
+        <p>Transitions and animations add interactivity and visual appeal to web pages. CSS transition properties such as <code style="color: rgba(51, 23, 207, 0.767);">transition-property</code>, <code style="color: rgba(51, 23, 207, 0.767);">transition-duration</code>, and <code style="color: rgba(51, 23, 207, 0.767);">transition-timing-function</code> enable smooth transitions between different states. CSS animations provide even greater control over element motion, allowing developers to define keyframes and animation properties.</p>
+        
+    </italic>
+    
+    
+
+  <div class="code-editor">
+    <h2>Let's try one simple Css example</h2>
+    <pre><code>&lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Introduction to CSS&lt;/title&gt;
+            &lt;style&gt;
+                /* CSS styles */
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f0f0f0;
+                    color: #333;
+                    margin: 0;
+                    padding: 0;
+                }
+                .container {
+                    max-width: 800px;
+                    margin: 20px auto;
+                    padding: 20px;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                h1 {
+                    color: #007bff;
+                    text-align: center;
+                }
+                p {
+                    line-height: 1.6;
+                }
+            &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;div class="container"&gt;
+                &lt;h1&gt;Introduction to CSS&lt;/h1&gt;
+                &lt;p&gt;Welcome to the course on CSS! In this course, we'll explore the fundamentals of Cascading Style Sheets (CSS) and how they are used to enhance the presentation of web pages.&lt;/p&gt;
+                &lt;h2&gt;What is CSS?&lt;/h2&gt;
+                &lt;p&gt;CSS, short for Cascading Style Sheets, is a style sheet language used for describing the presentation of a document written in HTML. It allows developers to control the layout, colors, fonts, and other visual aspects of web pages.&lt;/p&gt;
+                &lt;h2&gt;Why Learn CSS?&lt;/h2&gt;
+                &lt;p&gt;Understanding CSS is essential for web development as it enables developers to create visually appealing and user-friendly websites. By mastering CSS, you'll have the skills to customize the appearance of web pages and make them stand out.&lt;/p&gt;
+                &lt;h2&gt;Course Objectives&lt;/h2&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Learn the basic syntax and structure of CSS rules&lt;/li&gt;
+                    &lt;li&gt;Understand how to link CSS to HTML documents&lt;/li&gt;
+                    &lt;li&gt;Explore different types of CSS selectors and how to use them&lt;/li&gt;
+                    &lt;li&gt;Apply styles to HTML elements for enhanced presentation&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+        </code>
+        </pre>
+    <h2>Your CSS Code</h2>
+    <div id="userCode" class="code-editor">
+      <textarea id="codeTextarea" rows="23" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output-box" id="output"></div>
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the basics of CSS . Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+</div>
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Introduction to CSS</title>
+            <style>
+                /* CSS styles */
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f0f0f0;
+                    color: #333;
+                    margin: 0;
+                    padding: 0;
+                }
+                .container {
+                    max-width: 800px;
+                    margin: 20px auto;
+                    padding: 20px;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                h1 {
+                    color: #007bff;
+                    text-align: center;
+                }
+                p {
+                    line-height: 1.6;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Introduction to CSS</h1>
+                <p>Welcome to the course on CSS! In this course, we'll explore the fundamentals of Cascading Style Sheets (CSS) and how they are used to enhance the presentation of web pages.</p>
+                <h2>What is CSS?</h2>
+                <p>CSS, short for Cascading Style Sheets, is a style sheet language used for describing the presentation of a document written in HTML. It allows developers to control the layout, colors, fonts, and other visual aspects of web pages.</p>
+                <h2>Why Learn CSS?</h2>
+                <p>Understanding CSS is essential for web development as it enables developers to create visually appealing and user-friendly websites. By mastering CSS, you'll have the skills to customize the appearance of web pages and make them stand out.</p>
+                <h2>Course Objectives</h2>
+                <ul>
+                    <li>Learn the basic syntax and structure of CSS rules</li>
+                    <li>Understand how to link CSS to HTML documents</li>
+                    <li>Explore different types of CSS selectors and how to use them</li>
+                    <li>Apply styles to HTML elements for enhanced presentation</li>
+                </ul>
+            </div>
+        </body>
+        </html>`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    var outputText = isCorrect ? "Output: <!DOCTYPE html> <html lang='en'> <head> <meta charset='UTF-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> <title>Introduction to CSS</title> <style> /* CSS styles */ body { font-family: Arial, sans-serif; background-color: #f0f0f0; color: #333; margin: 0; padding: 0; } .container { max-width: 800px; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); } h1 { color: #007bff; text-align: center; } p { line-height: 1.6; } </style> </head> <body> <div class='container'> <h1>Introduction to CSS</h1> <p>Welcome to the course on CSS! In this course, we'll explore the fundamentals of Cascading Style Sheets (CSS) and how they are used to enhance the presentation of web pages.</p> <h2>What is CSS?</h2> <p>CSS, short for Cascading Style Sheets, is a style sheet language used for describing the presentation of a document written in HTML. It allows developers to control the layout, colors, fonts, and other visual aspects of web pages.</p> <h2>Why Learn CSS?</h2> <p>Understanding CSS is essential for web development as it enables developers to create visually appealing and user-friendly websites. By mastering CSS, you'll have the skills to customize the appearance of web pages and make them stand out.</p> <h2>Course Objectives</h2> <ul> <li>Learn the basic syntax and structure of CSS rules</li> <li>Understand how to link CSS to HTML documents</li> <li>Explore different types of CSS selectors and how to use them</li> <li>Apply styles to HTML elements for enhanced presentation</li> </ul> </div> </body> </html>" : "Error: Syntax is not correct. Please check your code and try again.";
+
+outputDiv.innerHTML = outputText;
+
+  }
+</script>
+
+</body>
+</html>

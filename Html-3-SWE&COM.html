@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Headings and Paragraphs</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red;
+    }
+
+    .header {
+      background-color: #030102;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+      padding: 16px;
+      background-color: white; 
+      height: 100%;
+      margin-left: 10%; 
+      margin-top: 3%;
+      color: #000000; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a  href="index.html">Home</a>
+  <a href="SWE&COM_Java1.html">Java</a>
+  <a class="active" href="Html-1-SWE&COM.html">HTML</a>
+  <a href="CSS-1-SWE&COM.html">CSS</a>
+  <a href="JS-1-SWE&COM.html">JavaScript</a>
+  <a href="SQL-1-SWE&COM.html">SQL</a>
+  <a href="C-1-SWE&COM.html">C</a>
+  <a href="Python-1-SWE&COM.html">Python</a>
+  <a href="DSA-1-SWE&COM.html">DSA</a>
+  </div>
+
+<div class="menu">
+  <a  href="Html-1-SWE&COM.html">Introduction to HTML</a> <hr>
+  <a href="Html-2-SWE&COM.html">HTML Basics</a> <hr>
+  <a class="active" href="Html-3-SWE&COM.html">Headings and Paragraphs</a> <hr>
+  <a href="Html-4-SWE&COM.html">Lists</a> <hr>
+  <a href="Html-5-SWE&COM.html">Links and Anchor Tags</a> <hr>
+  <a href="Html-6-SWE&COM.html">Images</a> <hr>
+  <a href="Html-7-SWE&COM.html">Tables</a> <hr>
+  <a href="Html-8-SWE&COM.html">Forms</a> <hr>
+  <a href="Html-9-SWE&COM.html">Semantic HTML</a> <hr>
+  <a href="Html-10-SWE&COM.html">HTML5 Features</a> <hr>
+ <br> <br> 
+</div>
+
+<div class="content">
+    <h2> HTML </h2>
+   
+    <italic>
+        <h2>Understanding HTML Headings and Paragraphs</h2>
+        <p>Welcome to the section on HTML headings and paragraphs. In this part of the course, you'll learn about the importance of headings and paragraphs in structuring your HTML documents.</p>
+        
+        <h3>Headings</h3>
+        <p>Headings are essential for organizing your content hierarchically. They range from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>, with <code>&lt;h1&gt;</code> being the most important and <code>&lt;h6&gt;</code> being the least. Here's an example:</p>
+        
+        <pre>&lt;h1>Main Heading&lt;/h1>
+        &lt;h2>Subheading&lt;/h2>
+        ...
+        &lt;h6>Minor Heading&lt;/h6></pre>
+        
+        <h3>Paragraphs</h3>
+        <p>Paragraphs are used to group related sentences or content together. They provide structure and improve readability. Here's how you create a paragraph in HTML:</p>
+        
+        <pre>&lt;p&gt;This is a paragraph.&lt;/p&gt;</pre>
+        
+        <h3>Quiz: Test Your Knowledge</h3>
+      
+        <p>Let's see how well you understand HTML headings and paragraphs. Answer the following questions:</p>
+      
+        <ol>
+          <li>What tag is used to define headings in HTML?  
+            <ul>
+              <li><input type="radio" name="q1" value="a"> <span style="color: blue;">&lt;h1&gt;</span></li>
+              <li><input type="radio" name="q1" value="b"> <span style="color: blue;">&lt;p&gt;</span></li>
+              <li><input type="radio" name="q1" value="c"> <span style="color: blue;">&lt;head&gt;</span></li>
+            </ul>
+          </li>
+          <li>How do you create a paragraph in HTML?  
+            <ul>
+              <li><input type="radio" name="q2" value="a"> <span style="color: blue;">&lt;paragraph&gt;</span></li>
+              <li><input type="radio" name="q2" value="b"> <span style="color: blue;">&lt;p&gt;</span></li>
+              <li><input type="radio" name="q2" value="c"> <span style="color: blue;">&lt;para&gt;</span></li>
+            </ul>
+          </li>
+        </ol>
+      
+        <button onclick="checkAnswers()">Check Answers</button>
+      
+        <div id="answers"></div>
+      
+        <script>
+          function checkAnswers() {
+            var q1 = document.querySelector('input[name="q1"]:checked').value;
+            var q2 = document.querySelector('input[name="q2"]:checked').value;
+      
+            var answersDiv = document.getElementById('answers');
+            if (q1 === "a" && q2 === "b") {
+              answersDiv.innerHTML = "<p>Congratulations! You answered both questions correctly.</p>";
+            } else {
+              answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Review the HTML syntax and try again!</p>";
+            }
+          }
+        </script>
+      </italic>
+      
+
+
+ <br>  <br>
+
+
+   <div class="code-editor">
+    <h2>Let's practise HTML Headings and Paragraphs</h2>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Learning HTML with CodeNub&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+        
+&lt;h1&gt;<h1>Learning HTML with CodeNub</h1>&lt;/h1&gt;
+&lt;h3&gt;<h3>Understanding HTML Headings</h3>&lt;/h3&gt;
+&lt;h4&gt;<h4>Understanding HTML Paragraphs</h4>&lt;/h4&gt;
+
+        
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+    <h2>Your HTML Code</h2> 
+    <div id="userCode" class="code-editor">
+        <textarea id="codeTextarea" rows="5" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output" id="output"></div>
+<br><hr>
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the understanding of Headings and Paragraphs. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+
+</div> 
+//
+
+
+
+
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `<!DOCTYPE html>
+<html>
+<head>
+<title>Learning HTML with CodeNub</title>
+</head>
+<body>
+        
+<h1>
+Learning HTML with CodeNub
+</h1>
+<h3>
+Understanding HTML Headings
+</h3>
+<h4>
+Understanding HTML Paragraphs
+</h4>
+
+        
+</body>
+</html>`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerText = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    if (isCorrect) {
+        outputDiv.innerHTML = "Output: <h2>Learning HTML with CodeNub</h2>\n" +
+                      "<h3> Understanding HTML Headings</h3>\n" +
+                      "<h4>Understanding HTML Paragraphs </h4>";      outputDiv.style.color = "green"; 
+    } else {
+      outputDiv.innerText = "Error: Syntax is not correct. Please check your code and try again.";
+      outputDiv.style.color = "red"; 
+    }
+  }
+
+
+
+
+
+
+  
+</script>
+
+</body>
+</html>

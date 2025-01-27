@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction HTML</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red;
+    }
+
+    .header {
+      background-color: #030102;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+    .p1 {
+  color: rgb(0, 0, 0); /* Change text color to blue */
+  font-weight: italic; /* Set font weight to bold */
+  font-size: 18px; /* Set font size to 18 pixels */
+}
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a  href="index.html">Home</a>
+  <a href="SWE&COM_Java1.html">Java</a>
+  <a class="active" href="Html-1-SWE&COM.html">HTML</a>
+  <a href="CSS-1-SWE&COM.html">CSS</a>
+  <a href="JS-1-SWE&COM.html">JavaScript</a>
+  <a href="SQL-1-SWE&COM.html">SQL</a>
+  <a href="C-1-SWE&COM.html">C</a>
+  <a href="Python-1-SWE&COM.html">Python</a>
+  <a href="DSA-1-SWE&COM.html">DSA</a>
+</div>
+
+<div class="menu">
+   
+    <a class="active"  href="Html-1-SWE&COM.html">Introduction to HTML</a> <hr>
+    <a href="Html-2-SWE&COM.html">HTML Basics</a> <hr>
+    <a href="Html-3-SWE&COM.html">Headings and Paragraphs</a> <hr>
+    <a href="Html-4-SWE&COM.html">Lists</a> <hr>
+    <a href="Html-5-SWE&COM.html">Links and Anchor Tags</a> <hr>
+    <a href="Html-6-SWE&COM.html">Images</a> <hr>
+    <a href="Html-7-SWE&COM.html">Tables</a> <hr>
+    <a href="Html-8-SWE&COM.html">Forms</a> <hr>
+    <a href="Html-9-SWE&COM.html">Semantic HTML</a> <hr>
+    <a href="Html-10-SWE&COM.html">HTML5 Features</a> <hr>
+   <br> <br> 
+</div>
+
+<div class="content">
+    <h2> HTML </h2>
+    <italic class="p1"> HTML stands as the backbone of web development, providing the essential structure and semantics for building web pages. Here's why it's crucial for aspiring developers:
+
+        Universal Markup Language: HTML serves as a universal markup language, enabling developers to create content that can be interpreted and displayed across various web browsers and devices.
+        
+        Structural Foundation: HTML defines the basic structure of a web page, including elements for headings, paragraphs, lists, and more, ensuring consistency and clarity in content presentation.
+        
+        Semantic Web Development: With semantic HTML elements, developers can convey meaning and context to both browsers and search engines, enhancing accessibility, SEO, and user experience.
+        
+        Evolving Standards: HTML continues to evolve with new features and specifications, such as HTML5, which introduces multimedia elements, canvas for graphics, and APIs for enhanced web functionality.
+        
+    </italic>
+  
+  
+  
+   
+
+
+  
+<italic>  <h2>Here's a logical introduction to some key concepts in HTML:</h2>
+    <h3 id="html_introduction">Introduction to HTML</h3>
+    <p>Learn the basics of HTML, including tags, elements, and attributes.</p>
+    <h3 id="html_basics">HTML Basics</h3>
+    <p>Explore fundamental concepts like tags, elements, and attributes in HTML.</p>
+    <h3 id="html_structure">HTML Structure</h3>
+    <p>Understand the structure of an HTML document, including the DOCTYPE, HTML, Head, and Body elements.</p>
+    <h3 id="headings_paragraphs">Headings and Paragraphs</h3>
+    <p>Discover how to use headings and paragraphs to structure and organize content in HTML.</p>
+    <h3 id="lists">Lists</h3>
+    <p>Learn about different types of lists in HTML, including ordered lists, unordered lists, and definition lists.</p>
+    <h3 id="links">Links and Anchor Tags</h3>
+    <p>Explore how to create hyperlinks and anchor tags to link to other web pages or resources.</p>
+    <h3 id="images">Images</h3>
+    <p>Learn how to insert and display images in an HTML document using the img tag.</p>
+    <h3 id="tables">Tables</h3>
+    <p>Discover how to create tables to display data in rows and columns using the table, tr, th, and td tags.</p>
+    <h3 id="forms">Forms</h3>
+    <p>Understand how to create forms to collect user input using form elements like input, select, textarea, and button.</p>
+    <h3 id="semantic_html">Semantic HTML</h3>
+    <p>Explore the importance of semantic HTML elements for better accessibility, SEO, and user experience.</p>
+    <h3 id="html5_features">HTML5 Features</h3>
+    <p>Learn about new features introduced in HTML5, such as audio, video, canvas, and APIs.</p>
+    
+</italic>
+ <br>  <br>
+
+
+   <div class="code-editor">
+    <h2>Ready for your first step! Print "Learning HTML with CodeNub"</h2>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Learning HTML with CodeNub&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+        
+&lt;h1&gt;Learning HTML with CodeNub&lt;/h1&gt;
+        
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+    <h2>Your HTML Code</h2>
+    <div id="userCode" class="code-editor">
+        <textarea id="codeTextarea" rows="5" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output" id="output"></div>  <br><hr>
+ 
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've completed your first code. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+
+</div> 
+//
+
+
+
+
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `<!DOCTYPE html>
+<html>
+<head>
+<title>Learning HTML with CodeNub</title>
+</head>
+<body>
+        
+<h1>Learning HTML with CodeNub</h1>
+        
+</body>
+</html>`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerText = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    if (isCorrect) {
+      outputDiv.innerText = "Output: Learning HTML with CodeNub";
+      outputDiv.style.color = "green"; 
+    } else {
+      outputDiv.innerText = "Error: Syntax is not correct. Please check your code and try again.";
+      outputDiv.style.color = "red"; 
+    }
+  }
+
+
+
+
+
+
+  //2
+</script>
+
+</body>
+</html>

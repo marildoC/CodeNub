@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> DSA</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output-box {
+      border: 2px solid #000;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .output-box pre {
+      white-space: pre-wrap;
+    }
+    
+    
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+      padding: 16px;
+      background-color: white; 
+      height: 100%;
+      margin-left: 10%; 
+      margin-top: 3%;
+      color: #000000; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+
+    <div class="header">
+      <a  href="index.html">Home</a>
+      <a href="SWE&COM_Java1.html">Java</a>
+      <a href="Html-1-SWE&COM.html">HTML</a>
+      <a href="CSS-1-SWE&COM.html">CSS</a>
+      <a href="JS-1-SWE&COM.html">JavaScript</a>
+      <a  href="SQL-1-SWE&COM.html">SQL</a>
+      <a href="C-1-SWE&COM.html">C</a>
+      <a href="Python-1-SWE&COM.html">Python</a>
+      <a class="active" href="DSA-1-SWE&COM.html">DSA</a>
+    </div>
+    
+    <div class="menu">
+        <a class="active" href="DSA-1-SWE&COM.html">Introduction to Algorithms`</a> <hr>
+        <a href="DSA-2-SWE&COM.html">Data Structures`</a> <hr>
+        <a href="DSA-3-SWE&COM.html">Searching and Sorting Algorithms`</a> <hr>
+        <a href="#lists">Recursion and Backtracking</a> <hr>
+        <a href="#links">Dynamic Programming</a> <hr>
+        <a href="#images">Graph Algorithms</a> <hr>
+        <a href="#tables">Advanced Data Structures</a> <hr>
+        <a href="#forms">String Algorithms</a> <hr> 
+        <a href="#tables">Complexity Theory</a> <hr>
+        <a href="#forms">Algorithm Design Techniques</a>  <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <italic>
+        <h1>DSA</h1>
+        <h2>Introduction to Algorithms</h2>
+
+        <p>Welcome to our comprehensive course on algorithms! In this module, we'll delve into the fundamental concepts of algorithms, their importance in problem-solving, and their applications across various domains.</p>
+        
+        <h3>Understanding Algorithms</h3>
+        
+        <i>An algorithm is a step-by-step procedure or a set of rules for solving a computational problem. It represents a systematic approach to solving problems by defining a series of precise instructions that, when followed, lead to the desired outcome. Algorithms are fundamental to computer science and are used in various applications, ranging from simple tasks like searching and sorting to complex operations like machine learning and cryptography. Efficient algorithms are characterized by their ability to solve problems optimally within a reasonable amount of time and resources, making them essential tools for designing efficient software systems and solving real-world challenges in diverse domains.</i>
+        
+        <h3>Characteristics of Good Algorithms</h3>
+        
+        <p>Good algorithms exhibit certain characteristics, including:</p>
+        
+        <ul>
+            <li><b>Correctness:</b> The algorithm should produce the correct output for all possible inputs.</li>
+            <li><b>Efficiency:</b> The algorithm should execute within a reasonable amount of time and use minimal resources.</li>
+            <li><b>Readability:</b> The algorithm should be easy to understand and maintain by other programmers.</li>
+            <li><b>Scalability:</b> The algorithm should perform well as the input size increases.</li>
+        </ul>
+        
+        <h3>Algorithm Analysis</h3>
+        
+        <p>Algorithm analysis involves evaluating the performance of algorithms in terms of time complexity and space complexity. Time complexity measures the amount of time an algorithm takes to complete as a function of the input size, while space complexity measures the amount of memory used by the algorithm.</p>
+        
+        <h3>Common Algorithmic Problems</h3>
+        
+        <p>Algorithms are used to solve a wide range of problems across various domains. Some common algorithmic problems include:</p>
+        
+        <ul>
+            <li><b>Searching:</b> Finding a specific element in a collection of data.</li>
+            <li><b>Sorting:</b> Arranging elements in a specific order, such as ascending or descending.</li>
+            <li><b>Graph Traversal:</b> Exploring the vertices and edges of a graph data structure.</li>
+            <li><b>Dynamic Programming:</b> Solving optimization problems by breaking them down into simpler subproblems.</li>
+            <li><b>String Matching:</b> Finding occurrences of a pattern within a text string.</li>
+        </ul>
+        
+        <h3>Importance of Algorithms in Computer Science</h3>
+        
+        <p>Algorithms are fundamental to computer science and play a crucial role in various fields, including:</p>
+        
+        <ul>
+            <li><b>Software Development:</b> Algorithms are the building blocks of software applications and systems.</li>
+            <li><b>Data Analysis:</b> Algorithms are used to process and analyze large datasets to extract valuable insights.</li>
+            <li><b>Artificial Intelligence:</b> Algorithms power machine learning and deep learning algorithms for intelligent decision-making.</li>
+            <li><b>Networking:</b> Algorithms are used in routing and network optimization for efficient data transmission.</li>
+        </ul>
+        
+        <h3>Conclusion</h3>
+        
+        <p>By the end of this course, you'll have a solid understanding of algorithms, their characteristics, analysis techniques, and their significance in computer science and beyond. You'll be equipped with the knowledge and skills to apply algorithms effectively to solve a wide range of problems.</p>
+        
+
+
+<br>
+<b style="color: rgba(8, 11, 12, 0.938);">
+  
+    </italic>
+    
+    
+</body>
+</html>

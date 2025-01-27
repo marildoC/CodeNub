@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> DSA</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output-box {
+      border: 2px solid #000;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .output-box pre {
+      white-space: pre-wrap;
+    }
+    
+    
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+      padding: 16px;
+      background-color: white; 
+      height: 100%;
+      margin-left: 10%; 
+      margin-top: 3%;
+      color: #000000; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+
+    <div class="header">
+      <a  href="index.html">Home</a>
+      <a href="SWE&COM_Java1.html">Java</a>
+      <a href="Html-1-SWE&COM.html">HTML</a>
+      <a href="CSS-1-SWE&COM.html">CSS</a>
+      <a href="JS-1-SWE&COM.html">JavaScript</a>
+      <a  href="SQL-1-SWE&COM.html">SQL</a>
+      <a href="C-1-SWE&COM.html">C</a>
+      <a href="Python-1-SWE&COM.html">Python</a>
+      <a class="active" href="DSA-1-SWE&COM.html">DSA</a>
+    </div>
+    
+    <div class="menu">
+      <a href="DSA-1-SWE&COM.html">Introduction to Algorithms`</a> <hr>
+      <a href="DSA-2-SWE&COM.html">Data Structures`</a> <hr>
+      <a class="active" href="DSA-3-SWE&COM.html">Searching and Sorting Algorithms`</a> <hr>
+      <a href="#lists">Recursion and Backtracking</a> <hr>
+      <a href="#links">Dynamic Programming</a> <hr>
+      <a href="#images">Graph Algorithms</a> <hr>
+      <a href="#tables">Advanced Data Structures</a> <hr>
+      <a href="#forms">String Algorithms</a> <hr> 
+      <a href="#tables">Complexity Theory</a> <hr>
+      <a href="#forms">Algorithm Design Techniques</a>  <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <italic>
+        <h1>DSA</h1>
+        <h2>Searching and Sorting Algorithms</h2>
+
+        <p>Welcome to our comprehensive course on searching and sorting algorithms! In this module, we'll explore various techniques for searching and sorting data efficiently, essential skills for solving a wide range of computational problems.</p>
+        
+        <h3>Searching Algorithms</h3>
+        
+        <p>Searching algorithms are used to find the presence, location, or value of a target within a collection of data. Some common searching algorithms include:</p>
+        
+        <ul>
+            <li><b>Linear Search:</b> Sequentially checking each element in the collection until the target is found.</li>
+            <li><b>Binary Search:</b> Dividing the collection in half and recursively searching in the appropriate subarray.</li>
+            <li><b>Hashing:</b> Using a hash function to map keys to indices and retrieving values from the corresponding location.</li>
+        </ul>
+        
+        <h3>Sorting Algorithms</h3>
+        
+        <p>Sorting algorithms are used to arrange elements in a specific order, such as ascending or descending. Some common sorting algorithms include:</p>
+        
+        <ul>
+            <li><b>Bubble Sort:</b> Repeatedly swapping adjacent elements if they are in the wrong order.</li>
+            <li><b>Selection Sort:</b> Selecting the smallest (or largest) element and swapping it with the first (or last) unsorted element.</li>
+            <li><b>Insertion Sort:</b> Inserting each element into its correct position in the sorted portion of the array.</li>
+            <li><b>Merge Sort:</b> Dividing the array into two halves, recursively sorting each half, and then merging the sorted halves.</li>
+            <li><b>Quick Sort:</b> Selecting a pivot element, partitioning the array into subarrays based on the pivot, and recursively sorting each subarray.</li>
+        </ul>
+        
+        <h3>Comparison of Sorting Algorithms</h3>
+        
+        <p>Sorting algorithms differ in terms of their time complexity, space complexity, and stability. Understanding the characteristics of each algorithm is essential for selecting the appropriate sorting technique for a given scenario.</p>
+        
+        <h3>Optimization Techniques</h3>
+        
+        <p>Several optimization techniques can improve the performance of searching and sorting algorithms, including:</p>
+        
+        <ul>
+            <li><b>Optimized Data Structures:</b> Using appropriate data structures to reduce the search space or improve access times.</li>
+            <li><b>Parallel Processing:</b> Distributing the workload across multiple processors or threads to speed up computations.</li>
+            <li><b>Caching:</b> Storing frequently accessed data in a cache memory to reduce retrieval times.</li>
+            <li><b>Algorithmic Improvements:</b> Tweaking the algorithm's implementation or parameters to enhance efficiency.</li>
+        </ul>
+        
+        <h3>Applications of Searching and Sorting Algorithms</h3>
+        
+        <p>Searching and sorting algorithms find applications in various fields, including:</p>
+        
+        <ul>
+            <li><b>Database Management:</b> Searching algorithms are used to retrieve records from databases, while sorting algorithms help organize data for efficient querying.</li>
+            <li><b>Information Retrieval:</b> Searching algorithms power search engines to retrieve relevant information from vast datasets.</li>
+            <li><b>Network Routing:</b> Searching algorithms help find the shortest path between network nodes, while sorting algorithms optimize routing tables.</li>
+            <li><b>Computer Graphics:</b> Sorting algorithms facilitate rendering of graphical elements in the correct order for display.</li>
+        </ul>
+        
+        <h3>Conclusion</h3>
+        
+        <p>By the end of this course, you'll have a solid understanding of searching and sorting algorithms, their implementation, performance characteristics, and applications. You'll be equipped with the knowledge and skills to apply these algorithms effectively to solve a variety of computational problems.</p>
+<br>
+<h3>Quiz: Test Your Knowledge!</h3>
+
+<ol>
+    <li>Which searching algorithm is more efficient for sorted arrays?</li>
+    <ul>
+        <li><input type="radio" name="q1" value="a"> Linear Search</li>
+        <li><input type="radio" name="q1" value="b"> Binary Search</li>
+        <li><input type="radio" name="q1" value="c"> Hashing</li>
+    </ul>
+    
+    <li>What is the time complexity of bubble sort in the worst-case scenario?</li>
+    <ul>
+        <li><input type="radio" name="q2" value="a"> O(1)</li>
+        <li><input type="radio" name="q2" value="b"> O(log n)</li>
+        <li><input type="radio" name="q2" value="c"> O(n^2)</li>
+    </ul>
+    
+    <li>Which sorting algorithm divides the array into smaller subarrays and then merges them?</li>
+    <ul>
+        <li><input type="radio" name="q3" value="a"> Bubble Sort</li>
+        <li><input type="radio" name="q3" value="b"> Merge Sort</li>
+        <li><input type="radio" name="q3" value="c"> Insertion Sort</li>
+    </ul>
+    
+    <li>What is the primary disadvantage of using linear search?</li>
+    <ul>
+        <li><input type="radio" name="q4" value="a"> It requires the array to be sorted.</li>
+        <li><input type="radio" name="q4" value="b"> It has a slower average-case time complexity compared to binary search.</li>
+        <li><input type="radio" name="q4" value="c"> It cannot handle large datasets.</li>
+    </ul>
+</ol>
+
+<button onclick="checkAnswers()">Check Answers</button>
+
+<div id="answers"></div>
+
+<script>
+    function checkAnswers() {
+        var q1 = document.querySelector('input[name="q1"]:checked').value;
+        var q2 = document.querySelector('input[name="q2"]:checked').value;
+        var q3 = document.querySelector('input[name="q3"]:checked').value;
+        var q4 = document.querySelector('input[name="q4"]:checked').value;
+        
+        var correctAnswers = ["b", "c", "b", "b"];
+        var userAnswers = [q1, q2, q3, q4];
+        
+        var correctCount = 0;
+        for (var i = 0; i < correctAnswers.length; i++) {
+            if (correctAnswers[i] === userAnswers[i]) {
+                correctCount++;
+            }
+        }
+        
+        var answersDiv = document.getElementById('answers');
+        if (correctCount === correctAnswers.length) {
+            answersDiv.innerHTML = "<p>Congratulations! You got all answers correct!</p>";
+        } else {
+            answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Please try again.</p>";
+        }
+    }
+</script>
+ss
+
+<br>
+<b style="color: rgba(8, 11, 12, 0.938);">
+    Keep pushing yourself to practice and experiment with them.
+    <br>
+    Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.
+</b>
+    </italic>
+    
+    
+</body>
+</html>

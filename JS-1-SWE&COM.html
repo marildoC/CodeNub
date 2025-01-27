@@ -1,0 +1,299 @@
+(<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Css</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output-box {
+      border: 2px solid #000;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .output-box pre {
+      white-space: pre-wrap;
+    }
+    
+    
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+      padding: 16px;
+      background-color: white; 
+      height: 100%;
+      margin-left: 10%; 
+      margin-top: 3%;
+      color: #000000; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+
+    <div class="header">
+      <a  href="index.html">Home</a>
+      <a href="SWE&COM_Java1.html">Java</a>
+      <a  href="Html-1-SWE&COM.html">HTML</a>
+      <a href="CSS-1-SWE&COM.html">CSS</a>
+      <a class="active" href="JS-1-SWE&COM.html">JavaScript</a>
+      <a href="SQL-1-SWE&COM.html">SQL</a>
+      <a href="C-1-SWE&COM.html">C</a>
+      <a href="Python-1-SWE&COM.html">Python</a>
+      <a href="DSA-1-SWE&COM.html">DSA</a>
+    </div>
+    
+    <div class="menu">
+        <a class="active" href="JS-1-SWE&COM.html">Introduction to JS`</a> <hr>
+        <a href="#ddddddd"> Functions and Scope</a> <hr>
+        <a href="JS-3-SWE&COM.html">DOM Manipulation`</a> <hr>
+        <a href="#lists"> Asynchronous JavaScript</a> <hr>
+        <a href="#links"> ES6+ Features</a> <hr>
+        <a href="JS-6-SWE&COM.html">Error Handling`</a> <hr>
+        <a href="#tables">Conditional Statements </a> <hr>
+        <a href="#forms">Arrays and Objects</a> <hr>  
+        <a href="#forms">Basic Algorithms and Data Structures</a> <hr>   <hr> 
+ 
+</div>
+
+<div class="content">
+    <italic> 
+        <h1>JavaScript</h1>
+
+        <h2>Introduction to JS</h2>
+
+<p>Welcome to our comprehensive guide to JavaScript! In this course, we'll cover essential concepts and features of JavaScript programming, focusing on practical applications for web development.</p>
+
+<h3>Getting Started with JavaScript</h3>
+
+<i>
+    JavaScript (JS) is a versatile programming language commonly used in web development to enhance the interactivity and functionality of websites. It runs on the client side, meaning it executes in the user's web browser, allowing dynamic manipulation of webpage content, handling user inputs, and interacting with web APIs. JavaScript is known for its flexibility and wide range of applications, from creating simple animations to building complex web applications and games. As an integral part of the web development stack, JavaScript plays a crucial role in creating engaging and interactive user experiences on the internet.</i>
+
+<h3>Functions and Scope</h3>
+
+<p>In JavaScript, functions are first-class citizens, and understanding their scope is crucial. We'll delve into function declaration, expressions, and lexical scope.</p>
+
+<h3>DOM Manipulation</h3>
+
+<p>With JavaScript, you can interact with HTML elements in the Document Object Model (DOM) dynamically. We'll explore how to select, modify, and manipulate HTML elements using JavaScript.</p>
+
+<h3>Asynchronous JavaScript</h3>
+
+<p>JavaScript supports asynchronous programming, allowing you to perform tasks without blocking the main execution thread. We'll cover asynchronous concepts like callbacks, promises, and async/await.</p>
+
+<h3>ES6+ Features</h3>
+
+<p>ES6 introduced several new features and enhancements to JavaScript. We'll explore modern JavaScript features such as arrow functions, template literals, destructuring, and the spread/rest operator.</p>
+
+<h3>Error Handling</h3>
+
+<p>Errors are inevitable in programming. We'll learn how to handle runtime errors in JavaScript using try...catch blocks and understand best practices for error handling.</p>
+
+<h3>Conditional Statements</h3>
+
+<p>Conditional statements are used to make decisions in JavaScript programs. We'll cover if...else statements, switch statements, and ternary operators.</p>
+
+<h3>Arrays and Objects</h3>
+
+<p>Arrays and objects are fundamental data structures in JavaScript. We'll explore how to create, manipulate, and iterate through arrays and objects.</p>
+
+<h3>Basic Algorithms and Data Structures</h3>
+
+<p>Understanding basic algorithms and data structures is essential for writing efficient JavaScript code. We'll cover basic sorting and searching algorithms, as well as arrays and objects as data structures.</p>
+
+    </italic>
+    
+    
+
+  <div class="code-editor">
+    <h2>Let's try one simple JS example</h2>
+    <pre><code>&lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;body&gt;
+        &lt;p&gt; Use of ( " If , else , else if " ) &lt;/p&gt;
+        &lt;p id="d1"&gt; &lt;/p&gt;
+        &lt;script&gt;
+            let h = 60; 
+            let g ; 
+            if( h  &gt;=  18 &amp;&amp; h &lt;= 80  ){
+                g = "you can" ; 
+            }else if (h &lt; 18  || h &gt;= 81 ) {
+                g = " you can't"; 
+            }
+            else {
+                g = "Enter you age ! wrong ";  
+            }         
+            document.getElementById("d1").innerHTML = g; 
+        &lt;/script&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+        </code>
+        </pre>
+    <h2>Your JS Code</h2>
+    <div id="userCode" class="code-editor">
+      <textarea id="codeTextarea" rows="23" style="width: 100%; height: 150px;" placeholder="Write your JS code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output-box" id="output"></div>
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the basics of JavaScript. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+</div>
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Introduction to CSS</title>
+            <style>
+                /* CSS styles */
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f0f0f0;
+                    color: #333;
+                    margin: 0;
+                    padding: 0;
+                }
+                .container {
+                    max-width: 800px;
+                    margin: 20px auto;
+                    padding: 20px;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                h1 {
+                    color: #007bff;
+                    text-align: center;
+                }
+                p {
+                    line-height: 1.6;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Introduction to CSS</h1>
+                <p>Welcome to the course on CSS! In this course, we'll explore the fundamentals of Cascading Style Sheets (CSS) and how they are used to enhance the presentation of web pages.</p>
+                <h2>What is CSS?</h2>
+                <p>CSS, short for Cascading Style Sheets, is a style sheet language used for describing the presentation of a document written in HTML. It allows developers to control the layout, colors, fonts, and other visual aspects of web pages.</p>
+                <h2>Why Learn CSS?</h2>
+                <p>Understanding CSS is essential for web development as it enables developers to create visually appealing and user-friendly websites. By mastering CSS, you'll have the skills to customize the appearance of web pages and make them stand out.</p>
+                <h2>Course Objectives</h2>
+                <ul>
+                    <li>Learn the basic syntax and structure of CSS rules</li>
+                    <li>Understand how to link CSS to HTML documents</li>
+                    <li>Explore different types of CSS selectors and how to use them</li>
+                    <li>Apply styles to HTML elements for enhanced presentation</li>
+                </ul>
+            </div>
+        </body>
+        </html>`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    var outputText = isCorrect ? "Output: <!DOCTYPE html> <html lang='en'> <head> <meta charset='UTF-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> <title>Introduction to CSS</title> <style> /* CSS styles */ body { font-family: Arial, sans-serif; background-color: #f0f0f0; color: #333; margin: 0; padding: 0; } .container { max-width: 800px; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); } h1 { color: #007bff; text-align: center; } p { line-height: 1.6; } </style> </head> <body> <div class='container'> <h1>Introduction to CSS</h1> <p>Welcome to the course on CSS! In this course, we'll explore the fundamentals of Cascading Style Sheets (CSS) and how they are used to enhance the presentation of web pages.</p> <h2>What is CSS?</h2> <p>CSS, short for Cascading Style Sheets, is a style sheet language used for describing the presentation of a document written in HTML. It allows developers to control the layout, colors, fonts, and other visual aspects of web pages.</p> <h2>Why Learn CSS?</h2> <p>Understanding CSS is essential for web development as it enables developers to create visually appealing and user-friendly websites. By mastering CSS, you'll have the skills to customize the appearance of web pages and make them stand out.</p> <h2>Course Objectives</h2> <ul> <li>Learn the basic syntax and structure of CSS rules</li> <li>Understand how to link CSS to HTML documents</li> <li>Explore different types of CSS selectors and how to use them</li> <li>Apply styles to HTML elements for enhanced presentation</li> </ul> </div> </body> </html>" : "Error: Syntax is not correct. Please check your code and try again.";
+
+outputDiv.innerHTML = outputText;
+
+  }
+</script>
+
+</body>
+</html>
+) 

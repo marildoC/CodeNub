@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Lists</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red;
+    }
+
+    .header {
+      background-color: #030102;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a  href="index.html">Home</a>
+  <a href="SWE&COM_Java1.html">Java</a>
+  <a class="active" href="Html-1-SWE&COM.html">HTML</a>
+  <a href="CSS-1-SWE&COM.html">CSS</a>
+  <a href="JS-1-SWE&COM.html">JavaScript</a>
+  <a href="SQL-1-SWE&COM.html">SQL</a>
+  <a href="C-1-SWE&COM.html">C</a>
+  <a href="Python-1-SWE&COM.html">Python</a>
+  <a href="DSA-1-SWE&COM.html">DSA</a>
+</div>
+
+<div class="menu">
+  <a  href="Html-1-SWE&COM.html">Introduction to HTML</a> <hr>
+  <a href="Html-2-SWE&COM.html">HTML Basics</a> <hr>
+  <a href="Html-3-SWE&COM.html">Headings and Paragraphs</a> <hr>
+  <a class="active" href="Html-4-SWE&COM.html">Lists</a> <hr>
+  <a href="Html-5-SWE&COM.html">Links and Anchor Tags</a> <hr>
+  <a href="Html-6-SWE&COM.html">Images</a> <hr>
+  <a href="Html-7-SWE&COM.html">Tables</a> <hr>
+  <a href="Html-8-SWE&COM.html">Forms</a> <hr>
+  <a href="Html-9-SWE&COM.html">Semantic HTML</a> <hr>
+  <a href="Html-10-SWE&COM.html">HTML5 Features</a> <hr>
+ <br> <br> 
+</div>
+
+<div class="content">
+    <h2> HTML </h2>
+   
+    <italic>
+        <h2>Mastering HTML Lists</h2>
+        
+        <p>Welcome to the HTML Lists course! In this module, you'll learn all about lists in HTML and how to effectively use them to structure your content.</p>
+        
+        <h3>Understanding List Basics</h3>
+        
+        <p>Before we dive into the specifics, let's understand the basics of lists in HTML.</p>
+        
+        <ul>
+          <li><strong>Types of Lists:</strong> HTML offers three types of lists: unordered lists (<code>&lt;ul&gt;</code>), ordered lists (<code>&lt;ol&gt;</code>), and definition lists (<code>&lt;dl&gt;</code>).</li>
+          <li><strong>List Items:</strong> Each item within a list is represented by the <code>&lt;li&gt;</code> (list item) tag.</li>
+        </ul>
+        
+        <h3>Unordered Lists (<code>&lt;ul&gt;</code>)</h3>
+        
+        <p>Unordered lists are used to represent a collection of items in no particular order.</p>
+        
+        <pre>
+        &lt;ul&gt;
+          &lt;li&gt;Item 1&lt;/li&gt;
+          &lt;li&gt;Item 2&lt;/li&gt;
+          &lt;li&gt;Item 3&lt;/li&gt;
+        &lt;/ul&gt;
+        </pre>
+        
+        <h3>Ordered Lists (<code>&lt;ol&gt;</code>)</h3>
+        
+        <p>Ordered lists are used to represent a collection of items in a specific order.</p>
+        
+        <pre>
+        &lt;ol&gt;
+          &lt;li&gt;First Item&lt;/li&gt;
+          &lt;li&gt;Second Item&lt;/li&gt;
+          &lt;li&gt;Third Item&lt;/li&gt;
+        &lt;/ol&gt;
+        </pre>
+        
+        <h3>Definition Lists (<code>&lt;dl&gt;</code>)</h3>
+        
+        <p>Definition lists are used to display a list of terms and their corresponding definitions.</p>
+        
+        <pre>
+        &lt;dl&gt;
+          &lt;dt&gt;Term 1&lt;/dt&gt;
+          &lt;dd&gt;Definition 1&lt;/dd&gt;
+          &lt;dt&gt;Term 2&lt;/dt&gt;
+          &lt;dd&gt;Definition 2&lt;/dd&gt;
+        &lt;/dl&gt;
+        </pre>
+        
+        <h3>Nested Lists</h3>
+        
+        <p>You can nest lists within other lists to create hierarchical structures.</p>
+        
+        <pre>
+        &lt;ul&gt;
+          &lt;li&gt;Main Item 1
+            &lt;ul&gt;
+              &lt;li&gt;Sub-item 1&lt;/li&gt;
+              &lt;li&gt;Sub-item 2&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Main Item 2&lt;/li&gt;
+        &lt;/ul&gt;
+        </pre>
+        
+        <h3>List Styling</h3>
+        
+        <p>Lists can be styled using CSS to change their appearance, such as bullet styles for unordered lists or numbering styles for ordered lists.</p>
+        
+        <h3>Accessibility Considerations</h3>
+        
+        <p>When using lists, it's important to consider accessibility. Ensure that lists are properly structured and labeled for screen readers.</p>
+        
+        <h3>Quiz: Test Your Knowledge!</h3>
+
+<p>Let's see how well you understand HTML lists. Answer the following questions:</p>
+
+<ol>
+  <li>
+    <p>What tag is used to represent each item in an unordered list?</p>
+    <ul>
+      <li><input type="radio" name="q1" value="a"> &lt;ul&gt;</li>
+      <li><input type="radio" name="q1" value="b"> &lt;ol&gt;</li>
+      <li><input type="radio" name="q1" value="c"> &lt;li&gt;</li>
+    </ul>
+  </li>
+  <li>
+    <p>Which type of list is used to display a collection of terms and their definitions?</p>
+    <ul>
+      <li><input type="radio" name="q2" value="a"> Ordered List</li>
+      <li><input type="radio" name="q2" value="b"> Unordered List</li>
+      <li><input type="radio" name="q2" value="c"> Definition List</li>
+    </ul>
+  </li>
+</ol>
+
+<button onclick="checkAnswers()">Check Answers</button>
+
+<div id="answers"></div>
+
+<script>
+function checkAnswers() {
+  var q1Answer = document.querySelector('input[name="q1"]:checked');
+  var q2Answer = document.querySelector('input[name="q2"]:checked');
+
+  var answersDiv = document.getElementById('answers');
+  if (q1Answer && q2Answer) {
+    if (q1Answer.value === "c" && q2Answer.value === "c") {
+      answersDiv.innerHTML = "<p>Congratulations! You answered both questions correctly.</p>";
+    } else {
+      answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Review the HTML lists topic and try again!</p>";
+    }
+  } else {
+    answersDiv.innerHTML = "<p>Please answer all questions before checking your answers.</p>";
+  }
+}
+</script>
+
+        </italic>
+        
+      
+
+
+ <br>  <br>
+
+
+   <div class="code-editor">
+    <h2>Let's practise HTML Lists</h2>
+<pre>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;HTML Lists Example&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h2&gt;Unordered List (ul)&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Item 1&lt;/li&gt;
+            &lt;li&gt;Item 2&lt;/li&gt;
+            &lt;li&gt;Item 3&lt;/li&gt;
+        &lt;/ul&gt;
+    
+        &lt;h2&gt;Ordered List (ol)&lt;/h2&gt;
+        &lt;ol&gt;
+            &lt;li&gt;First Item&lt;/li&gt;
+            &lt;li&gt;Second Item&lt;/li&gt;
+            &lt;li&gt;Third Item&lt;/li&gt;
+        &lt;/ol&gt;
+    
+        &lt;h2&gt;Definition List (dl)&lt;/h2&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;HTML&lt;/dt&gt;
+            &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+            
+            &lt;dt&gt;CSS&lt;/dt&gt;
+            &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+            
+            &lt;dt&gt;JS&lt;/dt&gt;
+            &lt;dd&gt;JavaScript&lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+    </pre>
+    <h2>Your HTML Code</h2> 
+    <div id="userCode" class="code-editor">
+        <textarea id="codeTextarea" rows="5" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output" id="output"></div>  <br><hr>
+
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the understanding of Lists. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+
+</div> 
+
+
+
+
+
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML Lists Example</title>
+    </head>
+    <body>
+        <h2>Unordered List (ul)</h2>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    
+        <h2>Ordered List (ol)</h2>
+        <ol>
+            <li>First Item</li>
+            <li>Second Item</li>
+            <li>Third Item</li>
+        </ol>
+    
+        <h2>Definition List (dl)</h2>
+        <dl>
+            <dt>HTML</dt>
+            <dd>HyperText Markup Language</dd>
+            
+            <dt>CSS</dt>
+            <dd>Cascading Style Sheets</dd>
+            
+            <dt>JS</dt>
+            <dd>JavaScript</dd>
+        </dl>
+    </body>
+    </html>`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerText = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    if (isCorrect) {
+        outputDiv.innerHTML = "Output: <p>Unordered List (ul):<ul>\n" +
+                      "<li>Item 1</li>\n" +
+                      "<li>Item 2</li>\n" +
+                      "<li>Item 3</li>\n" +
+                      "</ul>\n" +
+                      "Ordered List (ol):<ol>\n" +
+                      "<li>First Item</li>\n" +
+                      "<li>Second Item</li>\n" +
+                      "<li>Third Item</li>\n" +
+                      "</ol>\n" +
+                      "Definition List (dl):<dl>\n" +
+                      "<dt>HTML:</dt><dd>HyperText Markup Language</dd>\n" +
+                      "<dt>CSS:</dt><dd>Cascading Style Sheets</dd>\n" +
+                      "<dt>JS:</dt><dd>JavaScript</dd>\n" +
+                      "</dl>";
+     outputDiv.style.color = "green"; 
+    } else {
+      outputDiv.innerText = "Error: Syntax is not correct. Please check your code and try again.";
+      outputDiv.style.color = "red"; 
+    }
+  }
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

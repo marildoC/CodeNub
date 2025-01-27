@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Forms</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red;
+    }
+
+    .header {
+      background-color: #030102;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a  href="index.html">Home</a>
+  <a href="SWE&COM_Java1.html">Java</a>
+  <a class="active" href="Html-1-SWE&COM.html">HTML</a>
+  <a href="CSS-1-SWE&COM.html">CSS</a>
+  <a href="JS-1-SWE&COM.html">JavaScript</a>
+  <a href="SQL-1-SWE&COM.html">SQL</a>
+  <a href="C-1-SWE&COM.html">C</a>
+  <a href="Python-1-SWE&COM.html">Python</a>
+  <a href="DSA-1-SWE&COM.html">DSA</a>
+</div>
+
+<div class="menu">
+  <a  href="Html-1-SWE&COM.html">Introduction to HTML</a> <hr>
+  <a href="Html-2-SWE&COM.html">HTML Basics</a> <hr>
+  <a href="Html-3-SWE&COM.html">Headings and Paragraphs</a> <hr>
+  <a href="Html-4-SWE&COM.html">Lists</a> <hr>
+  <a href="Html-5-SWE&COM.html">Links and Anchor Tags</a> <hr>
+  <a href="Html-6-SWE&COM.html">Images</a> <hr>
+  <a href="Html-7-SWE&COM.html">Tables</a> <hr>
+  <a class="active" href="Html-8-SWE&COM.html">Forms</a> <hr>
+  <a href="Html-9-SWE&COM.html">Semantic HTML</a> <hr>
+  <a href="Html-10-SWE&COM.html">HTML5 Features</a> <hr>
+ <br> <br> 
+</div>
+
+<div class="content">
+    <h2> HTML </h2>
+   
+    <italic>
+        <h2>Understanding HTML Forms</h2>
+        <p>Welcome to the section on HTML forms! In this part of the course, you'll learn about creating interactive forms to collect data from users.</p>
+        
+        <h3>The Basics: Creating a Simple Form</h3>
+        <p>HTML forms are used to collect user input. Here's how you can create a basic form:</p>
+        
+        <pre>
+    &lt;form&gt;
+      &lt;label for="username"&gt;Username:&lt;/label&gt;
+      &lt;input type="text" id="username" name="username"&gt;&lt;br&gt;
+      
+      &lt;label for="password"&gt;Password:&lt;/label&gt;
+      &lt;input type="password" id="password" name="password"&gt;&lt;br&gt;
+      
+      &lt;input type="submit" value="Submit"&gt;
+    &lt;/form&gt;
+        </pre>
+        
+        <h3>Form Elements</h3>
+        <p>HTML provides various form elements for different types of input:</p>
+        
+        <ul>
+            <li><code>&lt;input type="text"&gt;</code>: Text input field</li>
+            <li><code>&lt;input type="password"&gt;</code>: Password input field</li>
+            <li><code>&lt;input type="checkbox"&gt;</code>: Checkbox</li>
+            <li><code>&lt;input type="radio"&gt;</code>: Radio button</li>
+            <li><code>&lt;input type="submit"&gt;</code>: Submit button</li>
+            <li><code>&lt;input type="reset"&gt;</code>: Reset button</li>
+            <li><code>&lt;select&gt;</code>: Dropdown list</li>
+            <li><code>&lt;textarea&gt;</code>: Text area</li>
+        </ul>
+        
+        <h3>Form Attributes</h3>
+        <p>Forms can have attributes like <code>action</code>, <code>method</code>, and <code>enctype</code>:</p>
+        
+        <pre>
+    &lt;form action="/submit-form" method="post" enctype="multipart/form-data"&gt;
+      <!-- Form elements go here -->
+    &lt;/form&gt;
+        </pre>
+        
+        <h3>Styling Forms with CSS</h3>
+        <p>You can apply CSS styles to your forms to enhance their appearance:</p>
+        
+        <pre>
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
+    
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+        </pre>
+        
+        <h3>Quiz: Test Your Knowledge!</h3>
+        <form id="quizForm">
+            <ol>
+                <li>
+                    <p>Which HTML tag is used to create a form?</p>
+                    <select name="q1">
+                        <option value="">Select an option</option>
+                        <option value="form">&lt;form&gt;</option>
+                        <option value="input">&lt;input&gt;</option>
+                        <option value="label">&lt;label&gt;</option>
+                    </select>
+                </li>
+                <li>
+                    <p>What attribute is used to specify the URL where the form data will be sent?</p>
+                    <select name="q2">
+                        <option value="">Select an option</option>
+                        <option value="action">action</option>
+                        <option value="method">method</option>
+                        <option value="enctype">enctype</option>
+                    </select>
+                </li>
+            </ol>
+            <button type="button" onclick="checkAnswers()">Check Answers</button>
+        </form>
+        
+        <div id="answers"></div>
+    </italic>
+    
+    <script>
+        function checkAnswers() {
+            var q1 = document.querySelector('select[name="q1"]').value;
+            var q2 = document.querySelector('select[name="q2"]').value;
+    
+            var answersDiv = document.getElementById('answers');
+            if (q1 === "form" && q2 === "action") {
+                answersDiv.innerHTML = "<p>Congratulations! You answered both questions correctly.</p>";
+            } else {
+                answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Review the HTML forms topic and try again!</p>";
+            }
+        }
+    </script>
+    
+    
+ <br> <hr>
+<b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the understanding of Forms Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+ 
+    </italic>
+    
+        
+      
+
+
+ <br>  <br>
+
+</body>
+</html>

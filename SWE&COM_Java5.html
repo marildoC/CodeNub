@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes and Objects in Java</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red; 
+    }
+
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a href="index.html">Home</a>
+  <a class="active" href="#java">Java</a>
+  <a href="#html">HTML</a>
+  <a href="#css">CSS</a>
+  <a href="#javascript">JavaScript</a>
+  <a href="#sql">SQL</a>
+  <a href="#c">C</a>
+  <a href="#python">Python</a>
+  <a href="#dsa">DSA</a>
+</div>
+
+<div class="menu">
+    <a href="SWE&COM_Java1.html">Introduction to Java</a>   <hr>
+    <a href="SWE&COM_Java2.html">Variables</a> <hr>
+  <a href="SWE&COM_Java3.html">Operators</a> <hr>
+ 
+  <a href="SWE&COM_Java4.html">Arrays</a>  <hr>
+  <a class="active" href="SWE&COM_Java5.html">Classes and Objects</a>  <hr>
+  <a href="SWE&COM_Java6.html">Inheritance</a>   <hr>
+  <a href="SWE&COM_Java7.html">Polymorphism</a>  <hr>
+  <a href="SWE&COM_Java8.html">Abstraction</a>   <hr>
+  <a href="SWE&COM_Java9.html">Interfaces</a>   <hr>
+  <a href="SWE&COM_Java10.html">Exceptions</a>  <hr>
+  <a href="SWE&COM_Java11.html">File I/O</a>          <hr>
+  <a href="SWE&COM_Java12.html">Collections</a>   <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <h2> JAVA </h2>
+  
+   
+
+    <italic>
+        <h2>Mastering Classes and Objects in Java</h2>
+    
+        <p>Welcome to our comprehensive guide on classes and objects in Java! In this tutorial, we'll explore the fundamental concepts of object-oriented programming (OOP), focusing on classes and objects.</p>
+    
+        <h3>Understanding Classes</h3>
+    
+        <p>In Java, a class is a blueprint or template for creating objects. It defines the properties (attributes) and behaviors (methods) that objects of that class will have. Classes are the building blocks of object-oriented programming and provide a way to structure and organize code.</p>
+    
+        <h3>Creating Classes</h3>
+    
+        <p>To create a class in Java, you use the <span style="color: rgba(51, 23, 207, 0.767);">class</span> keyword followed by the class name and the body of the class enclosed in curly braces. Let's take a closer look at the syntax:</p>
+        <p style="color: rgba(51, 23, 207, 0.767);">public class ClassName {</p>
+        <p style="color: rgba(51, 23, 207, 0.767);">&emsp;// Class members (fields, methods, constructors)</p>
+        <p style="color: rgba(51, 23, 207, 0.767);">}</p>
+    
+        <h3>Defining Attributes and Methods</h3>
+    
+        <p>Attributes are the variables or fields that represent the state of an object, while methods are the functions or behaviors that objects can perform. Here's how you define attributes and methods within a class:</p>
+        <pre>
+        public class MyClass {
+            // Attributes
+            private int attribute1;
+            private String attribute2;
+    
+            // Methods
+            public void method1() {
+                // Method body
+            }
+    
+            public int method2() {
+                // Method body
+            }
+        }
+        </pre>
+    
+        <h3>Creating Objects</h3>
+    
+        <p>Once you've defined a class, you can create objects (instances) of that class using the <span style="color: rgba(51, 23, 207, 0.767);">new</span> keyword followed by the class name and parentheses. This process is called instantiation. Let's see how it's done:</p>
+        <pre>
+        MyClass object1 = new MyClass();
+        MyClass object2 = new MyClass();
+        </pre>
+    
+        <h3>Accessing Class Members</h3>
+    
+        <p>You can access the attributes and methods of an object using the dot (.) operator. Here's how you can access and modify attributes and call methods:</p>
+        <pre>
+        object1.attribute1 = 10;
+        object1.method1();
+        </pre>
+    
+        <h3>Quiz: Test Your Knowledge!</h3>
+    
+        <p>Let's see how well you understand classes and objects in Java. Answer the following questions:</p>
+    
+        <ol>
+            <li>What is a class in Java?</li>
+            <ul>
+                <li><input type="radio" name="q1" value="a"> A blueprint for creating objects</li>
+                <li><input type="radio" name="q1" value="b"> A data type</li>
+                <li><input type="radio" name="q1" value="c"> A loop structure</li>
+            </ul>
+            <li>How do you create an object of a class in Java?</li>
+            <ul>
+                <li><input type="radio" name="q2" value="a"> Using the <span style="color: rgba(51, 23, 207, 0.767);">new</span> keyword followed by the class name</li>
+                <li><input type="radio" name="q2" value="b"> Using the <span style="color: rgba(51, 23, 207, 0.767);">class</span> keyword followed by the object name</li>
+                <li><input type="radio" name="q2" value="c"> Using the <span style="color: rgba(51, 23, 207, 0.767);">create</span> keyword</li>
+            </ul>
+            <!-- Add more questions -->
+        </ol>
+    
+        <button onclick="checkAnswers()">Check Answers</button>
+    
+        <div id="answers"></div>
+    
+        <script>
+            function checkAnswers() {
+                var q1 = document.querySelector('input[name="q1"]:checked').value;
+                var q2 = document.querySelector('input[name="q2"]:checked').value;
+    
+                var answersDiv = document.getElementById('answers');
+                if (q1 == "a" && q2 == "a") {
+                    answersDiv.innerHTML = "<p>Congratulations! You have answered both questions correctly.</p>";
+                } else {
+                    answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Please try again.</p>";
+                }
+            }
+        </script>
+    
+        <!-- Existing content -->
+    </italic>
+    
+    
+    
+    
+    
+    
+    
+    
+ <br>  <br>
+
+
+   <div class="code-editor">
+    <h2>Let's practise your understanding about Classes and Objects </h2>
+    <i>Java code  that demonstrates the declaration and initialization of Classes and Objects</i>
+    <pre><code>
+        
+class Car {
+    
+    String brand;
+    String model;
+    int year;
+    
+   
+    public Car(String brand, String model, int year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+    }
+    
+   
+    public void displayInfo() {
+        System.out.println("Brand " + brand);
+        System.out.println("Model " + model);
+        System.out.println("Year " + year);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+      
+        Car myCar = new Car("Toyota", "Camry", 2020);
+        
+        
+        myCar.displayInfo();
+    }
+}
+
+        
+        
+    </code></pre>
+    <h2>Your Java Code</h2>
+    <div id="userCode" class="code-editor">
+        <textarea id="codeTextarea" rows="21" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output" id="output"></div>
+
+  <b style="color: rgba(8, 11, 12, 0.938);">   Congratulations on completing this tutorial on classes and objects in Java! You've learned how to define classes, create objects, and work with attributes and methods. Object-oriented programming is a powerful paradigm that allows you to write modular, reusable, and maintainable code.
+  </b>
+
+</div> 
+
+
+
+
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `class Car {
+    
+    String brand;
+    String model;
+    int year;
+    
+   
+    public Car(String brand, String model, int year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+    }
+    
+   
+    public void displayInfo() {
+        System.out.println("Brand " + brand);
+        System.out.println("Model " + model);
+        System.out.println("Year " + year);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+      
+        Car myCar = new Car("Toyota", "Camry", 2020);
+        
+        
+        myCar.displayInfo();
+    }
+}`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerText = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    if (isCorrect) {
+      outputDiv.innerText = "Output: Brand: Toyota \nModel: Camry \nYear: 2020";
+
+
+      outputDiv.style.color = "green"; 
+    } else {
+      outputDiv.innerText = "Error: Syntax is not correct. Please check your code and try again.";
+      outputDiv.style.color = "red"; 
+    }
+  }
+
+
+</script>
+
+</body>
+</html>

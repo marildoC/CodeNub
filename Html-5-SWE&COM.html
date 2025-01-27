@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Links and Anchor Tags</title>
+  <style>
+  
+   
+
+    .header {
+      background-color: #030102;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+  
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a  href="index.html">Home</a>
+  <a href="SWE&COM_Java1.html">Java</a>
+  <a class="active" href="Html-1-SWE&COM.html">HTML</a>
+  <a href="CSS-1-SWE&COM.html">CSS</a>
+  <a href="JS-1-SWE&COM.html">JavaScript</a>
+  <a href="SQL-1-SWE&COM.html">SQL</a>
+  <a href="C-1-SWE&COM.html">C</a>
+  <a href="Python-1-SWE&COM.html">Python</a>
+  <a href="DSA-1-SWE&COM.html">DSA</a>
+</div>
+
+<div class="menu">
+  <a  href="Html-1-SWE&COM.html">Introduction to HTML</a> <hr>
+  <a href="Html-2-SWE&COM.html">HTML Basics</a> <hr>
+  <a href="Html-3-SWE&COM.html">Headings and Paragraphs</a> <hr>
+  <a href="Html-4-SWE&COM.html">Lists</a> <hr>
+  <a class="active" href="Html-5-SWE&COM.html">Links and Anchor Tags</a> <hr>
+  <a href="Html-6-SWE&COM.html">Images</a> <hr>
+  <a href="Html-7-SWE&COM.html">Tables</a> <hr>
+  <a href="Html-8-SWE&COM.html">Forms</a> <hr>
+  <a href="Html-9-SWE&COM.html">Semantic HTML</a> <hr>
+  <a href="Html-10-SWE&COM.html">HTML5 Features</a> <hr>
+ <br> <br> 
+</div>
+
+<div class="content">
+    <h2> HTML </h2>
+   
+    <italic>
+        <h2>Exploring HTML Links and Anchor Tags</h2>
+        <p>Welcome to the HTML Links and Anchor Tags course! In this module, you'll learn all about creating hyperlinks and anchor tags to connect web pages and navigate through the vast landscape of the internet.</p>
+    
+        <h3>Understanding Hyperlinks</h3>
+        <p>Hyperlinks, often referred to simply as "links," are elements in HTML that allow users to navigate between web pages. They are the backbone of the internet, enabling seamless connectivity between different online resources.</p>
+    
+        <h3>Creating Links with Anchor Tags</h3>
+        <p>In HTML, links are created using the anchor tag, which is represented by <code>&lt;a&gt;</code>. The anchor tag allows you to define the target destination of the link and specify the text or image that users can click on to activate the link.</p>
+    
+        <h4>The Basic Anatomy of an Anchor Tag</h4>
+        <p>The anchor tag consists of the following components:</p>
+        <ul>
+            <li><strong>href attribute:</strong> Specifies the URL (Uniform Resource Locator) of the target destination.</li>
+            <li><strong>Text or Image:</strong> The visible content that users can click on to follow the link.</li>
+        </ul>
+    
+        <h4>Creating Text Links</h4>
+        <p>To create a text link, enclose the link text within the anchor tag and define the destination URL using the <code>href</code> attribute. Here's an example:</p>
+        <pre>&lt;a href="https://www.example.com"&gt;Visit Example.com&lt;/a&gt;</pre>
+    
+        <h4>Creating Image Links</h4>
+        <p>Images can also serve as clickable links by wrapping an <code>&lt;img&gt;</code> tag inside an anchor tag. Here's how you can create an image link:</p>
+        <pre>&lt;a href="https://www.example.com"&gt;
+        &lt;img src="image.jpg" alt="Description of Image"&gt;
+    &lt;/a&gt;</pre>
+    
+        <h3>Linking Within the Same Page: Anchor Tags</h3>
+        <p>Anchor tags can also be used to create internal links within the same page. This is achieved by assigning an <code>id</code> attribute to the target element and using the same identifier in the <code>href</code> attribute of the anchor tag.</p>
+    
+        <h4>Example: Linking to Sections Within a Page</h4>
+        <p>Suppose you have a section with the heading <code>&lt;h2 id="section1"&gt;Section 1&lt;/h2&gt;</code>. You can create a link to this section elsewhere in the page using the following anchor tag:</p>
+        <pre>&lt;a href="#section1"&gt;Jump to Section 1&lt;/a&gt;</pre>
+    
+        <h3>Best Practices for Links</h3>
+        <p>When creating links in HTML, it's essential to follow best practices to ensure a seamless user experience:</p>
+        <ul>
+            <li>Use descriptive link text that clearly indicates the target destination.</li>
+            <li>Ensure that all links are functional and lead to the intended pages.</li>
+            <li>Use relative URLs whenever possible to maintain flexibility and avoid broken links.</li>
+            <li>Consider accessibility by providing alternative text for images used as links and ensuring that links are distinguishable.</li>
+        </ul>  <br><br>
+    
+        <h3>Quiz: Test Your Knowledge!</h3>
+<p>Let's assess your understanding of HTML links and anchor tags with a quiz. Match the following terms with their correct definitions:</p>
+
+<ol>
+    <li>URL
+        <ul>
+            <li><input type="radio" name="q1" value="a"> The visible content that users click on to follow the link.</li>
+            <li><input type="radio" name="q1" value="b"> A unique address that identifies a web resource.</li>
+        </ul>
+    </li>
+    <li>href
+        <ul>
+            <li><input type="radio" name="q2" value="a"> The visible content that users click on to follow the link.</li>
+            <li><input type="radio" name="q2" value="b"> A unique address that identifies a web resource.</li>
+        </ul>
+    </li>
+    <li>Anchor Tag
+        <ul>
+            <li><input type="radio" name="q3" value="a"> A tag used to create headings in HTML.</li>
+            <li><input type="radio" name="q3" value="b"> A tag used to create hyperlinks in HTML.</li>
+        </ul>
+    </li>
+    <li>Relative URL
+        <ul>
+            <li><input type="radio" name="q4" value="a"> A URL that specifies the exact location of a web resource.</li>
+            <li><input type="radio" name="q4" value="b"> A URL that specifies the location of a web resource relative to the current page.</li>
+        </ul>
+    </li>
+</ol>
+
+<button onclick="checkAnswers()">Check Answers</button>
+
+<div id="answers"></div>
+
+<script>
+    function checkAnswers() {
+        var q1 = document.querySelector('input[name="q1"]:checked').value;
+        var q2 = document.querySelector('input[name="q2"]:checked').value;
+        var q3 = document.querySelector('input[name="q3"]:checked').value;
+        var q4 = document.querySelector('input[name="q4"]:checked').value;
+
+        var answersDiv = document.getElementById('answers');
+        if (q1 === "b" && q2 === "a" && q3 === "b" && q4 === "b") {
+            answersDiv.innerHTML = "<p>Congratulations! You answered all questions correctly.</p>";
+        } else {
+            answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Review the HTML links and anchor tags topic and try again!</p>";
+        }
+    }
+</script>
+
+<br> <hr>
+<b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the understanding of Links and Anchor Tags. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+
+    </italic>
+    
+        
+      
+
+
+ <br>  <br>
+
+</body>
+</html>

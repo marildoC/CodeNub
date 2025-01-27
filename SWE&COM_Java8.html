@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abstraction in Java</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red; 
+    }
+
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a href="index.html">Home</a>
+  <a class="active" href="#java">Java</a>
+  <a href="#html">HTML</a>
+  <a href="#css">CSS</a>
+  <a href="#javascript">JavaScript</a>
+  <a href="#sql">SQL</a>
+  <a href="#c">C</a>
+  <a href="#python">Python</a>
+  <a href="#dsa">DSA</a>
+</div>
+
+<div class="menu">
+  <a  href="SWE&COM_Java1.html">Introduction to Java</a>   <hr>
+  <a href="SWE&COM_Java2.html">Variables</a> <hr>
+<a href="SWE&COM_Java3.html">Operators</a> <hr>
+
+<a href="SWE&COM_Java4.html">Arrays</a>  <hr>
+<a href="SWE&COM_Java5.html">Classes and Objects</a>  <hr>
+<a href="SWE&COM_Java6.html">Inheritance</a>   <hr>
+<a href="SWE&COM_Java7.html">Polymorphism</a>  <hr>
+<a class="active" href="SWE&COM_Java8.html">Abstraction</a>   <hr>
+<a href="SWE&COM_Java9.html">Interfaces</a>   <hr>
+<a href="SWE&COM_Java10.html">Exceptions</a>  <hr>
+<a href="SWE&COM_Java11.html">File I/O</a>          <hr>
+<a href="SWE&COM_Java12.html">Collections</a>   <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <h2> JAVA </h2>
+  
+   
+
+
+  
+    <italic>
+        <h2>Exploring Abstraction in Java</h2>
+    
+        <p>Welcome to our in-depth course on abstraction in Java! In this comprehensive guide, we'll dive into the concept of abstraction, its practical applications, and how it enhances the design and flexibility of Java programs.</p>
+    
+        <h3>Understanding Abstraction</h3>
+    
+        <p>Abstraction is a fundamental concept in object-oriented programming (OOP) that allows developers to focus on essential details while hiding unnecessary complexity. At its core, abstraction involves defining a simplified model of a complex system, emphasizing only the most relevant aspects.</p>
+    
+        <p>In Java, abstraction is achieved through abstract classes and interfaces. An abstract class is a class that cannot be instantiated directly and may contain one or more abstract methods, which are declared but not implemented. These abstract methods serve as placeholders for functionality that must be implemented by subclasses.</p>
+    
+        <p>Abstract classes provide a blueprint for creating concrete classes, allowing developers to define a common interface and behavior for a group of related classes. By using abstract classes, developers can enforce consistency and structure in their code while promoting code reuse and maintainability.</p>
+    
+        <h3>Abstract Classes and Methods</h3>
+    
+        <p>Let's take a closer look at abstract classes and methods:</p>
+    
+        <p>An abstract class is declared using the <span style="color: rgba(51, 23, 207, 0.767);">abstract</span> keyword. It may contain both abstract and concrete methods. Abstract methods are declared without an implementation, using the <span style="color: rgba(51, 23, 207, 0.767);">abstract</span> keyword and followed by a semicolon.</p>
+    
+        <pre>
+        <span style="color: rgba(51, 23, 207, 0.767);">abstract</span> class Shape {
+            <span style="color: rgba(51, 23, 207, 0.767);">// Abstract method declaration</span>
+            <span style="color: rgba(51, 23, 207, 0.767);">abstract</span> void draw();
+        }
+        </pre>
+    
+        <p>Abstract methods must be implemented by concrete subclasses. Any class that extends an abstract class must either provide implementations for all abstract methods or be declared as abstract itself.</p>
+    
+        <h3>Using Abstraction in Practice</h3>
+    
+        <p>Abstraction plays a crucial role in designing robust and maintainable Java applications. By abstracting away implementation details and focusing on high-level concepts, developers can build modular, extensible, and easy-to-understand systems.</p>
+    
+        <p>Common examples of abstraction in Java include:</p>
+        <ul>
+            <li>Creating abstract data types such as lists, queues, and stacks.</li>
+            <li>Defining interfaces to specify behavior without specifying the implementation.</li>
+            <li>Implementing design patterns such as the Factory Method pattern or the Template Method pattern.</li>
+        </ul>
+    
+        <p>By leveraging abstraction effectively, developers can write cleaner, more maintainable code that is easier to understand, extend, and debug.</p>
+    
+        <h3>Quiz: Test Your Knowledge!</h3>
+    
+        <p>Let's see how well you understand abstraction in Java. Answer the following questions:</p>
+    
+        <ol>
+            <li>What is an abstract class?</li>
+            <ul>
+                <li><input type="radio" name="q1" value="a"> A class that can be instantiated on its own.</li>
+                <li><input type="radio" name="q1" value="b"> A class that cannot be instantiated on its own and may contain abstract methods.</li>
+                <li><input type="radio" name="q1" value="c"> A class with fully implemented methods.</li>
+            </ul>
+            <li>How do you declare an abstract method?</li>
+            <ul>
+                <li><input type="radio" name="q2" value="a"> void methodName();</li>
+                <li><input type="radio" name="q2" value="b"> abstract void methodName();</li>
+                <li><input type="radio" name="q2" value="c"> returnType methodName();</li>
+            </ul>
+        </ol>
+    
+        <button onclick="checkAnswers()">Check Answers</button>
+    
+        <div id="answers"></div>
+    
+        <script>
+            function checkAnswers() {
+                var q1 = document.querySelector('input[name="q1"]:checked').value;
+                var q2 = document.querySelector('input[name="q2"]:checked').value;
+    
+                var correctAnswers = ["b", "b"];
+                var userAnswers = [q1, q2];
+    
+                var correctCount = 0;
+                for (var i = 0; i < correctAnswers.length; i++) {
+                    if (correctAnswers[i] === userAnswers[i]) {
+                        correctCount++;
+                    }
+                }
+    
+                var answersDiv = document.getElementById('answers');
+                if (correctCount === correctAnswers.length) {
+                    answersDiv.innerHTML = "<p>Congratulations! You got all answers correct!</p>";
+                } else {
+                    answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Please try again.</p>";
+                }
+            }
+        </script>
+    </italic>
+   
+    
+ <br>  <br>
+
+
+   <div class="code-editor">
+    <h2>Let's practise your understanding about Abstraction </h2>
+    <i>Java code  that demonstrates the declaration and initialization of Abstraction:</i>
+    <pre><code>
+    abstract class Shape {
+        abstract void draw();
+    }
+    
+    class Circle extends Shape {
+        void draw() {
+            System.out.println("Drawing a circle");
+        }
+    }
+    
+    class Rectangle extends Shape {
+        void draw() {
+            System.out.println("Drawing a rectangle");
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Shape circle = new Circle();
+            Shape rectangle = new Rectangle();
+    
+            circle.draw();
+            rectangle.draw();
+        }
+    }
+   </code></pre>
+    <h2>Your Java Code</h2>
+    <div id="userCode" class="code-editor">
+        <textarea id="codeTextarea" rows="21" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button> 
+  </div>
+  <div class="output" id="output"></div>
+
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the basics of Abstraction. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+
+</div> 
+
+
+
+
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `abstract class Shape {
+        abstract void draw();
+    }
+    
+    class Circle extends Shape {
+        void draw() {
+            System.out.println("Drawing a circle");
+        }
+    }
+    
+    class Rectangle extends Shape {
+        void draw() {
+            System.out.println("Drawing a rectangle");
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Shape circle = new Circle();
+            Shape rectangle = new Rectangle();
+    
+            circle.draw();
+            rectangle.draw();
+        }
+    }`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerText = ""; 
+
+    if (userCode === exampleCode) {
+      outputDiv.innerText = "Output: \nDrawing a circle\nDrawing a rectangle";
+      outputDiv.style.color = "green"; 
+    } else {
+      // Check if the user code is empty
+      if (userCode === "") {
+        outputDiv.innerText = "Error: Please write your Java code before running.";
+      } else {
+        outputDiv.innerText = "Error: Syntax is not correct. Please check your code and try again.";
+      }
+      outputDiv.style.color = "red"; 
+    }
+  }
+</script>
+
+
+</body>
+</html>

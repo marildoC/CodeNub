@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Topygraphy</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output-box {
+      border: 2px solid #000;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .output-box pre {
+      white-space: pre-wrap;
+    }
+    
+    
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+
+    .content {
+      padding: 16px;
+      background-color: white; 
+      height: 100%;
+      margin-left: 10%; 
+      margin-top: 3%;
+      color: #000000; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+
+    <div class="header">
+        <a  href="index.html">Home</a>
+        <a href="SWE&COM_Java1.html">Java</a>
+        <a href="Html-1-SWE&COM.html">HTML</a>
+        <a class="active" href="CSS-1-SWE&COM.html">CSS</a>
+        <a  href="JS-1-SWE&COM.html">JavaScript</a>
+        <a href="SQL-1-SWE&COM.html">SQL</a>
+        <a href="C-1-SWE&COM.html">C</a>
+        <a href="Python-1-SWE&COM.html">Python</a>
+        <a href="DSA-1-SWE&COM.html">DSA</a>
+    </div>
+    
+    <div class="menu">    
+        <a href="CSS-1-SWE&COM.html">Introduction to CSS</a> <hr>
+        <a href="CSS-2-SWE&COM.html">Selectors and Styling</a> <hr>
+        <a href="CSS-3-SWE&COM.html">Box Model</a> <hr>
+        <a href="CSS-4-SWE&COM.html">Layouts</a> <hr>
+        <a class="active" href="CSS-5-SWE&COM.html">Responsive Design</a> <hr>
+        <a href="CSS-6-SWE&COM.html">Typography</a> <hr>
+        <a href="CSS-7-SWE&COM.html">Colors and Backgrounds</a> <hr>
+        <a href="CSS-8-SWE&COM.html">Transitions and Animations</a> <hr>   <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <italic>
+        <h1>CSS</h1>
+        <h2>Mastering CSS Typography</h2>
+        <p>Welcome to our comprehensive guide on mastering CSS typography! In this tutorial, we'll delve into the art of styling text using CSS to enhance the readability and aesthetics of your web projects.</p>
+        
+        <h3>Understanding Typography</h3>
+        <p>Typography plays a crucial role in web design, influencing readability, accessibility, and overall user experience. Let's explore the key concepts:</p>
+        <p>The <code style="color: rgba(51, 23, 207, 0.767);">font-family</code> property allows you to specify the typeface or font family for text.</p>
+        <p>The <code style="color: rgba(51, 23, 207, 0.767);">font-size</code> property controls the size of the text.</p>
+        <p>The <code style="color: rgba(51, 23, 207, 0.767);">font-weight</code> property adjusts the thickness or boldness of the text.</p>
+        
+        <h3>Styling Text with CSS</h3>
+        <p>Let's explore how CSS can be used to style text effectively:</p>
+        <p>The <code style="color: rgba(51, 23, 207, 0.767);">color</code> property sets the color of the text.</p>
+        <p>The <code style="color: rgba(51, 23, 207, 0.767);">text-align</code> property aligns text within its containing element.</p>
+        <p>The <code style="color: rgba(51, 23, 207, 0.767);">text-decoration</code> property adds decorations such as underline or strikethrough to text.</p>
+        
+        <h3>Enhancing Typography with CSS</h3>
+        <p>CSS offers additional features to enhance typography:</p>
+        <p>The <code style="color: rgba(51, 23, 207, 0.767);">line-height</code> property adjusts the spacing between lines of text.</p>
+        <p>The <code style="color: rgba(51, 23, 207, 0.767);">letter-spacing</code> property controls the spacing between characters.</p>
+        <p>The <code style="color: rgba(51, 23, 207, 0.767);">text-transform</code> property transforms text to uppercase, lowercase, or capitalize.</p>
+        
+        <h3>Best Practices</h3>
+        <p>Follow these best practices for effective typography:</p>
+        <p>Choose appropriate font families that align with your website's theme and audience.</p>
+        <p>Maintain consistency in font sizes and styles across your website for a cohesive look.</p>
+        <p>Optimize line heights and letter spacing for improved readability.</p>
+        
+        <h3>Real-World Examples</h3>
+        <p>Let's examine some real-world examples of CSS typography in action:</p>
+        <p>Explore popular websites and observe how they use typography to convey their brand identity and enhance user experience.</p>
+        <p>Analyze typography trends in modern web design to stay updated with current practices.</p>
+        
+        <h3>Conclusion</h3>
+        <p>Mastering CSS typography is essential for creating visually appealing and user-friendly web experiences. By understanding typography principles, leveraging CSS properties, and following best practices, you can elevate the design of your web projects.</p>
+        
+   
+        <h3>Quiz: Test Your Knowledge!</h3>
+
+        <ol>
+            <li>What CSS property is used to specify the typeface or font family for text?</li>
+            <ul>
+                <li><input type="radio" name="q1" value="a"> font-weight</li>
+                <li><input type="radio" name="q1" value="b"> font-family</li>
+                <li><input type="radio" name="q1" value="c"> font-size</li>
+            </ul>
+            <li>Which CSS property controls the size of the text?</li>
+            <ul>
+                <li><input type="radio" name="q2" value="a"> font-style</li>
+                <li><input type="radio" name="q2" value="b"> font-size</li>
+                <li><input type="radio" name="q2" value="c"> text-transform</li>
+            </ul>
+            <li>What CSS property adjusts the spacing between lines of text?</li>
+            <ul>
+                <li><input type="radio" name="q3" value="a"> letter-spacing</li>
+                <li><input type="radio" name="q3" value="b"> text-decoration</li>
+                <li><input type="radio" name="q3" value="c"> line-height</li>
+            </ul>
+        </ol>
+        
+        <button onclick="checkAnswers()">Check Answers</button>
+        
+        <div id="answers"></div>
+        
+        <script>
+            function checkAnswers() {
+                var q1 = document.querySelector('input[name="q1"]:checked').value;
+                var q2 = document.querySelector('input[name="q2"]:checked').value;
+                var q3 = document.querySelector('input[name="q3"]:checked').value;
+        
+                var correctAnswers = ["b", "b", "c"];
+                var userAnswers = [q1, q2, q3];
+        
+                var correctCount = 0;
+                for (var i = 0; i < correctAnswers.length; i++) {
+                    if (correctAnswers[i] === userAnswers[i]) {
+                        correctCount++;
+                    }
+                }
+        
+                var answersDiv = document.getElementById('answers');
+                if (correctCount === correctAnswers.length) {
+                    answersDiv.innerHTML = "<p>Congratulations! You got all answers correct!</p>";
+                } else {
+                    answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Please try again.</p>";
+                }
+            }
+        </script>
+        
+
+        
+    </italic>
+    
+    
+    
+    
+    
+
+  <div class="code-editor">
+    <h2>Let's practise your understanding about Topygraphy
+    </h2>
+    <pre><code>&lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;CSS Typography&lt;/title&gt;
+            &lt;style&gt;
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f0f0f0;
+                    color: #333;
+                }
+        
+                .container {
+                    max-width: 800px;
+                    margin: 20px auto;
+                    padding: 20px;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+        
+                h1, h2 {
+                    color: #007bff;
+                    margin-bottom: 10px;
+                }
+        
+                .font-example {
+                    font-family: Arial, sans-serif;
+                }
+        
+                .size-example {
+                    font-size: 24px;
+                }
+        
+                .weight-example {
+                    font-weight: bold;
+                }
+        
+                .line-height-example {
+                    line-height: 1.6;
+                }
+        
+                .decoration-example {
+                    text-decoration: underline;
+                }
+        
+                .transformation-example {
+                    text-transform: uppercase;
+                }
+            &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;div class="container"&gt;
+                &lt;h1&gt;Welcome to CSS Typography&lt;/h1&gt;
+                &lt;p&gt;In this course, you will learn about various typography techniques in CSS.&lt;/p&gt;
+                &lt;h2&gt;Font Families&lt;/h2&gt;
+                &lt;p class="font-example"&gt;This text uses the Arial font family.&lt;/p&gt;
+                &lt;h2&gt;Font Size&lt;/h2&gt;
+                &lt;p class="size-example"&gt;This text has a larger font size.&lt;/p&gt;
+                &lt;h2&gt;Font Weight&lt;/h2&gt;
+                &lt;p class="weight-example"&gt;This text is bold.&lt;/p&gt;
+                &lt;h2&gt;Line Height&lt;/h2&gt;
+                &lt;p class="line-height-example"&gt;This text has increased line height.&lt;/p&gt;
+                &lt;h2&gt;Text Decoration&lt;/h2&gt;
+                &lt;p class="decoration-example"&gt;This text is underlined.&lt;/p&gt;
+                &lt;h2&gt;Text Transformation&lt;/h2&gt;
+                &lt;p class="transformation-example"&gt;This text is in uppercase.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+        
+        
+        </code>
+        
+        </pre>
+    <h2>Your CSS Code</h2>
+    <div id="userCode" class="code-editor">
+      <textarea id="codeTextarea" rows="23" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output-box" id="output"></div>
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the basics of CSS Topygraphy. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+</div>
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>CSS Typography</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f0f0f0;
+                    color: #333;
+                }
+        
+                .container {
+                    max-width: 800px;
+                    margin: 20px auto;
+                    padding: 20px;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+        
+                h1, h2 {
+                    color: #007bff;
+                    margin-bottom: 10px;
+                }
+        
+                .font-example {
+                    font-family: Arial, sans-serif;
+                }
+        
+                .size-example {
+                    font-size: 24px;
+                }
+        
+                .weight-example {
+                    font-weight: bold;
+                }
+        
+                .line-height-example {
+                    line-height: 1.6;
+                }
+        
+                .decoration-example {
+                    text-decoration: underline;
+                }
+        
+                .transformation-example {
+                    text-transform: uppercase;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Welcome to CSS Typography</h1>
+                <p>In this course, you will learn about various typography techniques in CSS.</p>
+                <h2>Font Families</h2>
+                <p class="font-example">This text uses the Arial font family.</p>
+                <h2>Font Size</h2>
+                <p class="size-example">This text has a larger font size.</p>
+                <h2>Font Weight</h2>
+                <p class="weight-example">This text is bold.</p>
+                <h2>Line Height</h2>
+                <p class="line-height-example">This text has increased line height.</p>
+                <h2>Text Decoration</h2>
+                <p class="decoration-example">This text is underlined.</p>
+                <h2>Text Transformation</h2>
+                <p class="transformation-example">This text is in uppercase.</p>
+            </div>
+        </body>
+        </html>`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    var outputText = isCorrect ? `Output: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Typography</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .font-example {
+            font-family: Arial, sans-serif;
+        }
+
+        .size-example {
+            font-size: 24px;
+        }
+
+        .weight-example {
+            font-weight: bold;
+        }
+
+        .line-height-example {
+            line-height: 1.6;
+        }
+
+        .decoration-example {
+            text-decoration: underline;
+        }
+
+        .transformation-example {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to CSS Typography</h1>
+        <p>In this course, you will learn about various typography techniques in CSS.</p>
+        <h2>Font Families</h2>
+        <p class="font-example">This text uses the Arial font family.</p>
+        <h2>Font Size</h2>
+        <p class="size-example">This text has a larger font size.</p>
+        <h2>Font Weight</h2>
+        <p class="weight-example">This text is bold.</p>
+        <h2>Line Height</h2>
+        <p class="line-height-example">This text has increased line height.</p>
+        <h2>Text Decoration</h2>
+        <p class="decoration-example">This text is underlined.</p>
+        <h2>Text Transformation</h2>
+        <p class="transformation-example">This text is in uppercase.</p>
+    </div>
+</body>
+</html>` : "Error: Syntax is not correct. Please check your code and try again.";
+
+outputDiv.innerHTML = outputText;
+
+
+
+
+  }
+</script>
+
+</body>
+</html>

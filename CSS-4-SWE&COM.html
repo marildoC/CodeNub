@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Layouts</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output-box {
+      border: 2px solid #000;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .output-box pre {
+      white-space: pre-wrap;
+    }
+    
+    
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+
+    .content {
+      padding: 16px;
+      background-color: white; 
+      height: 100%;
+      margin-left: 10%; 
+      margin-top: 3%;
+      color: #000000; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+
+    <div class="header">
+        <a  href="index.html">Home</a>
+      <a href="SWE&COM_Java1.html">Java</a>
+      <a href="Html-1-SWE&COM.html">HTML</a>
+      <a class="active" href="CSS-1-SWE&COM.html">CSS</a>
+      <a  href="JS-1-SWE&COM.html">JavaScript</a>
+      <a href="SQL-1-SWE&COM.html">SQL</a>
+      <a href="C-1-SWE&COM.html">C</a>
+      <a href="Python-1-SWE&COM.html">Python</a>
+      <a href="DSA-1-SWE&COM.html">DSA</a>
+    </div>
+    
+    <div class="menu">
+        <a href="CSS-1-SWE&COM.html">Introduction to CSS</a> <hr>
+        <a href="CSS-2-SWE&COM.html">Selectors and Styling</a> <hr>
+        <a href="CSS-3-SWE&COM.html">Box Model</a> <hr>
+        <a class="active" href="CSS-4-SWE&COM.html">Layouts</a> <hr>
+        <a href="CSS-5-SWE&COM.html">Responsive Design</a> <hr>
+        <a href="CSS-6-SWE&COM.html">Typography</a> <hr>
+        <a href="CSS-7-SWE&COM.html">Colors and Backgrounds</a> <hr>
+        <a href="CSS-8-SWE&COM.html">Transitions and Animations</a> <hr>   <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <italic>
+        <h1>CSS</h1>
+        <h2>Mastering CSS Layouts</h2>
+        <p>Welcome to our comprehensive guide on mastering CSS layouts! In this tutorial, we'll explore various layout techniques, best practices, and real-world examples to help you create flexible and responsive layouts for your web projects.</p>
+    
+        <h3>Understanding CSS Layouts</h3>
+        <p>CSS layouts play a crucial role in determining how elements are arranged and displayed on a web page. Let's dive into the key concepts:</p>
+        <p>The <code style="color: rgba(51, 23, 207, 0.767);">box model</code> defines the structure of elements on a webpage, including their content, padding, borders, and margins.</p>
+        <p><code style="color: rgba(51, 23, 207, 0.767);">Flexbox</code> and <code style="color: rgba(51, 23, 207, 0.767);">CSS Grid</code> are powerful layout tools that allow for the creation of complex and responsive designs with ease.</p>
+        <p>Understanding <code style="color: rgba(51, 23, 207, 0.767);">responsive design</code> is essential for ensuring that your layouts adapt seamlessly to different screen sizes and devices.</p>
+    
+        <h3>Layout Techniques</h3>
+        <p>Let's explore some common layout techniques used in CSS:</p>
+        <p><code style="color: rgba(51, 23, 207, 0.767);">Floats</code> are used to create multi-column layouts and wrap text around images.</p>
+        <p><code style="color: rgba(51, 23, 207, 0.767);">Positioning</code> allows for precise control over the placement of elements on the page, including relative, absolute, fixed, and sticky positioning.</p>
+        <p><code style="color: rgba(51, 23, 207, 0.767);">Grid systems</code> provide a structured approach to layout design, enabling consistent alignment and spacing of elements.</p>
+    
+        <h3>Best Practices</h3>
+        <p>Follow these best practices to create maintainable and efficient CSS layouts:</p>
+        <p>Use <code style="color: rgba(51, 23, 207, 0.767);">semantic HTML</code> to structure your content, enhancing accessibility and search engine optimization.</p>
+        <p>Keep your CSS code organized and modular, using <code style="color: rgba(51, 23, 207, 0.767);">separation of concerns</code> to separate structure from presentation.</p>
+        <p>Optimize your layouts for <code style="color: rgba(51, 23, 207, 0.767);">performance</code> by minimizing the use of unnecessary styles and optimizing image assets.</p>
+    
+        <h3>Real-World Examples</h3>
+        <p>Let's examine some real-world examples to see CSS layouts in action:</p>
+        <p>Explore popular CSS frameworks such as Bootstrap and Foundation to see how they implement responsive grid systems and layout components.</p>
+        <p>Check out websites with innovative and creative layouts to draw inspiration for your own projects.</p>
+    
+        <h3>Conclusion</h3>
+        <p>Mastering CSS layouts is essential for creating visually appealing and user-friendly web experiences. By understanding layout techniques, best practices, and real-world examples, you'll be well-equipped to tackle any layout challenge in your web projects.</p>
+   
+   
+        <h3>Quiz: Test Your Knowledge!</h3>
+
+<ol>
+    <li>What is the primary role of the CSS box model?</li>
+    <ul>
+        <li><input type="radio" name="q1" value="a"> To define the structure of HTML elements</li>
+        <li><input type="radio" name="q1" value="b"> To determine the layout and spacing of elements on a webpage</li>
+        <li><input type="radio" name="q1" value="c"> To specify the color and font of text</li>
+    </ul>
+    <li>Which CSS property is used to create space around an element's content, inside of its border?</li>
+    <ul>
+        <li><input type="radio" name="q2" value="a"> margin</li>
+        <li><input type="radio" name="q2" value="b"> padding</li>
+        <li><input type="radio" name="q2" value="c"> border</li>
+    </ul>
+    <li>Which CSS layout technique allows elements to be positioned based on their normal position in the document flow?</li>
+    <ul>
+        <li><input type="radio" name="q3" value="a"> Floats</li>
+        <li><input type="radio" name="q3" value="b"> Positioning</li>
+        <li><input type="radio" name="q3" value="c"> Flexbox</li>
+    </ul>
+</ol>
+
+<button onclick="checkAnswers()">Check Answers</button>
+
+<div id="answers"></div>
+
+<script>
+    function checkAnswers() {
+        var q1 = document.querySelector('input[name="q1"]:checked').value;
+        var q2 = document.querySelector('input[name="q2"]:checked').value;
+        var q3 = document.querySelector('input[name="q3"]:checked').value;
+
+        var correctAnswers = ["b", "b", "b"];
+        var userAnswers = [q1, q2, q3];
+
+        var correctCount = 0;
+        for (var i = 0; i < correctAnswers.length; i++) {
+            if (correctAnswers[i] === userAnswers[i]) {
+                correctCount++;
+            }
+        }
+
+        var answersDiv = document.getElementById('answers');
+        if (correctCount === correctAnswers.length) {
+            answersDiv.innerHTML = "<p>Congratulations! You got all answers correct!</p>";
+        } else {
+            answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Please try again.</p>";
+        }
+    }
+</script>
+
+        
+    </italic>
+    
+    
+    
+    
+    
+
+  <div class="code-editor">
+    <h2>Let's practise your understanding about Layouts
+    </h2>
+    <pre><code>&lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;CSS Layouts&lt;/title&gt;
+            &lt;style style="color: rgba(51, 23, 207, 0.767);"&gt;
+                /* CSS styles */
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f0f0f0;
+                    color: #333;
+                    margin: 0;
+                    padding: 0;
+                }
+                .container {
+                    max-width: 800px;
+                    margin: 20px auto;
+                    padding: 20px;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                h1 {
+                    color: #007bff;
+                    text-align: center;
+                }
+                p {
+                    line-height: 1.6;
+                }
+                .example-code {
+                    background-color: #f9f9f9;
+                    padding: 10px;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                }
+            &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;div class="container"&gt;
+                &lt;h1&gt;CSS Layouts&lt;/h1&gt;
+                &lt;p&gt;Welcome to the CSS Layouts course! In this module, we'll explore various CSS techniques for creating layouts and arranging elements on a webpage.&lt;/p&gt;
+                
+                &lt;h2&gt;Understanding the CSS Box Model&lt;/h2&gt;
+                &lt;p&gt;The CSS box model is fundamental to understanding layouts in CSS. It consists of content, padding, border, and margin. Let's visualize it:&lt;/p&gt;
+                &lt;div class="example-code"&gt;
+                    &lt;pre&gt;
+                        &lt;code style="color: rgba(51, 23, 207, 0.767);"&gt;
+                            /* CSS box model */
+                            .box {
+                                width: 200px;
+                                height: 100px;
+                                padding: 20px;
+                                border: 2px solid #333;
+                                margin: 20px;
+                            }
+                        &lt;/code&gt;
+                    &lt;/pre&gt;
+                &lt;/div&gt;
+        
+                &lt;h2&gt;Layout Techniques&lt;/h2&gt;
+                &lt;p&gt;There are several CSS layout techniques available:&lt;/p&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Floats&lt;/li&gt;
+                    &lt;li&gt;Flexbox&lt;/li&gt;
+                    &lt;li&gt;Grid&lt;/li&gt;
+                    &lt;li&gt;Positioning&lt;/li&gt;
+                &lt;/ul&gt;
+        
+                &lt;h2&gt;Case Studies&lt;/h2&gt;
+                &lt;p&gt;Let's examine some real-world examples of CSS layouts:&lt;/p&gt;
+                &lt;div class="example-code"&gt;
+                    &lt;pre&gt;
+                        &lt;code style="color: rgba(51, 23, 207, 0.767);"&gt;
+                            /* Example of a simple layout using Flexbox */
+                            .container {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 100vh;
+                            }
+        
+                            .box {
+                                width: 100px;
+                                height: 100px;
+                                background-color: #007bff;
+                                margin: 10px;
+                            }
+                        &lt;/code&gt;
+                    &lt;/pre&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+        
+        </code>
+        
+        </pre>
+    <h2>Your CSS Code</h2>
+    <div id="userCode" class="code-editor">
+      <textarea id="codeTextarea" rows="23" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output-box" id="output"></div>
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the basics of CSS Layouts. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+</div>
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>CSS Layouts</title>
+            <style style="color: rgba(51, 23, 207, 0.767);">
+                /* CSS styles */
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f0f0f0;
+                    color: #333;
+                    margin: 0;
+                    padding: 0;
+                }
+                .container {
+                    max-width: 800px;
+                    margin: 20px auto;
+                    padding: 20px;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                h1 {
+                    color: #007bff;
+                    text-align: center;
+                }
+                p {
+                    line-height: 1.6;
+                }
+                .example-code {
+                    background-color: #f9f9f9;
+                    padding: 10px;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>CSS Layouts</h1>
+                <p>Welcome to the CSS Layouts course! In this module, we'll explore various CSS techniques for creating layouts and arranging elements on a webpage.</p>
+                
+                <h2>Understanding the CSS Box Model</h2>
+                <p>The CSS box model is fundamental to understanding layouts in CSS. It consists of content, padding, border, and margin. Let's visualize it:</p>
+                <div class="example-code">
+                    <pre>
+                        <code style="color: rgba(51, 23, 207, 0.767);">
+                            /* CSS box model */
+                            .box {
+                                width: 200px;
+                                height: 100px;
+                                padding: 20px;
+                                border: 2px solid #333;
+                                margin: 20px;
+                            }
+                        </code>
+                    </pre>
+                </div>
+        
+                <h2>Layout Techniques</h2>
+                <p>There are several CSS layout techniques available:</p>
+                <ul>
+                    <li>Floats</li>
+                    <li>Flexbox</li>
+                    <li>Grid</li>
+                    <li>Positioning</li>
+                </ul>
+        
+                <h2>Case Studies</h2>
+                <p>Let's examine some real-world examples of CSS layouts:</p>
+                <div class="example-code">
+                    <pre>
+                        <code style="color: rgba(51, 23, 207, 0.767);">
+                            /* Example of a simple layout using Flexbox */
+                            .container {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 100vh;
+                            }
+        
+                            .box {
+                                width: 100px;
+                                height: 100px;
+                                background-color: #007bff;
+                                margin: 10px;
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </body>
+        </html>`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    var outputText = isCorrect ? `Output: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Layouts</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .example-code {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Layouts</h1>
+        <p>Welcome to the CSS Layouts course! In this module, we'll explore various CSS techniques for creating layouts and arranging elements on a webpage.</p>
+        
+        <h2>Understanding the CSS Box Model</h2>
+        <p>The CSS box model is fundamental to understanding layouts in CSS. It consists of content, padding, border, and margin. Let's visualize it:</p>
+        <div class="example-code">
+            <pre>
+                <code style="color: rgba(51, 23, 207, 0.767);">
+                    /* CSS box model */
+                    .box {
+                        width: 200px;
+                        height: 100px;
+                        padding: 20px;
+                        border: 2px solid #333;
+                        margin: 20px;
+                    }
+                </code>
+            </pre>
+        </div>
+
+        <h2>Layout Techniques</h2>
+        <p>There are several CSS layout techniques available:</p>
+        <ul>
+            <li>Floats</li>
+            <li>Flexbox</li>
+            <li>Grid</li>
+            <li>Positioning</li>
+        </ul>
+
+        <h2>Case Studies</h2>
+        <p>Let's examine some real-world examples of CSS layouts:</p>
+        <div class="example-code">
+            <pre>
+                <code style="color: rgba(51, 23, 207, 0.767);">
+                    /* Example of a simple layout using Flexbox */
+                    .container {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
+                    }
+
+                    .box {
+                        width: 100px;
+                        height: 100px;
+                        background-color: #007bff;
+                        margin: 10px;
+                    }
+                </code>
+            </pre>
+        </div>
+    </div>
+</body>
+</html>` : "Error: Syntax is not correct. Please check your code and try again.";
+
+outputDiv.innerHTML = outputText;
+
+
+
+  }
+</script>
+
+</body>
+</html>

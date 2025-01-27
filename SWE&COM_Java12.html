@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collections in Java</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red; 
+    }
+
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a href="index.html">Home</a>
+  <a class="active" href="#java">Java</a>
+  <a href="#html">HTML</a>
+  <a href="#css">CSS</a>
+  <a href="#javascript">JavaScript</a>
+  <a href="#sql">SQL</a>
+  <a href="#c">C</a>
+  <a href="#python">Python</a>
+  <a href="#dsa">DSA</a>
+</div>
+
+<div class="menu">
+    <a class="active" href="SWE&COM_Java1.html">Introduction to Java</a>   <hr>
+    <a href="SWE&COM_Java2.html">Variables</a> <hr>
+  <a href="SWE&COM_Java3.html">Operators</a> <hr>
+ 
+  <a href="SWE&COM_Java4.html">Arrays</a>  <hr>
+  <a href="SWE&COM_Java5.html">Classes and Objects</a>  <hr>
+  <a href="SWE&COM_Java6.html">Inheritance</a>   <hr>
+  <a href="SWE&COM_Java7.html">Polymorphism</a>  <hr>
+  <a href="SWE&COM_Java8.html">Abstraction</a>   <hr>
+  <a href="SWE&COM_Java9.html">Interfaces</a>   <hr>
+  <a href="SWE&COM_Java10.html">Exceptions</a>  <hr>
+  <a href="SWE&COM_Java11.html">File I/O</a>          <hr>
+  <a class="active" href="SWE&COM_Java12.html">Collections</a>   <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <h2> JAVA </h2>
+  
+   
+
+    <italic>
+        <h2>Mastering Collections in Java</h2>
+    
+        <p>Welcome to our comprehensive guide on collections in Java! In this tutorial, we'll explore the vast world of collections, indispensable tools for managing and manipulating groups of objects in Java.</p>
+    
+        <h3>Introduction to Collections</h3>
+    
+        <p>In Java, a collection is an object that represents a group of elements. Collections provide a flexible and efficient way to store, retrieve, and manipulate data. They offer various operations such as adding, removing, searching, sorting, and iterating over elements.</p>
+    
+        <h3>Types of Collections</h3>
+    
+        <p>Java offers a rich set of interfaces and classes for working with collections. Some of the most commonly used collection interfaces include:</p>
+    
+        <ul>
+            <li><span>List:</span> An ordered collection that allows duplicate elements. Implementations include ArrayList, LinkedList, and Vector.</li>
+            <li><span>Set:</span> A collection that does not allow duplicate elements. Implementations include HashSet, TreeSet, and LinkedHashSet.</li>
+            <li><span>Map:</span> An object that maps keys to values. Implementations include HashMap, TreeMap, and LinkedHashMap.</li>
+            <li><span>Queue:</span> A collection used for holding elements prior to processing. Implementations include PriorityQueue and LinkedList.</li>
+        </ul>
+    
+        <h3>Using Collections in Java</h3>
+    
+        <p>Let's explore some common operations performed on collections:</p>
+    
+        <h4>Creating a Collection</h4>
+        <p>To create a collection, you can instantiate one of the collection classes provided by Java. For example:</p>
+        <pre style="color: rgba(51, 23, 207, 0.767);">List&lt;String&gt; names = new ArrayList&lt;&gt;();</pre>
+    
+        <h4>Adding Elements</h4>
+        <p>You can add elements to a collection using the <span style="color: rgba(51, 23, 207, 0.767);">add</span> method:</p>
+        <pre style="color: rgba(51, 23, 207, 0.767);">names.add("Alice");
+    names.add("Bob");
+    names.add("Charlie");</pre>
+    
+        <h4>Iterating Through a Collection</h4>
+        <p>You can iterate through the elements of a collection using loops or iterators:</p>
+        <pre style="color: rgba(51, 23, 207, 0.767);">for (String name : names) {
+        System.out.println(name);
+    }</pre>
+    
+        <h3>Quiz: Test Your Knowledge!</h3>
+    
+        <p>Let's see how well you understand collections in Java. Answer the following questions:</p>
+    
+        <ol>
+            <li>What interface represents an ordered collection that allows duplicate elements?</li>
+            <ul>
+                <li><input type="radio" name="q1" value="a"> List</li>
+                <li><input type="radio" name="q1" value="b"> Set</li>
+                <li><input type="radio" name="q1" value="c"> Map</li>
+            </ul>
+    
+            <li>Which collection does not allow duplicate elements?</li>
+            <ul>
+                <li><input type="radio" name="q2" value="a"> List</li>
+                <li><input type="radio" name="q2" value="b"> Set</li>
+                <li><input type="radio" name="q2" value="c"> Map</li>
+            </ul>
+    
+            <li>Which interface represents an object that maps keys to values?</li>
+            <ul>
+                <li><input type="radio" name="q3" value="a"> List</li>
+                <li><input type="radio" name="q3" value="b"> Set</li>
+                <li><input type="radio" name="q3" value="c"> Map</li>
+            </ul>
+    
+            <li>Which collection is used for holding elements prior to processing?</li>
+            <ul>
+                <li><input type="radio" name="q4" value="a"> List</li>
+                <li><input type="radio" name="q4" value="b"> Set</li>
+                <li><input type="radio" name="q4" value="c"> Queue</li>
+            </ul>
+        </ol>
+    
+        <button onclick="checkAnswers()">Check Answers</button>
+    
+        <div id="answers"></div>
+    
+        <script>
+            function checkAnswers() {
+                var q1 = document.querySelector('input[name="q1"]:checked').value;
+                var q2 = document.querySelector('input[name="q2"]:checked').value;
+                var q3 = document.querySelector('input[name="q3"]:checked').value;
+                var q4 = document.querySelector('input[name="q4"]:checked').value;
+    
+                var answersDiv = document.getElementById('answers');
+                if (q1 === "a" && q2 === "b" && q3 === "c" && q4 === "c") {
+                    answersDiv.innerHTML = "<p>Congratulations! You've answered all questions correctly.</p>";
+                } else {
+                    answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Please try again.</p>";
+                }
+            }
+        </script>
+    </italic>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ <br>  <br>
+
+
+   <div class="code-editor">
+    <h2>Let's practise your understanding about Collections </h2>
+    <i>Java code  that demonstrates the declaration and initialization of Collections</i>
+    <pre><code>import java.util.*;
+public class CollectionsExample {
+    public static void main(String[] args) {
+        // Creating an ArrayList to store integers
+        List<Integer> numbers = new ArrayList<>();
+
+        // Adding elements to the ArrayList
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+
+        // Creating a LinkedList to store strings
+        LinkedList<String> names = new LinkedList<>();
+
+        // Adding elements to the LinkedList
+        names.add("Alice");
+        names.add("Bob");
+        names.add("Charlie");
+
+        // Creating a HashSet to store floating-point numbers
+        Set<Double> prices = new HashSet<>();
+
+        // Adding elements to the HashSet
+        prices.add(10.5);
+        prices.add(20.75);
+        prices.add(30.0);
+
+        // Creating a HashMap to store student names and their ages
+        Map<String, Integer> studentAges = new HashMap<>();
+
+        // Adding elements to the HashMap
+        studentAges.put("Alice", 25);
+        studentAges.put("Bob", 30);
+        studentAges.put("Charlie", 28);
+
+        // Iterating through the ArrayList and printing elements
+        System.out.println("Numbers:");
+        for (int num : numbers) {
+            System.out.println(num);
+        }
+
+        // Iterating through the LinkedList and printing elements
+        System.out.println("\nNames:");
+        for (String name : names) {
+            System.out.println(name);
+        }
+
+        // Iterating through the HashSet and printing elements
+        System.out.println("\nPrices:");
+        for (double price : prices) {
+            System.out.println(price);
+        }
+
+        // Iterating through the HashMap and printing key-value pairs
+        System.out.println("\nStudent Ages:");
+        for (Map.Entry<String, Integer> entry : studentAges.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+    }
+}
+
+        
+        
+    </code></pre>
+    <h2>Your Java Code</h2>
+    <div id="userCode" class="code-editor">
+        <textarea id="codeTextarea" rows="60" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output" id="output"></div>
+
+  <b style="color: rgba(8, 11, 12, 0.938);">   Congratulations on completing this tutorial on Collections in Java! You've learned how to define classes, create objects, and work with attributes and methods. Object-oriented programming is a powerful paradigm that allows you to write modular, reusable, and maintainable code.
+  </b>
+
+</div> 
+
+
+
+
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `import java.util.*;
+public class CollectionsExample {
+    public static void main(String[] args) {
+        // Creating an ArrayList to store integers
+        List numbers = new ArrayList<>();
+
+        // Adding elements to the ArrayList
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+
+        // Creating a LinkedList to store strings
+        LinkedList names = new LinkedList<>();
+
+        // Adding elements to the LinkedList
+        names.add("Alice");
+        names.add("Bob");
+        names.add("Charlie");
+
+        // Creating a HashSet to store floating-point numbers
+        Set prices = new HashSet<>();
+
+        // Adding elements to the HashSet
+        prices.add(10.5);
+        prices.add(20.75);
+        prices.add(30.0);
+
+        // Creating a HashMap to store student names and their ages
+        Map studentAges = new HashMap<>();
+
+        // Adding elements to the HashMap
+        studentAges.put("Alice", 25);
+        studentAges.put("Bob", 30);
+        studentAges.put("Charlie", 28);
+
+        // Iterating through the ArrayList and printing elements
+        System.out.println("Numbers:");
+        for (int num : numbers) {
+            System.out.println(num);
+        }
+
+        // Iterating through the LinkedList and printing elements
+        System.out.println("\nNames:");
+        for (String name : names) {
+            System.out.println(name);
+        }
+
+        // Iterating through the HashSet and printing elements
+        System.out.println("\nPrices:");
+        for (double price : prices) {
+            System.out.println(price);
+        }
+
+        // Iterating through the HashMap and printing key-value pairs
+        System.out.println("\nStudent Ages:");
+        for (Map.Entry entry : studentAges.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+    }
+}` ;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerText = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    if (isCorrect) {
+      outputDiv.innerText = "Output: Numbers:\n10\n20\n30 \nNames:\nAlice\nBob\nCharlie\nPrices:\n10.5\n20.75\n30.0\nStudent Ages:\nAlice: 25\nBob: 30\nCharlie: 28";
+
+
+      outputDiv.style.color = "green"; 
+    } else {
+      outputDiv.innerText = "Error: Syntax is not correct. Please check your code and try again.";
+      outputDiv.style.color = "red"; 
+    }
+  }
+
+</script>
+
+</body>
+</html>

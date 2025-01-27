@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Tables</title>
+  <style>
+  
+    
+
+    .header {
+      background-color: #030102;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+   
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a  href="index.html">Home</a>
+  <a href="SWE&COM_Java1.html">Java</a>
+  <a class="active" href="Html-1-SWE&COM.html">HTML</a>
+  <a href="CSS-1-SWE&COM.html">CSS</a>
+  <a href="JS-1-SWE&COM.html">JavaScript</a>
+  <a href="SQL-1-SWE&COM.html">SQL</a>
+  <a href="C-1-SWE&COM.html">C</a>
+  <a href="Python-1-SWE&COM.html">Python</a>
+  <a href="DSA-1-SWE&COM.html">DSA</a>
+</div>
+
+<div class="menu">
+  <a  href="Html-1-SWE&COM.html">Introduction to HTML</a> <hr>
+  <a href="Html-2-SWE&COM.html">HTML Basics</a> <hr>
+  <a href="Html-3-SWE&COM.html">Headings and Paragraphs</a> <hr>
+  <a href="Html-4-SWE&COM.html">Lists</a> <hr>
+  <a href="Html-5-SWE&COM.html">Links and Anchor Tags</a> <hr>
+  <a href="Html-6-SWE&COM.html">Images</a> <hr>
+  <a class="active"  href="Html-7-SWE&COM.html">Tables</a> <hr>
+  <a href="Html-8-SWE&COM.html">Forms</a> <hr>
+  <a href="Html-9-SWE&COM.html">Semantic HTML</a> <hr>
+  <a href="Html-10-SWE&COM.html">HTML5 Features</a> <hr>
+ <br> <br> 
+</div>
+
+<div class="content">
+    <h2> HTML </h2>
+   
+    <italic>
+        <h2>Understanding HTML Tables</h2>
+        <p>Welcome to the section on HTML tables! In this part of the course, you'll learn about creating structured layouts using tables.</p>
+        
+        <h3>The Basics: Creating a Simple Table</h3>
+        <p>HTML tables are used to organize data into rows and columns. Here's how you can create a basic table:</p>
+        
+        <pre>
+    &lt;table&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Row 1, Cell 1&lt;/td&gt;
+        &lt;td&gt;Row 1, Cell 2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Row 2, Cell 1&lt;/td&gt;
+        &lt;td&gt;Row 2, Cell 2&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+        </pre>
+        
+        <h3>Adding Headers and Footers</h3>
+        <p>You can enhance your tables by adding header and footer sections:</p>
+        
+        <pre>
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Header 1&lt;/th&gt;
+          &lt;th&gt;Header 2&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Row 1, Cell 1&lt;/td&gt;
+          &lt;td&gt;Row 1, Cell 2&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Row 2, Cell 1&lt;/td&gt;
+          &lt;td&gt;Row 2, Cell 2&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+      &lt;tfoot&gt;
+        &lt;tr&gt;
+          &lt;td colspan="2"&gt;Footer content&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tfoot&gt;
+    &lt;/table&gt;
+        </pre>
+        
+        <h3>Spanning Rows and Columns</h3>
+        <p>You can span rows and columns using the <code>rowspan</code> and <code>colspan</code> attributes:</p>
+        
+        <pre>
+    &lt;table&gt;
+      &lt;tr&gt;
+        &lt;td rowspan="2"&gt;Row 1, Cell 1&lt;/td&gt;
+        &lt;td&gt;Row 1, Cell 2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Row 2, Cell 2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td colspan="2"&gt;Row 3, Cell 1 and 2&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+        </pre>
+        
+        <h3>Styling Tables with CSS</h3>
+        <p>You can apply CSS styles to your tables to enhance their appearance. Here's an example:</p>
+        
+        <pre>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+        </pre>
+        
+        <h3>Quiz: Test Your Knowledge!</h3>
+        <form id="quizForm">
+            <ol>
+                <li>
+                    <p>What HTML tag is used to define a table row?</p>
+                    <select name="q1">
+                        <option value="">Select an option</option>
+                        <option value="tr">&lt;tr&gt;</option>
+                        <option value="td">&lt;td&gt;</option>
+                        <option value="table">&lt;table&gt;</option>
+                    </select>
+                </li>
+                <li>
+                    <p>How do you add a header section to a table?</p>
+                    <select name="q2">
+                        <option value="">Select an option</option>
+                        <option value="thead">&lt;thead&gt;</option>
+                        <option value="tbody">&lt;tbody&gt;</option>
+                        <option value="tfoot">&lt;tfoot&gt;</option>
+                    </select>
+                </li>
+            </ol>
+            <button type="button" onclick="checkAnswers()">Check Answers</button>
+        </form>
+        
+        <div id="answers"></div>
+    </italic>
+    
+    <script>
+        function checkAnswers() {
+            var q1 = document.querySelector('select[name="q1"]').value;
+            var q2 = document.querySelector('select[name="q2"]').value;
+    
+            var answersDiv = document.getElementById('answers');
+            if (q1 === "tr" && q2 === "thead") {
+                answersDiv.innerHTML = "<p>Congratulations! You answered both questions correctly.</p>";
+            } else {
+                answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Review the HTML tables topic and try again!</p>";
+            }
+        }
+    </script>
+    
+ <br> <hr>
+<b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the understanding of Tables. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+ 
+    </italic>
+    
+        
+      
+
+
+ <br>  <br>
+
+</body>
+</html>

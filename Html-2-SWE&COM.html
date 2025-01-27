@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Structure</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red;
+    }
+
+    .header {
+      background-color: #030102;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a  href="index.html">Home</a>
+  <a href="SWE&COM_Java1.html">Java</a>
+  <a class="active" href="Html-1-SWE&COM.html">HTML</a>
+  <a href="CSS-1-SWE&COM.html">CSS</a>
+  <a href="JS-1-SWE&COM.html">JavaScript</a>
+  <a href="SQL-1-SWE&COM.html">SQL</a>
+  <a href="C-1-SWE&COM.html">C</a>
+  <a href="Python-1-SWE&COM.html">Python</a>
+  <a href="DSA-1-SWE&COM.html">DSA</a>
+</div>
+
+<div class="menu">
+  <a  href="Html-1-SWE&COM.html">Introduction to HTML</a> <hr>
+  <a class="active" href="Html-2-SWE&COM.html">HTML Basics</a> <hr>
+  <a href="Html-3-SWE&COM.html">Headings and Paragraphs</a> <hr>
+  <a href="Html-4-SWE&COM.html">Lists</a> <hr>
+  <a href="Html-5-SWE&COM.html">Links and Anchor Tags</a> <hr>
+  <a href="Html-6-SWE&COM.html">Images</a> <hr>
+  <a href="Html-7-SWE&COM.html">Tables</a> <hr>
+  <a href="Html-8-SWE&COM.html">Forms</a> <hr>
+  <a href="Html-9-SWE&COM.html">Semantic HTML</a> <hr>
+  <a href="Html-10-SWE&COM.html">HTML5 Features</a> <hr>
+ <br> <br> 
+</div>
+
+<div class="content">
+    <h2> HTML </h2>
+   
+  
+  
+<italic> <h2>Understanding HTML Structure</h2>
+    <p>Welcome to the world of HTML! This comprehensive course will provide you with an in-depth understanding of HTML document structure. By the end, you'll be equipped with the knowledge to create well-structured and semantically meaningful web pages.</p>
+    
+    <h3>The Big Picture: Foundation of an HTML Document</h3>
+    <p><em>Every HTML document starts with a DOCTYPE declaration. This line tells the browser what document type it's dealing with (usually HTML5 in modern websites). Think of it as a handshake, introducing the document and ensuring the browser understands its language. Here's an example of a DOCTYPE declaration:</em></p>
+    
+    <pre>&lt;!DOCTYPE html&gt;</pre>
+    
+    <h3>The Root Element: &lt;html&gt;</h3>
+    <p>The <code>&lt;html&gt;</code> tag serves as the root element of an HTML document. It encompasses everything within a web page. Imagine it as the outermost container that holds all the other elements. Here's the basic structure:</p>
+    
+    <pre>&lt;html&gt;
+      &lt;/html&gt;</pre>
+    
+    <h3>Inside the &lt;html&gt; Tag: Key Sections</h3>
+    <p>Within the <code>&lt;html&gt;</code> tag, you'll find two crucial sections: the <code>&lt;head&gt;</code> and the <code>&lt;body&gt;</code>.</p>
+    
+    <h4><code>&lt;head&gt;</code>: The Head of the Matter</h4>
+    <p>The <code>&lt;head&gt;</code> section acts as the headquarters for information about the document, primarily unseen by users. It houses essential elements like:</p>
+    
+    <ul>
+      <li><code>&lt;title&gt;</code>: Defines the title of the web page, displayed in the browser tab and search engine results. Here's how it's used:</li>
+    </ul>
+    
+    <pre>&lt;head&gt;
+      &lt;title&gt;My Awesome Website&lt;/title&gt;
+    &lt;/head&gt;</pre>
+    
+    <ul>
+      <li><code>&lt;meta&gt;</code> tags: Provide metadata about the document, such as character encoding, author information, and keywords for search engines.</li>
+    </ul>
+    
+    <p>Additionally, you can include other elements within the <code>&lt;head&gt;</code> section, such as:</p>
+    <ul>
+      <li><code>&lt;link&gt;</code> tags for linking external stylesheets or resources.</li>
+      <li><code>&lt;script&gt;</code> tags for embedding JavaScript code.</li>
+    </ul>
+    
+    <h4><code>&lt;body&gt;</code>: The Heart of the Web Page</h4>
+    <p>The <code>&lt;body&gt;</code> section is the heart of the web page. It contains all the visible content that users will interact with. We'll explore specific elements like headings, paragraphs, lists, links, images, tables, forms, and semantic HTML in detail in this course, but here's the basic structure:</p>
+    
+    <pre>&lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;My Awesome Website&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        <!-- Your content goes here -->
+      &lt;/body&gt;
+    &lt;/html&gt;</pre>
+    
+    <h3>Best Practices for a Well-Structured HTML Document</h3>
+    <p>Here are some guidelines to ensure a well-structured HTML document:</p>
+    
+    <ul>
+      <li><strong>Proper Nesting:</strong> Maintain a hierarchical structure by nesting elements within each other according to their logical relationships. For example, a heading should enclose its related paragraph content.</li>
+      <li><strong>Closing Tags:</strong> Always remember to include closing tags for all opening tags. Unclosed tags can lead to display issues and unexpected behavior.</li>
+      <li><strong>Use Semantic HTML:</strong> Utilize semantic HTML elements to provide meaning and structure to your content. Examples include <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>, and <code>&lt;aside&gt;</code>.</li>
+      <li><strong>Accessibility:</strong> Ensure your HTML document is accessible to users with disabilities by following accessibility best practices, such as providing descriptive alt text for images and using proper semantic markup.</li>
+    </ul>
+    
+    <p>By adhering to these best practices, you'll not only create well-structured HTML documents but also improve the accessibility and maintainability of your web pages.</p>
+
+    
+
+    <h3>Quiz: Test Your HTML Knowledge!</h3>
+
+<p>Let's see how well you understand the building blocks of HTML. Answer the following questions:</p>
+
+<ol>
+<li>What is the root element of an HTML document that encompasses everything within a web page?  <ul>
+<li><input type="radio" name="q1" value="a"> <span style="color: blue;">&lt;body&gt;</span></li>  <li><input type="radio" name="q1" value="b"> <span style="color: blue;">&lt;html&gt;</span></li>  <li><input type="radio" name="q1" value="c"> <span style="color: blue;">&lt;head&gt;</span></li>  </ul>
+</li>
+<li>Which tag defines the title of a web page, displayed in the browser tab and search engine results?  <ul>
+<li><input type="radio" name="q2" value="a"> <span style="color: blue;">&lt;header&gt;</span></li>  <li><input type="radio" name="q2" value="b"> <span style="color: blue;">&lt;title&gt;</span></li>  <li><input type="radio" name="q2" value="c"> <span style="color: blue;">&lt;meta&gt;</span></li>  </ul>
+</li>
+</ol>
+
+<button onclick="checkAnswers()">Check Answers</button>
+
+<div id="answers"></div>
+
+<script>
+function checkAnswers() {
+var q1 = document.querySelector('input[name="q1"]:checked').value;
+var q2 = document.querySelector('input[name="q2"]:checked').value;
+
+var answersDiv = document.getElementById('answers');
+if (q1 === "b" && q2 === "b") {
+answersDiv.innerHTML = "<p>Congratulations! You answered both questions correctly.</p>";
+} else {
+answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Review the HTML syntax and try again!</p>";
+}
+}
+</script>
+
+     </italic>
+
+
+
+ <br>  <br>
+
+
+   <div class="code-editor">
+    <h2>Let's practise HTML Basics</h2>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Learning HTML with CodeNub&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+        
+&lt;h1&gt;Learning HTML with CodeNub&lt;/h1&gt;
+&lt;h1&gt;Understanding HTML basics&lt;/h1&gt;
+        
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+    <h2>Your HTML Code</h2> 
+    <div id="userCode" class="code-editor">
+        <textarea id="codeTextarea" rows="5" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output" id="output"></div>  <br><hr>
+
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the understanding of HTML Structure. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+
+</div> 
+//
+
+
+
+
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `<!DOCTYPE html>
+<html>
+<head>
+<title>Learning HTML with CodeNub</title>
+</head>
+<body>
+        
+<h1>Learning HTML with CodeNub</h1>
+<h1>Understanding HTML basics</h1>
+        
+</body>
+</html>`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerText = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    if (isCorrect) {
+      outputDiv.innerText = "Output: Learning HTML with CodeNub \n Understanding HTML basics";
+      outputDiv.style.color = "green"; 
+    } else {
+      outputDiv.innerText = "Error: Syntax is not correct. Please check your code and try again.";
+      outputDiv.style.color = "red"; 
+    }
+  }
+
+
+
+
+
+
+  //2
+</script>
+
+</body>
+</html>

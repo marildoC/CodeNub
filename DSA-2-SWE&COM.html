@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> DSA</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output-box {
+      border: 2px solid #000;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .output-box pre {
+      white-space: pre-wrap;
+    }
+    
+    
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+      padding: 16px;
+      background-color: white; 
+      height: 100%;
+      margin-left: 10%; 
+      margin-top: 3%;
+      color: #000000; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+
+    <div class="header">
+      <a  href="index.html">Home</a>
+      <a href="SWE&COM_Java1.html">Java</a>
+      <a href="Html-1-SWE&COM.html">HTML</a>
+      <a href="CSS-1-SWE&COM.html">CSS</a>
+      <a href="JS-1-SWE&COM.html">JavaScript</a>
+      <a  href="SQL-1-SWE&COM.html">SQL</a>
+      <a href="C-1-SWE&COM.html">C</a>
+      <a href="Python-1-SWE&COM.html">Python</a>
+      <a class="active" href="DSA-1-SWE&COM.html">DSA</a>
+    </div>
+    
+    <div class="menu">
+      <a href="DSA-1-SWE&COM.html">Introduction to Algorithms`</a> <hr>
+      <a class="active" href="DSA-2-SWE&COM.html">Data Structures`</a> <hr>
+      <a href="DSA-3-SWE&COM.html">Searching and Sorting Algorithms`</a> <hr>
+      <a href="#lists">Recursion and Backtracking</a> <hr>
+      <a href="#links">Dynamic Programming</a> <hr>
+      <a href="#images">Graph Algorithms</a> <hr>
+      <a href="#tables">Advanced Data Structures</a> <hr>
+      <a href="#forms">String Algorithms</a> <hr> 
+      <a href="#tables">Complexity Theory</a> <hr>
+      <a href="#forms">Algorithm Design Techniques</a>  <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <italic>
+        <h1>DSA</h1>
+        <h2>Data Structures</h2>
+
+        <p>Welcome to our comprehensive course on data structures! In this module, we'll explore the fundamental concepts of data structures, their implementation, and their role in efficient information management and problem-solving.</p>
+        
+        <h3>Introduction to Data Structures</h3>
+        
+        <i> A data structure is a way of organizing and storing data in a computer so that it can be accessed and manipulated efficiently. It provides a means to manage and organize data effectively to perform various operations such as insertion, deletion, and searching. Data structures can be simple, like arrays and linked lists, or more complex, like trees, graphs, and hash tables. Choosing the appropriate data structure is crucial for optimizing the performance of algorithms and software applications. Understanding different data structures and their properties enables programmers to select the most suitable structure for a specific problem, leading to more efficient and scalable solutions.</i>
+        
+        <h3>Types of Data Structures</h3>
+        
+        <p>Data structures can be classified into various types based on their organization and behavior. Some common types of data structures include:</p>
+        
+        <ul>
+            <li><b>Arrays:</b> Contiguous memory locations used to store elements of the same type.</li>
+            <li><b>Linked Lists:</b> Linear data structures consisting of nodes linked together by pointers.</li>
+            <li><b>Stacks:</b> Last-in, first-out (LIFO) data structures that support push and pop operations.</li>
+            <li><b>Queues:</b> First-in, first-out (FIFO) data structures that support enqueue and dequeue operations.</li>
+            <li><b>Trees:</b> Hierarchical data structures with a root node and child nodes organized in a parent-child relationship.</li>
+            <li><b>Graphs:</b> Non-linear data structures consisting of vertices and edges that represent relationships between entities.</li>
+            <li><b>Hash Tables:</b> Data structures that store key-value pairs and provide efficient insertion, deletion, and retrieval operations.</li>
+        </ul>
+        
+        <h3>Operations on Data Structures</h3>
+        
+        <p>Data structures support various operations to manipulate the stored data efficiently. Some common operations include:</p>
+        
+        <ul>
+            <li><b>Insertion:</b> Adding new elements to the data structure.</li>
+            <li><b>Deletion:</b> Removing existing elements from the data structure.</li>
+            <li><b>Traversal:</b> Visiting each element in the data structure in a specific order.</li>
+            <li><b>Search:</b> Finding a specific element within the data structure.</li>
+            <li><b>Sorting:</b> Arranging elements in a specific order, such as ascending or descending.</li>
+        </ul>
+        
+        <h3>Choosing the Right Data Structure</h3>
+        
+        <p>Choosing the appropriate data structure for a particular problem is crucial for efficient algorithm design and performance. Factors to consider when selecting a data structure include:</p>
+        
+        <ul>
+            <li><b>Time Complexity:</b> The efficiency of operations performed on the data structure.</li>
+            <li><b>Space Complexity:</b> The memory usage of the data structure.</li>
+            <li><b>Flexibility:</b> The ability to adapt to changing requirements or data.</li>
+            <li><b>Expected Operations:</b> The types of operations expected to be performed frequently on the data.</li>
+        </ul>
+        
+        <h3>Applications of Data Structures</h3>
+        
+        <p>Data structures find applications in various domains, including:</p>
+        
+        <ul>
+            <li><b>Software Engineering:</b> Data structures form the backbone of software systems and applications.</li>
+            <li><b>Database Management:</b> Data structures are used to organize and manage data in databases.</li>
+            <li><b>Networking:</b> Data structures play a vital role in network protocols and data transmission.</li>
+            <li><b>Artificial Intelligence:</b> Data structures support data representation and manipulation in AI algorithms.</li>
+            <li><b>Web Development:</b> Data structures are used to manage data in web applications and servers.</li>
+        </ul>
+        
+        <h3>Conclusion</h3>
+        
+        <p>By the end of this course, you'll have a solid understanding of data structures, their types, operations, and applications. You'll be equipped with the knowledge and skills to choose and implement the right data structure for various problem-solving scenarios.</p>
+        
+
+<br>
+<b style="color: rgba(8, 11, 12, 0.938);">
+    Keep pushing yourself to practice and experiment with them.
+    <br>
+    Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.
+</b>
+    </italic>
+    
+    
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red; 
+    }
+
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a  href="index.html">Home</a>
+  <a href="SWE&COM_Java1.html">Java</a>
+  <a href="Html-1-SWE&COM.html">HTML</a>
+  <a href="CSS-1-SWE&COM.html">CSS</a>
+  <a href="JS-1-SWE&COM.html">JavaScript</a>
+  <a  href="SQL-1-SWE&COM.html">SQL</a>
+  <a href="C-1-SWE&COM.html">C</a>
+  <a class="active" href="Python-1-SWE&COM.html">Python</a>
+  <a  href="DSA-1-SWE&COM.html">DSA</a>
+</div>
+
+<div class="menu">
+  <a  href="Python-1-SWE&COM.html">Introduction to Python`</a>   <hr>
+  <a href="#C:\Ul">Data Structures</a> <hr>
+<a href="#C:\Users\ml">Functions and Modules </a> <hr>
+
+<a href="#sss">Object-Oriented Programming (OOP)</a>  <hr>
+<a class="active" href="Python-5-SWE&COM.html">File Handling`</a>  <hr>
+<a href="#C:\Usml">Exception Handling</a>   <hr>
+<a href="#C:l">Functional Programming</a>  <hr>
+<a href="#C:\Usml">Python Standard Library</a>   <hr>
+ <hr> <br> <br> 
+</div>
+
+<div class="content">
+    
+  
+   
+
+    <italic>
+      <h1> Python </h1>
+      <h2>Python File Handling</h2>
+
+<p>Welcome to the Python File Handling course! In this module, we'll explore how to work with files in Python, including reading from and writing to files.</p>
+
+<h3>Introduction to File Handling</h3>
+
+<p>File handling is an essential aspect of programming, allowing us to interact with files on our computer's file system. Python provides built-in functions and methods to perform various file operations.</p>
+
+<h3>Opening and Closing Files</h3>
+
+<p>Before we can read from or write to a file, we need to open it. Python's <code style="color: rgba(51, 23, 207, 0.767);">open()</code> function is used to open a file. It takes two parameters: the file path and the mode in which to open the file (read mode, write mode, append mode, etc.).</p>
+
+<pre>
+# Open a file in read mode
+file = open("example.txt", "r")
+
+# Close the file
+file.close()
+</pre>
+
+<h3>Reading from Files</h3>
+
+<p>Python offers various methods for reading from files. The <code style="color: rgba(51, 23, 207, 0.767);">read()</code> method reads the entire contents of the file, while <code style="color: rgba(51, 23, 207, 0.767);">readline()</code> reads a single line at a time. Additionally, we can use a loop to iterate over each line in the file.</p>
+
+<pre>
+# Read the entire file
+content = file.read()
+
+# Read a single line
+line = file.readline()
+
+# Iterate over each line
+for line in file:
+    print(line)
+</pre>
+
+<h3>Writing to Files</h3>
+
+<p>To write to a file, we open it in write mode (<code style="color: rgba(51, 23, 207, 0.767);">"w"</code>). We can then use methods like <code style="color: rgba(51, 23, 207, 0.767);">write()</code> or <code style="color: rgba(51, 23, 207, 0.767);">writelines()</code> to write data to the file. Be careful, as opening a file in write mode will overwrite its existing contents.</p>
+
+<pre>
+# Open a file in write mode
+file = open("example.txt", "w")
+
+# Write data to the file
+file.write("Hello, world!\n")
+file.write("Python is awesome!\n")
+
+# Close the file
+file.close()
+</pre>
+
+<h3>Working with File Paths</h3>
+
+<p>Python's <code style="color: rgba(51, 23, 207, 0.767);">os</code> module provides functions for working with file paths and directories. We can use <code style="color: rgba(51, 23, 207, 0.767);">os.path.join()</code> to construct file paths and <code style="color: rgba(51, 23, 207, 0.767);">os.path.exists()</code> to check if a file exists.</p>
+
+<pre>
+import os
+
+# Construct file path
+file_path = os.path.join("folder", "example.txt")
+
+# Check if file exists
+if os.path.exists(file_path):
+    print("File exists")
+else:
+    print("File does not exist")
+</pre>
+
+<h3>Exception Handling</h3>
+
+<p>When working with files, it's essential to handle exceptions properly to avoid program crashes and data loss. Python's <code style="color: rgba(51, 23, 207, 0.767);">try</code> and <code style="color: rgba(51, 23, 207, 0.767);">except</code> blocks can be used for error handling.</p>
+
+<pre>
+try:
+    file = open("example.txt", "r")
+    content = file.read()
+    file.close()
+except FileNotFoundError:
+    print("File not found")
+except Exception as e:
+    print("An error occurred:", e)
+</pre>
+
+<h3>File Handling Best Practices</h3>
+
+<p>As with any programming task, there are best practices to follow when working with files. These include properly closing files after use, using context managers (<code style="color: rgba(51, 23, 207, 0.767);">with</code> statement) to automatically close files, and handling exceptions gracefully.</p>
+
+<p>Now that we've covered the basics of Python file handling, let's dive deeper into each topic and explore more advanced concepts!</p>
+
+
+<br>
+
+<h3>Quiz: Test Your Knowledge!</h3>
+
+<ol>
+    <li>Which mode is used to open a file for reading in Python?</li>
+    <ul>
+        <li><input type="radio" name="q1" value="a"> "r"</li>
+        <li><input type="radio" name="q1" value="b"> "w"</li>
+        <li><input type="radio" name="q1" value="c"> "a"</li>
+    </ul>
+    <li>What method is used to read a single line from a file in Python?</li>
+    <ul>
+        <li><input type="radio" name="q2" value="a"> read()</li>
+        <li><input type="radio" name="q2" value="b"> readline()</li>
+        <li><input type="radio" name="q2" value="c"> writelines()</li>
+    </ul>
+    <li>What function is used to open a file in Python?</li>
+    <ul>
+        <li><input type="radio" name="q3" value="a"> open()</li>
+        <li><input type="radio" name="q3" value="b"> read()</li>
+        <li><input type="radio" name="q3" value="c"> write()</li>
+    </ul>
+    <li>Which module is used for working with file paths and directories in Python?</li>
+    <ul>
+        <li><input type="radio" name="q4" value="a"> os.path</li>
+        <li><input type="radio" name="q4" value="b"> sys.path</li>
+        <li><input type="radio" name="q4" value="c"> file.path</li>
+    </ul>
+    <li>What keyword is used for error handling in Python?</li>
+    <ul>
+        <li><input type="radio" name="q5" value="a"> try</li>
+        <li><input type="radio" name="q5" value="b"> except</li>
+        <li><input type="radio" name="q5" value="c"> catch</li>
+    </ul>
+</ol>
+
+<button onclick="checkAnswers()">Check Answers</button>
+
+<div id="answers"></div>
+
+<script>
+    function checkAnswers() {
+        var q1 = document.querySelector('input[name="q1"]:checked').value;
+        var q2 = document.querySelector('input[name="q2"]:checked').value;
+        var q3 = document.querySelector('input[name="q3"]:checked').value;
+        var q4 = document.querySelector('input[name="q4"]:checked').value;
+        var q5 = document.querySelector('input[name="q5"]:checked').value;
+
+        var correctAnswers = ["a", "b", "a", "a", "b"];
+        var userAnswers = [q1, q2, q3, q4, q5];
+
+        var correctCount = 0;
+        for (var i = 0; i < correctAnswers.length; i++) {
+            if (correctAnswers[i] === userAnswers[i]) {
+                correctCount++;
+            }
+        }
+
+        var answersDiv = document.getElementById('answers');
+        if (correctCount === correctAnswers.length) {
+            answersDiv.innerHTML = "<p>Congratulations! You got all answers correct!</p>";
+        } else {
+            answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Please try again.</p>";
+        }
+    }
+</script>
+
+<br>
+       
+    </italic>
+    
+    
+    
+    
+    
+    
+    
+    
+ <br>  <br>
+
+
+   <div class="code-editor">
+    <h2>Let's practise our understanding  </h2>
+    <pre><code># Writing to a file
+        with open("example.txt", "w") as file:
+            file.write("Hello, World!\n")
+            file.write("This is a Python file handling example.\n")
+        
+        # Reading from a file
+        with open("example.txt", "r") as file:
+            data = file.read()
+            print("Content of the file:")
+            print(data)
+        
+        # Appending to a file
+        with open("example.txt", "a") as file:
+            file.write("Appending more text to the file.\n")
+        
+        # Reading lines from a file
+        with open("example.txt", "r") as file:
+            lines = file.readlines()
+            print("\nLines from the file:")
+            for line in lines:
+                print(line.strip())  # Strip newline characters
+        
+        # Checking if a file exists
+        import os
+        if os.path.exists("example.txt"):
+            print("\nFile 'example.txt' exists.")
+        else:
+            print("\nFile 'example.txt' does not exist.")</code></pre>
+    <h2>Your Python Code</h2>
+    <div id="userCode" class="code-editor">
+        <textarea id="codeTextarea" rows="21" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output" id="output"></div>
+ <br><hr>
+ Keep pushing yourself to practice and experiment with coding.
+    <br>
+    Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.
+</b>  </b>
+
+</div> 
+
+
+
+
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `# Writing to a file
+        with open("example.txt", "w") as file:
+            file.write("Hello, World!\n")
+            file.write("This is a Python file handling example.\n")
+        
+        # Reading from a file
+        with open("example.txt", "r") as file:
+            data = file.read()
+            print("Content of the file:")
+            print(data)
+        
+        # Appending to a file
+        with open("example.txt", "a") as file:
+            file.write("Appending more text to the file.\n")
+        
+        # Reading lines from a file
+        with open("example.txt", "r") as file:
+            lines = file.readlines()
+            print("\nLines from the file:")
+            for line in lines:
+                print(line.strip())  # Strip newline characters
+        
+        # Checking if a file existsss
+        import os
+        if os.path.exists("example.txt"):
+            print("\nFile 'example.txt' exists.")
+        else:
+            print("\nFile 'example.txt' does not exist.")`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerText = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    if (isCorrect) {
+      outputDiv.innerText = "Output: Content of the file: \n Hello, World! \nThis is a Python file handling example. \n\nLines from the file:\nHello, World!\nThis is a Python file handling example.\nAppending more text to the file.\nFile 'example.txt' exists.";
+
+
+      outputDiv.style.color = "green"; 
+    } else {
+      outputDiv.innerText = "Error: Syntax is not correct. Please check your code and try again.";
+      outputDiv.style.color = "red"; 
+    }
+  }
+
+
+</script>
+
+</body>
+</html>

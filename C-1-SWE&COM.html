@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to C</title>
+  <style>
+    
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red; 
+    }
+
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000;
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%; 
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white;
+  height: 100%;
+  margin-left: 10%;
+  margin-top: 3%; 
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%;
+      resize: vertical; 
+      min-height: 10px; 
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none; 
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a  href="index.html">Home</a>
+  <a href="SWE&COM_Java1.html">Java</a>
+  <a href="Html-1-SWE&COM.html">HTML</a>
+  <a href="CSS-1-SWE&COM.html">CSS</a>
+  <a href="JS-1-SWE&COM.html">JavaScript</a>
+  <a  href="SQL-1-SWE&COM.html">SQL</a>
+  <a class="active" href="C-1-SWE&COM.html">C</a>
+  <a  href="Python-1-SWE&COM.html">Python</a>
+  <a  href="DSA-1-SWE&COM.html">DSA</a>
+</div>
+
+<div class="menu">
+    <a class="active" href="C-1-SWE&COM.html">Introduction to C`</a>   <hr>
+    <a href="#C:\Usersl">Control Flow</a> <hr>
+  <a href="#C:\Users\Boshtml">Arrays </a> <hr>
+ 
+  <a href="#C:\Users\Boss\ml">Pointers</a>  <hr>
+  <a  href="#C:\Users\Boss\tml">Structures and Unions</a>  <hr>
+  <a href="#C:\Users\Btml">File Handling</a>   <hr>
+  <a href="#C:\Users\ml">Memory Management</a>  <hr>
+  <a href="#C:\Users\Bostml"> Best Practices and Coding Standards</a>  <hr>
+
+ <hr> <br> <br> 
+</div>
+
+<div class="content">
+    
+  
+   
+
+    <italic>
+      <h1> C </h1>
+      <h2>Introduction to C</h2>
+      <p>Welcome to the Introduction to C course! In this module, we'll explore the fundamentals of the C programming language, covering its history, basic syntax, and key features.</p>
+      
+      <h3>What is C?</h3>
+      <i>
+        C is a powerful and widely used programming language known for its efficiency, flexibility, and versatility. Developed in the early 1970s by Dennis Ritchie at Bell Labs, C quickly became one of the most influential programming languages, serving as the foundation for many other languages and operating systems. Its simplicity, combined with low-level features, makes it suitable for system programming, embedded systems, and high-performance computing. C provides direct access to memory through pointers, enabling precise control over hardware resources and facilitating efficient manipulation of data structures. Its syntax, influenced by B and Algol, emphasizes structured programming principles, allowing for the creation of clear and concise code. With a rich standard library and extensive community support, C remains a popular choice for developing operating systems, device drivers, compilers, and many other critical software systems. Its portability, efficiency, and close-to-the-metal capabilities make it an essential language for programmers seeking to understand the fundamentals of computer science and software development</i>
+      
+      <h3>History of C</h3>
+      <p>C was developed to provide a structured and efficient alternative to assembly language. Its development was closely tied to the UNIX operating system, making it popular in the early days of computing.</p>
+      
+      <h3>Basic Syntax</h3>
+      <p>C programs consist of functions, which contain statements. Statements are instructions that perform specific tasks, such as variable declarations, assignments, and control flow.</p>
+      
+      <h3>Data Types</h3>
+      <p>C supports various data types, including integers, floating-point numbers, characters, and pointers. Understanding data types is essential for writing efficient and reliable C programs.</p>
+      
+      <h3>Functions</h3>
+      <p>Functions are blocks of code that perform a specific task. They provide modularity and reusability to C programs by encapsulating logic into manageable units.</p>
+      
+      <h3>Control Flow</h3>
+      <p>C supports various control flow structures, such as if-else statements, loops, and switch-case statements, allowing programmers to control the flow of execution based on conditions.</p>
+      
+      <h3>Compilation and Execution</h3>
+      <p>C programs are typically written in source code files with a .c extension. They are compiled into executable machine code using a C compiler before being executed.</p>
+      
+      <h3>IDEs and Tools</h3>
+      <p>There are several integrated development environments (IDEs) and tools available for C programming, including GCC, Visual Studio, and CLion. These tools provide features such as syntax highlighting, code completion, and debugging.</p>
+      
+      <h3>Getting Started</h3>
+      <p>To get started with C programming, you'll need to install a C compiler and set up your development environment. You can begin by writing simple programs to understand the basics and gradually explore more advanced topics.</p>
+      
+<br>
+
+
+<br>
+       
+    </italic>
+    
+    
+    
+    
+    
+    
+    
+    
+ <br>  <br>
+
+
+   <div class="code-editor">
+    <h2>Let's practise one simple example </h2>
+    <pre><code>#include stdio.h
+
+        int main() {
+            # Print "Hello World!" to the console
+            printf("Hello World!\n");
+            printf("C programming with CodeNub!\n");
+        
+        
+            # Return 0 to indicate successful execution
+            return 0;
+        }</code></pre>
+    <h2>Your C Code</h2>
+    <div id="userCode" class="code-editor">
+        <textarea id="codeTextarea" rows="21" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output" id="output"></div>
+ <br><hr>
+ Keep pushing yourself to practice and experiment with coding.
+    <br>
+    Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.
+</b>  </b>
+
+</div> 
+
+
+
+
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `#include stdio.h
+
+int main() {
+    # Print "Hello World!" to the console
+    printf("Hello World!\n");
+    printf("C programming with CodeNub!\n");
+
+
+    # Return 0 to indicate successful execution
+    return 0;
+}`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerText = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    if (isCorrect) {
+      outputDiv.innerText = "Output: Hello World!\n Learning C programming !";
+
+
+      outputDiv.style.color = "green"; 
+    } else {
+      outputDiv.innerText = "Error: Syntax is not correct. Please check your code and try again.";
+      outputDiv.style.color = "red"; 
+    }
+  }
+
+
+</script>
+
+</body>
+</html>

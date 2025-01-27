@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables in Java</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red;
+    }
+
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a href="index.html">Home</a>
+  <a class="active" href="#java">Java</a>
+  <a href="#html">HTML</a>
+  <a href="#css">CSS</a>
+  <a href="#javascript">JavaScript</a>
+  <a href="#sql">SQL</a>
+  <a href="#c">C</a>
+  <a href="#python">Python</a>
+  <a href="#dsa">DSA</a>
+</div>
+
+<div class="menu">
+    <a  href="SWE&COM_Java1.html">Introduction to Java</a>   <hr>
+    <a class="active" href="SWE&COM_Java2.html">Variables</a> <hr>
+  <a href="SWE&COM_Java3.html">Operators</a> <hr>
+ 
+  <a href="SWE&COM_Java4.html">Arrays</a>  <hr>
+  <a href="SWE&COM_Java5.html">Classes and Objects</a>  <hr>
+  <a href="SWE&COM_Java6.html">Inheritance</a>   <hr>
+  <a href="SWE&COM_Java7.html">Polymorphism</a>  <hr>
+  <a href="SWE&COM_Java8.html">Abstraction</a>   <hr>
+  <a href="SWE&COM_Java9.html">Interfaces</a>   <hr>
+  <a href="SWE&COM_Java10.html">Exceptions</a>  <hr>
+  <a href="SWE&COM_Java11.html">File I/O</a>          <hr>
+  <a href="SWE&COM_Java12.html">Collections</a>   <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <h2> JAVA </h2>
+  
+   
+
+
+  
+    <italic>
+        <h2>Understanding Variables in Java</h2>
+    
+        <p>Welcome to our tutorial on variables in Java! In this guide, we'll explore the fundamental concept of variables, their significance in programming, and how to effectively use them in your Java programs.</p>
+    
+        <h3>What are Variables?</h3>
+        <p>In the realm of programming, variables are the foundation upon which our code is built. They serve as placeholders for storing and manipulating data within a program. Think of variables as labeled containers that hold information, allowing us to reference and modify it as needed during the execution of our code.</p>
+    
+        <h3>Declaring Variables</h3>
+        <p>In Java, declaring a variable involves specifying its data type and giving it a name. Let's take a closer look at the syntax:</p>
+        <p style="color: rgba(51, 23, 207, 0.767);">dataType variableName;</p>
+        <p>Here, <span>dataType</span> refers to the type of data that the variable will hold, such as integers (<span style="color: rgba(51, 23, 207, 0.767);">int</span>), floating-point numbers (<span style="color: rgba(51, 23, 207, 0.767);">double</span>), characters (<span style="color: rgba(51, 23, 207, 0.767);">char</span>), or strings (<span style="color: rgba(51, 23, 207, 0.767);">String</span>). Meanwhile, <span>variableName</span> is the identifier we use to refer to the variable within our code.</p>
+    
+        <p>It's important to note that in Java, variable names are case-sensitive and must follow certain naming conventions. For example, variable names can contain letters, digits, and underscores, but cannot start with a digit.</p>
+    
+        <h3>Initializing Variables</h3>
+        <p>Once we've declared a variable, we can initialize it by assigning a value. This is done using the assignment operator <span style="color: rgba(51, 23, 207, 0.767);">(=)</span> as shown below:</p>
+        <p style="color: rgba(51, 23, 207, 0.767);">variableName = value;</p>
+        <p>Alternatively, we can combine the declaration and initialization steps into a single line, like so:</p>
+        <p style="color: rgba(51, 23, 207, 0.767);">dataType variableName = value;</p>
+    
+        <p>Variables can also be initialized without specifying an initial value. In such cases, the variable is assigned a default value based on its data type. For example, numeric variables are initialized to <span style="color: rgba(51, 23, 207, 0.767);">0</span>, boolean variables are initialized to <span style="color: rgba(51, 23, 207, 0.767);">false</span>, and reference variables are initialized to <span style="color: rgba(51, 23, 207, 0.767);">null</span>.</p>
+    
+        <h3>Data Types in Java</h3>
+        <p>Java supports various data types, each with its own set of values and operations. Some common data types include:</p>
+        <ul>
+            <li><span style="color: rgba(51, 23, 207, 0.767);">int</span>: Represents integer values.</li>
+            <li><span style="color: rgba(51, 23, 207, 0.767);">double</span>: Represents floating-point values (decimals).</li>
+            <li><span style="color: rgba(51, 23, 207, 0.767);">char</span>: Represents single characters.</li>
+            <li><span style="color: rgba(51, 23, 207, 0.767);">String</span>: Represents sequences of characters.</li>
+        </ul>
+    
+        <p>By understanding the different data types available in Java, you can choose the most appropriate type for your variables based on the nature of the data you're working with.</p>
+    
+       
+    </italic>
+    
+    
+ <br>  <br>
+
+
+   <div class="code-editor">
+    <h2>Let's practise your understanding about varibales </h2>
+    <i>Calculating area of a rectangle using variables:</i>
+    <pre><code>
+        public class RectangleAreaCalculator {
+            public static void main(String[] args) {
+                
+                int length = 5;
+                int width = 3;
+            
+                int area = length * width;
+         System.out.println("The area of the rectangle is " + area);
+            }
+        }
+        
+    </code></pre>
+    <h2>Your Java Code</h2>
+    <div id="userCode" class="code-editor">
+        <textarea id="codeTextarea" rows="8" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output" id="output"></div>
+
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the basics of variables. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+
+</div> 
+//
+
+
+
+
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `public class RectangleAreaCalculator {
+            public static void main(String[] args) {
+                
+                int length = 5;
+                int width = 3;
+            
+                int area = length * width;
+         System.out.println("The area of the rectangle is " + area);
+            }
+        }`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerText = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    if (isCorrect) {
+      outputDiv.innerText = "Output:The area of the rectangle is 15";
+      outputDiv.style.color = "green"; 
+    } else {
+      outputDiv.innerText = "Error: Syntax is not correct. Please check your code and try again.";
+      outputDiv.style.color = "red"; 
+    }
+  }
+
+
+
+
+
+
+  //2
+</script>
+
+</body>
+</html>

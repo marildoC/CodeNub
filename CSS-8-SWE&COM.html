@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Transitions and Animations</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output-box {
+      border: 2px solid #000;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .output-box pre {
+      white-space: pre-wrap;
+    }
+    
+    
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+
+    .content {
+      padding: 16px;
+      background-color: white; 
+      height: 100%;
+      margin-left: 10%; 
+      margin-top: 3%;
+      color: #000000; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+
+    <div class="header">
+        <a  href="index.html">Home</a>
+      <a href="SWE&COM_Java1.html">Java</a>
+      <a href="Html-1-SWE&COM.html">HTML</a>
+      <a class="active" href="CSS-1-SWE&COM.html">CSS</a>
+      <a  href="JS-1-SWE&COM.html">JavaScript</a>
+      <a href="SQL-1-SWE&COM.html">SQL</a>
+      <a href="C-1-SWE&COM.html">C</a>
+      <a href="Python-1-SWE&COM.html">Python</a>
+      <a href="DSA-1-SWE&COM.html">DSA</a>
+    </div>
+    
+    <div class="menu">
+        <a href="CSS-1-SWE&COM.html">Introduction to CSS</a> <hr>
+        <a href="CSS-2-SWE&COM.html">Selectors and Styling</a> <hr>
+        <a href="CSS-3-SWE&COM.html">Box Model</a> <hr>
+        <a href="CSS-4-SWE&COM.html">Layouts</a> <hr>
+        <a href="CSS-5-SWE&COM.html">Responsive Design</a> <hr>
+        <a href="CSS-6-SWE&COM.html">Typography</a> <hr>
+        <a href="CSS-7-SWE&COM.html">Colors and Backgrounds</a> <hr>
+        <a class="active" href="CSS-8-SWE&COM.html">Transitions and Animations</a> <hr>   <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <italic>
+        <h1>CSS</h1>
+        <h2>Mastering CSS Transitions and Animations</h2>
+        <p>Welcome to our comprehensive guide on mastering CSS transitions and animations! In this tutorial, we'll explore how to bring your web projects to life with smooth transitions and captivating animations using CSS.</p>
+        
+        <h3>Understanding CSS Transitions</h3>
+        <p>CSS transitions allow you to change property values smoothly over a specified duration. Let's delve into the key concepts:</p>
+        <p>The <code>transition</code> property specifies which CSS properties to transition and the duration of the transition.</p>
+        <p>Transition timing functions such as <code>ease</code>, <code>ease-in</code>, <code>ease-out</code>, and <code>ease-in-out</code> control the acceleration and deceleration of the transition.</p>
+        <p>Transitions can be triggered by various events such as hover, click, or focus using pseudo-classes.</p>
+        
+        <h3>Creating CSS Animations</h3>
+        <p>CSS animations allow you to animate CSS properties over a set duration. Let's explore how to create engaging animations:</p>
+        <p>The <code>@keyframes</code> rule defines the animation sequence by specifying keyframes at different points in time.</p>
+        <p>The <code>animation</code> property applies the animation to an element and controls aspects such as duration, timing function, and iteration count.</p>
+        <p>Animations can be customized with additional properties like <code>animation-delay</code>, <code>animation-direction</code>, and <code>animation-fill-mode</code>.</p>
+        
+        <h3>Combining Transitions and Animations</h3>
+        <p>By combining CSS transitions and animations, you can create dynamic and interactive user experiences. Let's see how to integrate them effectively:</p>
+        <p>Transitions can complement animations by providing smooth state changes or interactions.</p>
+        <p>Animations can enhance transitions by adding more complex and visually appealing effects.</p>
+        <p>Experiment with combining transitions and animations to achieve the desired effects in your web projects.</p>
+        
+        <h3>Best Practices</h3>
+        <p>Follow these best practices for using CSS transitions and animations:</p>
+        <p>Keep animations subtle and purposeful to avoid overwhelming users.</p>
+        <p>Optimize animations for performance by minimizing unnecessary movement and effects.</p>
+        <p>Test animations across different devices and browsers to ensure compatibility and smooth performance.</p>
+        
+        <h3>Real-World Examples</h3>
+        <p>Let's examine some real-world examples of CSS transitions and animations in action:</p>
+        <p>Explore websites with seamless hover effects, sliding menus, and interactive elements to see how transitions and animations are implemented.</p>
+        <p>Check out animation libraries and frameworks such as Animate.css and GreenSock (GSAP) for inspiration and ready-to-use animations.</p>
+       
+      
+    </italic>
+    
+    
+    
+    
+    
+
+  <div class="code-editor">
+    <h2>Let's practise your understanding about Transitions and Animations
+    </h2>
+    <pre><code>&lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Marildo and Sefer Animation Over Kaleidoscope Animation&lt;/title&gt;
+            &lt;style&gt;
+                /* CSS styles for Kaleidoscope Animation */
+                .kaleidoscope-container {
+                    font-family: Arial, sans-serif;
+                    background-color: #000;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    perspective: 1000px;
+                    z-index: 1;
+                }
+        
+                .kaleidoscope {
+                    width: 200px;
+                    height: 200px;
+                    position: relative;
+                    transform-style: preserve-3d;
+                    animation: kaleidoscopeRotate 30s linear infinite;
+                }
+        
+                .triangle {
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border-left: 100px solid transparent;
+                    border-right: 100px solid transparent;
+                    border-bottom: 173px solid #f00; /* Change color as desired */
+                    animation: kaleidoscopeRotate 30s linear infinite;
+                }
+        
+                @keyframes kaleidoscopeRotate {
+                    0% {
+                        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+                    }
+                    100% {
+                        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+                    }
+                }
+        
+                .triangle:nth-child(2) {
+                    transform: rotate(60deg);
+                }
+        
+                .triangle:nth-child(3) {
+                    transform: rotate(120deg);
+                }
+        
+                .triangle:nth-child(4) {
+                    transform: rotate(180deg);
+                }
+        
+                .triangle:nth-child(5) {
+                    transform: rotate(240deg);
+                }
+        
+                .triangle:nth-child(6) {
+                    transform: rotate(300deg);
+                }
+        
+                /* CSS styles for Marildo & Sefer Animation */
+                .marildo-container {
+                    font-family: Arial, sans-serif;
+                    background-color: transparent;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 2;
+                }
+        
+                .shape {
+                    width: 100px;
+                    height: 100px;
+                    background-color: #007bff;
+                    border-radius: 50%;
+                    position: relative;
+                    animation: marildo 4s infinite alternate, sefer 3s infinite alternate;
+                }
+        
+                @keyframes marildo {
+                    0% {
+                        transform: translateY(-100px) rotate(0deg);
+                        background-color: #007bff;
+                    }
+                    50% {
+                        transform: translateY(100px) rotate(360deg);
+                        background-color: #ff6347;
+                    }
+                    100% {
+                        transform: translateY(-100px) rotate(720deg);
+                        background-color: #007bff;
+                    }
+                }
+        
+                @keyframes sefer {
+                    0% {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        background-color: #007bff;
+                    }
+                    50% {
+                        width: 200px;
+                        height: 50px;
+                        border-radius: 0;
+                        background-color: #ff6347;
+                    }
+                    100% {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        background-color: #007bff;
+                    }
+                }
+        
+                .marildo-text,
+                .sefer-text {
+                    position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: white;
+                    font-size: 16px;
+                    display: none;
+                }
+        
+                .shape.marildo .marildo-text {
+                    display: block;
+                }
+        
+                .shape.sefer .sefer-text {
+                    display: block;
+                }
+        
+                /* CSS styles for Cloud Animation */
+                .cloud-container {
+                    position: absolute;
+                    top: 50px; /* Adjust position as needed */
+                    left: -200px; /* Adjust position as needed */
+                    width: 100%;
+                    height: 100%;
+                    z-index: 3;
+                    animation: cloudAnimation 20s linear infinite;
+                }
+        
+                .cloud {
+                    position: absolute;
+                    width: 200px; /* Adjust size as needed */
+                    height: 100px; /* Adjust size as needed */
+                    background-color: #FFFFFF;
+                    border-radius: 50%;
+                    opacity: 0.7;
+                    animation: cloudMove 20s linear infinite;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+        
+                .cloud-text {
+                    font-size: 20px;
+                    color: #333;
+                    font-weight: bold;
+                }
+        
+                @keyframes cloudAnimation {
+                    0% {
+                        transform: translateX(-200px);
+                    }
+                    100% {
+                        transform: translateX(100%);
+                    }
+                }
+        
+                @keyframes cloudMove {
+                    0%, 100% {
+                        transform: translateY(0);
+                    }
+                    50% {
+                        transform: translateY(-20px);
+                    }
+                }
+            &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            <!-- Marildo & Sefer Animation -->
+            &lt;div class="marildo-container"&gt;
+                &lt;div class="shape marildo"&gt;
+                    &lt;div class="marildo-text"&gt;Marildo&lt;/div&gt;
+                    &lt;div class="sefer-text"&gt;Sefer&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        
+            <!-- Kaleidoscope Animation -->
+            &lt;div class="kaleidoscope-container"&gt;
+                &lt;div class="kaleidoscope"&gt;
+                    &lt;div class="triangle"&gt;&lt;/div&gt;
+                    &lt;div class="triangle"&gt;&lt;/div&gt;
+                    &lt;div class="triangle"&gt;&lt;/div&gt;
+                    &lt;div class="triangle"&gt;&lt;/div&gt;
+                    &lt;div class="triangle"&gt;&lt;/div&gt;
+                    &lt;div class="triangle"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        
+            <!-- Cloud Animation -->
+            &lt;div class="cloud-container"&gt;
+                &lt;div class="cloud"&gt;
+                    &lt;div class="cloud-text"&gt;FC Bayern Munich&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+         </code>
+        
+        </pre>
+    <h2>Your CSS Code</h2>
+    <div id="userCode" class="code-editor">
+      <textarea id="codeTextarea" rows="23" style="width: 100%; height: 150px;" placeholder="Write your CSS code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output-box" id="output"></div>  <br><hr>
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the basics of CSS Transitions and Animations. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+</div>
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Marildo and Sefer Animation Over Kaleidoscope Animation</title>
+            <style>
+                /* CSS styles for Kaleidoscope Animation */
+                .kaleidoscope-container {
+                    font-family: Arial, sans-serif;
+                    background-color: #000;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    perspective: 1000px;
+                    z-index: 1;
+                }
+        
+                .kaleidoscope {
+                    width: 200px;
+                    height: 200px;
+                    position: relative;
+                    transform-style: preserve-3d;
+                    animation: kaleidoscopeRotate 30s linear infinite;
+                }
+        
+                .triangle {
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border-left: 100px solid transparent;
+                    border-right: 100px solid transparent;
+                    border-bottom: 173px solid #f00; /* Change color as desired */
+                    animation: kaleidoscopeRotate 30s linear infinite;
+                }
+        
+                @keyframes kaleidoscopeRotate {
+                    0% {
+                        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+                    }
+                    100% {
+                        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+                    }
+                }
+        
+                .triangle:nth-child(2) {
+                    transform: rotate(60deg);
+                }
+        
+                .triangle:nth-child(3) {
+                    transform: rotate(120deg);
+                }
+        
+                .triangle:nth-child(4) {
+                    transform: rotate(180deg);
+                }
+        
+                .triangle:nth-child(5) {
+                    transform: rotate(240deg);
+                }
+        
+                .triangle:nth-child(6) {
+                    transform: rotate(300deg);
+                }
+        
+                /* CSS styles for Marildo & Sefer Animation */
+                .marildo-container {
+                    font-family: Arial, sans-serif;
+                    background-color: transparent;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 2;
+                }
+        
+                .shape {
+                    width: 100px;
+                    height: 100px;
+                    background-color: #007bff;
+                    border-radius: 50%;
+                    position: relative;
+                    animation: marildo 4s infinite alternate, sefer 3s infinite alternate;
+                }
+        
+                @keyframes marildo {
+                    0% {
+                        transform: translateY(-100px) rotate(0deg);
+                        background-color: #007bff;
+                    }
+                    50% {
+                        transform: translateY(100px) rotate(360deg);
+                        background-color: #ff6347;
+                    }
+                    100% {
+                        transform: translateY(-100px) rotate(720deg);
+                        background-color: #007bff;
+                    }
+                }
+        
+                @keyframes sefer {
+                    0% {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        background-color: #007bff;
+                    }
+                    50% {
+                        width: 200px;
+                        height: 50px;
+                        border-radius: 0;
+                        background-color: #ff6347;
+                    }
+                    100% {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        background-color: #007bff;
+                    }
+                }
+        
+                .marildo-text,
+                .sefer-text {
+                    position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: white;
+                    font-size: 16px;
+                    display: none;
+                }
+        
+                .shape.marildo .marildo-text {
+                    display: block;
+                }
+        
+                .shape.sefer .sefer-text {
+                    display: block;
+                }
+        
+                /* CSS styles for Cloud Animation */
+                .cloud-container {
+                    position: absolute;
+                    top: 50px; /* Adjust position as needed */
+                    left: -200px; /* Adjust position as needed */
+                    width: 100%;
+                    height: 100%;
+                    z-index: 3;
+                    animation: cloudAnimation 20s linear infinite;
+                }
+        
+                .cloud {
+                    position: absolute;
+                    width: 200px; /* Adjust size as needed */
+                    height: 100px; /* Adjust size as needed */
+                    background-color: #FFFFFF;
+                    border-radius: 50%;
+                    opacity: 0.7;
+                    animation: cloudMove 20s linear infinite;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+        
+                .cloud-text {
+                    font-size: 20px;
+                    color: #333;
+                    font-weight: bold;
+                }
+        
+                @keyframes cloudAnimation {
+                    0% {
+                        transform: translateX(-200px);
+                    }
+                    100% {
+                        transform: translateX(100%);
+                    }
+                }
+        
+                @keyframes cloudMove {
+                    0%, 100% {
+                        transform: translateY(0);
+                    }
+                    50% {
+                        transform: translateY(-20px);
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            
+            <div class="marildo-container">
+                <div class="shape marildo">
+                    <div class="marildo-text">Marildo</div>
+                    <div class="sefer-text">Sefer</div>
+                </div>
+            </div>
+        
+            
+            <div class="kaleidoscope-container">
+                <div class="kaleidoscope">
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                </div>
+            </div>
+        
+            
+            <div class="cloud-container">
+                <div class="cloud">
+                    <div class="cloud-text">FC Bayern Munich</div>
+                </div>
+            </div>
+        </body>
+        </html>`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    var outputText = isCorrect ? `Output: <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Marildo and Sefer Animation Over Kaleidoscope Animation</title>
+            <style>
+                /* CSS styles for Kaleidoscope Animation */
+                .kaleidoscope-container {
+                    font-family: Arial, sans-serif;
+                    background-color: #000;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    perspective: 1000px;
+                    z-index: 1;
+                }
+        
+                .kaleidoscope {
+                    width: 200px;
+                    height: 200px;
+                    position: relative;
+                    transform-style: preserve-3d;
+                    animation: kaleidoscopeRotate 30s linear infinite;
+                }
+        
+                .triangle {
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border-left: 100px solid transparent;
+                    border-right: 100px solid transparent;
+                    border-bottom: 173px solid #f00; /* Change color as desired */
+                    animation: kaleidoscopeRotate 30s linear infinite;
+                }
+        
+                @keyframes kaleidoscopeRotate {
+                    0% {
+                        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+                    }
+                    100% {
+                        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+                    }
+                }
+        
+                .triangle:nth-child(2) {
+                    transform: rotate(60deg);
+                }
+        
+                .triangle:nth-child(3) {
+                    transform: rotate(120deg);
+                }
+        
+                .triangle:nth-child(4) {
+                    transform: rotate(180deg);
+                }
+        
+                .triangle:nth-child(5) {
+                    transform: rotate(240deg);
+                }
+        
+                .triangle:nth-child(6) {
+                    transform: rotate(300deg);
+                }
+        
+                /* CSS styles for Marildo & Sefer Animation */
+                .marildo-container {
+                    font-family: Arial, sans-serif;
+                    background-color: transparent;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 2;
+                }
+        
+                .shape {
+                    width: 100px;
+                    height: 100px;
+                    background-color: #007bff;
+                    border-radius: 50%;
+                    position: relative;
+                    animation: marildo 4s infinite alternate, sefer 3s infinite alternate;
+                }
+        
+                @keyframes marildo {
+                    0% {
+                        transform: translateY(-100px) rotate(0deg);
+                        background-color: #007bff;
+                    }
+                    50% {
+                        transform: translateY(100px) rotate(360deg);
+                        background-color: #ff6347;
+                    }
+                    100% {
+                        transform: translateY(-100px) rotate(720deg);
+                        background-color: #007bff;
+                    }
+                }
+        
+                @keyframes sefer {
+                    0% {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        background-color: #007bff;
+                    }
+                    50% {
+                        width: 200px;
+                        height: 50px;
+                        border-radius: 0;
+                        background-color: #ff6347;
+                    }
+                    100% {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        background-color: #007bff;
+                    }
+                }
+        
+                .marildo-text,
+                .sefer-text {
+                    position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: white;
+                    font-size: 16px;
+                    display: none;
+                }
+        
+                .shape.marildo .marildo-text {
+                    display: block;
+                }
+        
+                .shape.sefer .sefer-text {
+                    display: block;
+                }
+        
+                /* CSS styles for Cloud Animation */
+                .cloud-container {
+                    position: absolute;
+                    top: 50px; /* Adjust position as needed */
+                    left: -200px; /* Adjust position as needed */
+                    width: 100%;
+                    height: 100%;
+                    z-index: 3;
+                    animation: cloudAnimation 20s linear infinite;
+                }
+        
+                .cloud {
+                    position: absolute;
+                    width: 200px; /* Adjust size as needed */
+                    height: 100px; /* Adjust size as needed */
+                    background-color: #FFFFFF;
+                    border-radius: 50%;
+                    opacity: 0.7;
+                    animation: cloudMove 20s linear infinite;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+        
+                .cloud-text {
+                    font-size: 20px;
+                    color: #333;
+                    font-weight: bold;
+                }
+        
+                @keyframes cloudAnimation {
+                    0% {
+                        transform: translateX(-200px);
+                    }
+                    100% {
+                        transform: translateX(100%);
+                    }
+                }
+        
+                @keyframes cloudMove {
+                    0%, 100% {
+                        transform: translateY(0);
+                    }
+                    50% {
+                        transform: translateY(-20px);
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            
+            <div class="marildo-container">
+                <div class="shape marildo">
+                    <div class="marildo-text">Marildo</div>
+                    <div class="sefer-text">Sefer</div>
+                </div>
+            </div>
+        
+            
+            <div class="kaleidoscope-container">
+                <div class="kaleidoscope">
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                </div>
+            </div>
+        
+            
+            <div class="cloud-container">
+                <div class="cloud">
+                    <div class="cloud-text">FC Bayern Munich</div>
+                </div>
+            </div>
+        </body>
+        </html>` : "Error: Syntax is not correct. Please check your code and try again.";
+
+outputDiv.innerHTML = outputText;
+
+
+
+
+  }
+</script>
+
+</body>
+</html>

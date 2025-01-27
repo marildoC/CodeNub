@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red;
+    }
+
+    .header {
+      background-color: #030503;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+    .p1 {
+  color: rgb(0, 0, 0); /* Change text color to blue */
+  font-weight: italic; /* Set font weight to bold */
+  font-size: 18px; /* Set font size to 18 pixels */
+}
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a href="index.html">Home</a>
+  <a class="active" href="#java">Java</a>
+  <a href="#html">HTML</a>
+  <a href="#css">CSS</a>
+  <a href="#javascript">JavaScript</a>
+  <a href="#sql">SQL</a>
+  <a href="#c">C</a>
+  <a href="#python">Python</a>
+  <a href="#dsa">DSA</a>
+</div>
+
+<div class="menu">
+    <a class="active" href="SWE&COM_Java1.html">Introduction to Java</a>   <hr>
+    <a href="SWE&COM_Java2.html">Variables</a> <hr>
+  <a href="SWE&COM_Java3.html">Operators</a> <hr>
+ 
+  <a href="SWE&COM_Java4.html">Arrays</a>  <hr>
+  <a href="SWE&COM_Java5.html">Classes and Objects</a>  <hr>
+  <a href="SWE&COM_Java6.html">Inheritance</a>   <hr>
+  <a href="SWE&COM_Java7.html">Polymorphism</a>  <hr>
+  <a href="SWE&COM_Java8.html">Abstraction</a>   <hr>
+  <a href="SWE&COM_Java9.html">Interfaces</a>   <hr>
+  <a href="SWE&COM_Java10.html">Exceptions</a>  <hr>
+  <a href="SWE&COM_Java11.html">File I/O</a>          <hr>
+  <a href="SWE&COM_Java12.html">Collections</a>   <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <h2> JAVA </h2>
+  <italic class="p1">  Java stands as a cornerstone in the realm of programming, revered for its versatility and reliability. Here's why it holds such a prominent place in the developer's toolkit:
+
+    Java's Universal Reach: It boasts the unique ability to transcend platform boundaries, ensuring that your applications can run seamlessly on any device or operating system.
+    
+    Clarity and Simplicity: Java's straightforward syntax and intuitive structure make it accessible to developers of all levels, enabling them to focus on problem-solving without unnecessary complexities.
+    
+    Built-in Resilience: With robust error-handling mechanisms and a solid architecture, Java equips developers with the tools they need to create applications that deliver consistent performance and stability.
+    
+    Thriving Community: Behind Java lies a vibrant ecosystem of developers who collaborate, innovate, and support each other in their endeavors, fostering a culture of knowledge-sharing and growth.
+    
+  </italic>
+  
+  
+  
+   
+
+
+  
+<italic> <h2>Here's a logical introduction to some key concepts in Java:</h2>
+
+    <h3>Variables: </h3>Variables are used to store data values in a Java program. They must be declared with a specific data type before they can be used, and their values can be modified during the execution of the program.
+    <h3>Operators:</h3> Java provides a variety of operators for performing operations on variables and values. These include arithmetic, relational, logical, assignment, and bitwise operators.
+    <h3>Control Statements:</h3> Control statements are used to control the flow of execution in a Java program. This includes decision-making statements like if-else and switch, as well as looping statements like for, while, and do-while.
+   <h3> Arrays:</h3> Arrays are used to store multiple values of the same type under a single variable name. They provide a convenient way to work with collections of data elements.
+    <h3>Classes and Objects:</h3> Java is an object-oriented programming language, which means it revolves around the concept of objects and classes. Classes define the properties (fields) and behaviors (methods) of objects, and objects are instances of classes.
+    <h3>Methods:</h3> Methods in Java are blocks of code that perform specific tasks. They are defined within classes and can be called to execute their functionality. Methods can accept parameters (input) and return values (output).
+   <h3> Inheritance:</h3> Inheritance allows a class (subclass) to inherit properties and behaviors from another class (superclass). This promotes code reuse and enables the creation of hierarchical relationships between classes.
+    <h3>Polymorphism:</h3> Polymorphism allows objects of different classes to be treated as objects of a common superclass. This enables flexibility and extensibility in Java programs.
+   <h3> Abstraction:</h3> Abstraction involves hiding the implementation details of a class and only exposing the essential features to the user. It allows for the creation of complex systems by breaking them down into simpler, more manageable components.
+   <h3> Encapsulation:</h3> Encapsulation involves bundling data (fields) and methods that operate on that data within a single unit (class). It helps in hiding the internal state of an object and protecting it from outside interference.
+   <h3> Interfaces:</h3> Interfaces define a contract for classes to implement. They contain method signatures but no method bodies, allowing multiple classes to provide their own implementations.
+   <h3> Exceptions:</h3> Exceptions are used to handle errors and exceptional situations in Java programs. They provide a way to gracefully recover from unexpected events and prevent program crashes.
+   <h3> File I/O:</h3> File I/O operations in Java allow programs to read from and write to files on the file system. This includes reading data from text files, writing data to files, and performing various file-related operations.
+   <h3> Collections: </h3>The Collections framework in Java provides a set of classes and interfaces for working with collections of objects. It includes data structures such as lists, sets, maps, and queues, along with algorithms for manipulating and traversing these collections efficiently.</italic>
+ <br>  <br>
+
+
+   <div class="code-editor">
+    <h2>Ready for your first step! Print "Hello, world!"</h2>
+    <pre><code>
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello, world!");
+  }
+}
+    </code></pre>
+    <h2>Your Java Code</h2>
+    <div id="userCode" class="code-editor">
+        <textarea id="codeTextarea" rows="5" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output" id="output"></div>
+
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've completed your first code. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+
+</div> 
+//
+
+
+
+
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello, world!");
+  }
+}`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerText = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    if (isCorrect) {
+      outputDiv.innerText = "Output: Hello, world!";
+      outputDiv.style.color = "green"; 
+    } else {
+      outputDiv.innerText = "Error: Syntax is not correct. Please check your code and try again.";
+      outputDiv.style.color = "red"; 
+    }
+  }
+
+
+
+
+
+
+  //2
+</script>
+
+</body>
+</html>

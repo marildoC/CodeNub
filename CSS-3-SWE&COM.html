@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors and Styling</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output-box {
+      border: 2px solid #000;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .output-box pre {
+      white-space: pre-wrap;
+    }
+    
+    
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+
+    .content {
+      padding: 16px;
+      background-color: white; 
+      height: 100%;
+      margin-left: 10%; 
+      margin-top: 3%;
+      color: #000000; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+
+    <div class="header">
+      <a  href="index.html">Home</a>
+      <a href="SWE&COM_Java1.html">Java</a>
+      <a href="Html-1-SWE&COM.html">HTML</a>
+      <a class="active" href="CSS-1-SWE&COM.html">CSS</a>
+      <a  href="JS-1-SWE&COM.html">JavaScript</a>
+      <a href="SQL-1-SWE&COM.html">SQL</a>
+      <a href="C-1-SWE&COM.html">C</a>
+      <a href="Python-1-SWE&COM.html">Python</a>
+      <a href="DSA-1-SWE&COM.html">DSA</a>
+    </div>
+    
+    <div class="menu">
+      <a href="CSS-1-SWE&COM.html">Introduction to CSS</a> <hr>
+      <a href="CSS-2-SWE&COM.html">Selectors and Styling</a> <hr>
+      <a class="active" href="CSS-3-SWE&COM.html">Box Model</a> <hr>
+      <a href="CSS-4-SWE&COM.html">Layouts</a> <hr>
+      <a href="CSS-5-SWE&COM.html">Responsive Design</a> <hr>
+      <a href="CSS-6-SWE&COM.html">Typography</a> <hr>
+      <a href="CSS-7-SWE&COM.html">Colors and Backgrounds</a> <hr>
+      <a href="CSS-8-SWE&COM.html">Transitions and Animations</a> <hr>   <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <italic>
+        <h1>CSS</h1>
+        <h2>Box Model</h2>
+        <p>Welcome to the CSS Box Model course! In this module, we'll dive into the fundamental concept of the CSS Box Model and its importance in web design.</p>
+        <h3>Understanding the Box Model</h3>
+        <p>The CSS Box Model is a cornerstone of web design, defining the structure and layout of elements on a web page. At its core, it consists of:</p>
+        <ul>
+            <li><b>Content:</b> The actual content of the element, such as text or images.</li>
+            <li><b>Padding:</b> The space between the content and the border of the element.</li>
+            <li><b>Border:</b> The visible boundary around the content and padding.</li>
+            <li><b>Margin:</b> The space outside the border, creating separation between elements.</li>
+        </ul>
+        <p>To illustrate, let's consider a simple example:</p>
+        <code style="color: rgba(51, 23, 207, 0.767);">
+            .box {
+                width: 200px;
+                height: 100px;
+                padding: 20px;
+                border: 2px solid #000;
+                margin: 10px;
+            }
+        </code>
+        <p>In this code snippet, we define a box element with a width of 200 pixels, a height of 100 pixels, 20 pixels of padding, a 2-pixel solid border, and 10 pixels of margin.</p>
+        <h3>Box Sizing Property</h3>
+        <p>The <code style="color: rgba(51, 23, 207, 0.767);">box-sizing</code> property is a powerful tool for controlling how the width and height of an element are calculated. By default, elements use the <code style="color: rgba(51, 23, 207, 0.767);">content-box</code> value, but we can change this behavior with <code style="color: rgba(51, 23, 207, 0.767);">border-box</code>.</p>
+        <code style="color: rgba(51, 23, 207, 0.767);">
+            .box {
+                box-sizing: border-box;
+            }
+        </code>
+        <p>By setting <code style="color: rgba(51, 23, 207, 0.767);">box-sizing: border-box;</code>, the element's width and height will include padding and border, making it easier to create predictable layouts.</p>
+        <h3>Margin Collapse</h3>
+        <p>Margin collapse can be a tricky concept to grasp, but it's essential for understanding how margins behave in certain situations. When two adjacent margins touch, they collapse into a single margin, creating unexpected spacing.</p>
+        <p>To prevent margin collapse, we can use techniques like adding padding or borders to elements, or setting <code style="color: rgba(51, 23, 207, 0.767);">overflow: auto;</code> to contain floats.</p>
+        <h3>Practical Applications</h3>
+        <p>Now that we understand the basics, let's explore some real-world applications of the CSS Box Model:</p>
+        <ul>
+            <li><b>Layouts:</b> Use the box model to create different layouts, from simple columns to complex grids.</li>
+            <li><b>Styling:</b> Apply padding, border, and margin to style elements and add visual flair to your designs.</li>
+            <li><b>Spacing:</b> Control spacing between elements with margin and padding, ensuring a clean and organized layout.</li>
+            <li><b>Debugging:</b> Understand how the box model affects the positioning and sizing of elements when troubleshooting layout issues.</li>
+        </ul>
+
+        <br> <br>
+
+        <h3>Quiz: Test Your Knowledge on CSS Box Model!</h3>
+
+<ol>
+    <li>What does the CSS Box Model consist of?
+        <ul>
+            <li><input type="radio" name="q1" value="a"> Content, Padding, Border, Margin</li>
+            <li><input type="radio" name="q1" value="b"> Content, Padding, Outline, Margin</li>
+            <li><input type="radio" name="q1" value="c"> Content, Padding, Border, Overflow</li>
+        </ul>
+    </li>
+    <li>Which property is used to change the space between an element's border and inner content?
+        <ul>
+            <li><input type="radio" name="q2" value="a"> margin</li>
+            <li><input type="radio" name="q2" value="b"> padding</li>
+            <li><input type="radio" name="q2" value="c"> border</li>
+        </ul>
+    </li>
+    <li>What does the margin property control?
+        <ul>
+            <li><input type="radio" name="q3" value="a"> The space inside an element between the content and its border</li>
+            <li><input type="radio" name="q3" value="b"> The space outside an element, between the border and adjacent elements</li>
+            <li><input type="radio" name="q3" value="c"> The thickness of an element's border</li>
+        </ul>
+    </li>
+</ol>
+
+<button onclick="checkAnswers()">Check Answers</button>
+
+<div id="answers"></div>
+
+<script>
+    function checkAnswers() {
+        var q1 = document.querySelector('input[name="q1"]:checked').value;
+        var q2 = document.querySelector('input[name="q2"]:checked').value;
+        var q3 = document.querySelector('input[name="q3"]:checked').value;
+
+        var correctAnswers = ["a", "b", "b"];
+        var userAnswers = [q1, q2, q3];
+
+        var correctCount = 0;
+        for (var i = 0; i < correctAnswers.length; i++) {
+            if (correctAnswers[i] === userAnswers[i]) {
+                correctCount++;
+            }
+        }
+
+        var answersDiv = document.getElementById('answers');
+        if (correctCount === correctAnswers.length) {
+            answersDiv.innerHTML = "<p>Congratulations! You got all answers correct!</p>";
+        } else {
+            answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Please try again.</p>";
+        }
+    }
+</script>
+
+
+   <br> <br>
+   <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the basics of CSS Box Model. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+
+    </italic>
+    
+    
+    
+
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interfaces in Java</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red; 
+    }
+
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a href="index.html">Home</a>
+  <a class="active" href="#java">Java</a>
+  <a href="#html">HTML</a>
+  <a href="#css">CSS</a>
+  <a href="#javascript">JavaScript</a>
+  <a href="#sql">SQL</a>
+  <a href="#c">C</a>
+  <a href="#python">Python</a>
+  <a href="#dsa">DSA</a>
+</div>
+
+<div class="menu">
+    <a  href="SWE&COM_Java1.html">Introduction to Java</a>   <hr>
+    <a href="SWE&COM_Java2.html">Variables</a> <hr>
+  <a href="SWE&COM_Java3.html">Operators</a> <hr>
+ 
+  <a href="SWE&COM_Java4.html">Arrays</a>  <hr>
+  <a href="SWE&COM_Java5.html">Classes and Objects</a>  <hr>
+  <a href="SWE&COM_Java6.html">Inheritance</a>   <hr>
+  <a href="SWE&COM_Java7.html">Polymorphism</a>  <hr>
+  <a href="SWE&COM_Java8.html">Abstraction</a>   <hr>
+  <a class="active" href="SWE&COM_Java9.html">Interfaces</a>   <hr>
+  <a href="SWE&COM_Java10.html">Exceptions</a>  <hr>
+  <a href="SWE&COM_Java11.html">File I/O</a>          <hr>
+  <a href="SWE&COM_Java12.html">Collections</a>   <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <h2> JAVA </h2>
+  
+   
+
+
+  
+    <italic>
+        <h2>Exploring Interfaces in Java</h2>
+    
+        <p>Welcome to our comprehensive guide on interfaces in Java! In this tutorial, we'll delve into the world of interfaces, a powerful tool for achieving abstraction and polymorphism in Java programming.</p>
+    
+        <h3>Understanding Interfaces</h3>
+    
+        <p>An interface in Java is a reference type, similar to a class, that can contain only constants, method signatures, default methods, static methods, and nested types. It provides a way to achieve abstraction by defining a contract for what classes can do without specifying how they do it.</p>
+    
+        <h3>Declaring Interfaces</h3>
+        
+        <p>In Java, you declare an interface using the <span style="color: rgba(51, 23, 207, 0.767);">interface</span> keyword, followed by the interface name and a code block containing method signatures:</p>
+        
+        <pre style="color: rgba(51, 23, 207, 0.767);">interface MyInterface {
+        void method1();
+        int method2(String str);
+    }</pre>
+    
+        <p>An interface can extend one or more other interfaces, allowing you to inherit method signatures from multiple sources:</p>
+    
+        <pre style="color: rgba(51, 23, 207, 0.767);">interface MyInterface extends AnotherInterface, YetAnotherInterface {
+        // Method signatures
+    }</pre>
+    
+        <h3>Implementing Interfaces</h3>
+        
+        <p>To use an interface in a class, you must implement it using the <span style="color: rgba(51, 23, 207, 0.767);">implements</span> keyword. When a class implements an interface, it must provide concrete implementations for all the methods declared in the interface:</p>
+    
+        <pre style="color: rgba(51, 23, 207, 0.767);">class MyClass implements MyInterface {
+        // Implement interface methods
+    }</pre>
+    
+        <h3>Interface Default Methods</h3>
+        
+        <p>Java 8 introduced default methods in interfaces, allowing you to add new functionality to interfaces without breaking existing implementations. Default methods have a default implementation specified in the interface itself:</p>
+    
+        <pre style="color: rgba(51, 23, 207, 0.767);">interface MyInterface {
+        void method1();
+    
+        default void defaultMethod() {
+            // Default implementation
+        }
+    }</pre>
+    
+        <h3>Interface Static Methods</h3>
+        
+        <p>Java 8 also introduced static methods in interfaces, which can be called using the interface name without the need for an instance of the interface. Static methods provide utility methods related to the interface:</p>
+    
+        <pre style="color: rgba(51, 23, 207, 0.767);">interface MyInterface {
+        void method1();
+    
+        static void staticMethod() {
+            // Static method implementation
+        }
+    }</pre>
+    
+        <h3>Quiz: Test Your Understanding!</h3>
+    
+        <p>Let's see how well you understand interfaces in Java. Answer the following questions:</p>
+    
+        <ol>
+            <li>What keyword is used to declare an interface in Java?</li>
+            <ul>
+                <li><input type="radio" name="q1" value="a"> interface</li>
+                <li><input type="radio" name="q1" value="b"> class</li>
+                <li><input type="radio" name="q1" value="c"> extends</li>
+            </ul>
+    
+            <li>Which of the following is true about interface default methods?</li>
+            <ul>
+                <li><input type="radio" name="q2" value="a"> They must be overridden by implementing classes.</li>
+                <li><input type="radio" name="q2" value="b"> They cannot have a default implementation.</li>
+                <li><input type="radio" name="q2" value="c"> They provide a default implementation in the interface itself.</li>
+            </ul>
+    
+            <li>How are static methods defined in interfaces?</li>
+            <ul>
+                <li><input type="radio" name="q3" value="a"> Using the <span style="color: rgba(51, 23, 207, 0.767);">method</span> keyword.</li>
+                <li><input type="radio" name="q3" value="b"> Using the <span style="color: rgba(51, 23, 207, 0.767);">static</span> keyword.</li>
+                <li><input type="radio" name="q3" value="c"> Using the <span style="color: rgba(51, 23, 207, 0.767);">interface</span> keyword.</li>
+            </ul>
+        </ol>
+    
+        <button onclick="checkAnswers()">Check Answers</button>
+    
+        <div id="answers"></div>
+    
+        <script>
+            function checkAnswers() {
+                var userAnswers = document.querySelectorAll('input:checked');
+                var correctAnswers = ["a", "c", "b"];
+                var correctCount = 0;
+    
+                for (var i = 0; i < userAnswers.length; i++) {
+                    if (correctAnswers[i] === userAnswers[i].value) {
+                        correctCount++;
+                    }
+                }
+    
+                var answersDiv = document.getElementById('answers');  
+                if (correctCount === correctAnswers.length) {  
+                    answersDiv.innerHTML = "<p>Congratulations! You got all answers correct!</p>";
+                } else {
+                    answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Please try again.</p>";
+                }
+            }
+        </script>
+    </italic>
+    
+   
+    
+ <br>  <br>
+
+
+   <div class="code-editor">
+    <h2>Let's practise your understanding about Interfaces </h2>
+    <i>Java code  that demonstrates the declaration and initialization of Interfaces: </i>
+    <pre><code>
+interface Vehicle {
+    void start();
+    void stop();
+}
+
+class Car implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Car started.");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Car stopped.");
+    }
+}
+
+class Bike implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Bike started.");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Bike stopped.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        Bike bike = new Bike();
+
+        car.start();
+        car.stop();
+
+        bike.start();
+        bike.stop();
+    }
+}
+   </code></pre>
+    <h2>Your Java Code</h2>
+    <div id="userCode" class="code-editor">
+        <textarea id="codeTextarea" rows="21" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button> 
+  </div>
+  <div class="output" id="output"></div>
+
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the basics of Interfaces. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+
+</div> 
+
+
+
+
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `interface Vehicle {
+    void start();
+    void stop();
+}
+
+class Car implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Car started.");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Car stopped.");
+    }
+}
+
+class Bike implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Bike started.");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Bike stopped.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        Bike bike = new Bike();
+
+        car.start();
+        car.stop();
+
+        bike.start();
+        bike.stop();
+    }
+}`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerText = ""; 
+
+    if (userCode === exampleCode) {
+      outputDiv.innerText = "Output: Car started.\n Car stopped.\nBike started. \nBike stopped.";
+      outputDiv.style.color = "green"; 
+    } else {
+      // Check if the user code is empty
+      if (userCode === "") {
+        outputDiv.innerText = "Error: Please write your Java code before running.";
+      } else {
+        outputDiv.innerText = "Error: Syntax is not correct. Please check your code and try again.";
+      }
+      outputDiv.style.color = "red"; 
+    }
+  }
+</script>
+
+
+</body>
+</html>

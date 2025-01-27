@@ -1,0 +1,378 @@
+(<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error Handling in JavaScript</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output-box {
+      border: 2px solid #000;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .output-box pre {
+      white-space: pre-wrap;
+    }
+    
+    
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+      padding: 16px;
+      background-color: white; 
+      height: 100%;
+      margin-left: 10%; 
+      margin-top: 3%;
+      color: #000000; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+
+    <div class="header">
+      <a  href="index.html">Home</a>
+      <a href="SWE&COM_Java1.html">Java</a>
+      <a  href="Html-1-SWE&COM.html">HTML</a>
+      <a href="CSS-1-SWE&COM.html">CSS</a>
+      <a class="active" href="JS-1-SWE&COM.html">JavaScript</a>
+      <a href="SQL-1-SWE&COM.html">SQL</a>
+      <a href="C-1-SWE&COM.html">C</a>
+      <a href="Python-1-SWE&COM.html">Python</a>
+      <a href="DSA-1-SWE&COM.html">DSA</a>
+    </div>
+    
+    <div class="menu">
+      <a href="JS-1-SWE&COM.html">Introduction to JS`</a> <hr>
+      <a href="#ddddddd"> Functions and Scope</a> <hr>
+      <a href="JS-3-SWE&COM.html">DOM Manipulation`</a> <hr>
+      <a href="#lists"> Asynchronous JavaScript</a> <hr>
+      <a href="#links"> ES6+ Feature</a> <hr>
+      <a class="active" href="JS-6-SWE&COM.html">Error Handling`</a> <hr>
+      <a href="#tables">Conditional Statements </a> <hr>
+      <a href="#forms">Arrays and Objects</a> <hr>  
+      <a href="#forms">Basic Algorithms and Data Structures</a> <hr>   <hr> 
+ 
+</div>
+
+<div class="content">
+    <italic> 
+        <h1>JavaScript</h1>
+        <h2>Error Handling in JavaScript</h2>
+
+        <p>Welcome to our comprehensive guide to error handling in JavaScript! In this course, we'll explore the fundamentals of handling errors in JavaScript code effectively.</p>
+        
+        <h3>Understanding Errors in JavaScript</h3>
+        
+        <p>Errors are inevitable in programming, and JavaScript is no exception. Understanding the types of errors and how they occur is crucial for writing robust and reliable code. JavaScript errors can be categorized into three main types:</p>
+        
+        <ul>
+            <li><b>Syntax Errors:</b> Occur when the code is not written according to the syntax rules of JavaScript, preventing it from being executed.</li>
+            <li><b>Runtime Errors:</b> Occur during the execution of the code, typically due to invalid operations or unexpected conditions.</li>
+            <li><b>Logical Errors:</b> Occur when the code produces incorrect results due to flawed logic or incorrect algorithm implementation.</li>
+        </ul>
+        
+        <h3>Types of Error Handling</h3>
+        
+        <p>In JavaScript, there are several ways to handle errors, each serving different purposes and scenarios:</p>
+        
+        <ul>
+            <li><b>Using try...catch:</b> The <code style="color: rgba(51, 23, 207, 0.767);">try...catch</code> statement allows you to catch and handle errors gracefully, preventing them from crashing the entire script.</li>
+            <li><b>Throwing Errors:</b> The <code style="color: rgba(51, 23, 207, 0.767);">throw</code> statement allows you to create custom error objects and throw them when certain conditions are met.</li>
+            <li><b>Handling Asynchronous Errors:</b> Asynchronous code introduces its own challenges for error handling. We'll explore techniques for handling errors in asynchronous JavaScript code, such as using <code style="color: rgba(51, 23, 207, 0.767);">try...catch</code> with async/await or handling promises rejection.</li>
+            <li><b>Error Objects:</b> JavaScript provides built-in error objects like <code style="color: rgba(51, 23, 207, 0.767);">Error</code>, <code style="color: rgba(51, 23, 207, 0.767);">SyntaxError</code>, <code style="color: rgba(51, 23, 207, 0.767);">TypeError</code>, etc., which contain valuable information about the error.</li>
+        </ul>
+        
+        <h3>Best Practices for Error Handling</h3>
+        
+        <p>Effective error handling is essential for writing maintainable and reliable JavaScript code. Here are some best practices to follow:</p>
+        
+        <ul>
+            <li><b>Handle Errors Gracefully:</b> Use <code style="color: rgba(51, 23, 207, 0.767);">try...catch</code> to catch and handle errors wherever possible, preventing them from propagating up the call stack.</li>
+            <li><b>Provide Meaningful Error Messages:</b> When throwing custom errors, provide descriptive error messages that help developers understand the cause of the error.</li>
+            <li><b>Logging Errors:</b> Logging errors to the console or server can help diagnose issues in production environments and provide valuable insights for debugging.</li>
+            <li><b>Testing Error Cases:</b> Write unit tests to cover error cases and ensure that your error handling logic works as expected.</li>
+        </ul>
+        
+        <h3>Common Error Handling Patterns</h3>
+        
+        <p>Throughout this course, we'll explore common error handling patterns and techniques used in real-world JavaScript applications. These include:</p>
+        
+        <ul>
+            <li><b>Fallback Values:</b> Providing default or fallback values when an error occurs, ensuring graceful degradation of functionality.</li>
+            <li><b>Retrying Operations:</b> Implementing retry mechanisms for failed operations, with backoff strategies to prevent overwhelming servers.</li>
+            <li><b>Circuit Breaker Pattern:</b> Implementing a circuit breaker to temporarily disable functionality when errors reach a certain threshold, preventing cascading failures.</li>
+            <li><b>Graceful Degradation:</b> Designing applications to gracefully degrade functionality in the presence of errors, providing a smoother user experience.</li>
+        </ul>
+        
+    
+
+         <br> <br>
+         <h3>Quiz: Test Your Knowledge!</h3>
+
+         <ol>
+             <li>What is the primary purpose of error handling in JavaScript?</li>
+             <ul>
+                 <li><input type="radio" name="q1" value="a"> To introduce bugs into the code</li>
+                 <li><input type="radio" name="q1" value="b"> To prevent errors from crashing the entire script</li>
+                 <li><input type="radio" name="q1" value="c"> To slow down the execution of the code</li>
+             </ul>
+             <li>Which type of error occurs during the execution of the code?</li>
+             <ul>
+                 <li><input type="radio" name="q2" value="a"> Syntax Error</li>
+                 <li><input type="radio" name="q2" value="b"> Runtime Error</li>
+                 <li><input type="radio" name="q2" value="c"> Logical Error</li>
+             </ul>
+             <li>What is the purpose of the try...catch statement in JavaScript?</li>
+             <ul>
+                 <li><input type="radio" name="q3" value="a"> To execute code asynchronously</li>
+                 <li><input type="radio" name="q3" value="b"> To catch and handle errors gracefully</li>
+                 <li><input type="radio" name="q3" value="c"> To define custom error objects</li>
+             </ul>
+             <li>Which JavaScript method allows you to throw custom errors?</li>
+             <ul>
+                 <li><input type="radio" name="q4" value="a"> throw</li>
+                 <li><input type="radio" name="q4" value="b"> catch</li>
+                 <li><input type="radio" name="q4" value="c"> try</li>
+             </ul>
+         </ol>
+         
+         <button onclick="checkAnswers()">Check Answers</button>
+         
+         <div id="answers"></div>
+         
+         <script>
+             function checkAnswers() {
+                 var q1 = document.querySelector('input[name="q1"]:checked').value;
+                 var q2 = document.querySelector('input[name="q2"]:checked').value;
+                 var q3 = document.querySelector('input[name="q3"]:checked').value;
+                 var q4 = document.querySelector('input[name="q4"]:checked').value;
+         
+                 var correctAnswers = ["b", "b", "b", "a"];
+                 var userAnswers = [q1, q2, q3, q4];
+         
+                 var correctCount = 0;
+                 for (var i = 0; i < correctAnswers.length; i++) {
+                     if (correctAnswers[i] === userAnswers[i]) {
+                         correctCount++;
+                     }
+                 }
+         
+                 var answersDiv = document.getElementById('answers');
+                 if (correctCount === correctAnswers.length) {
+                     answersDiv.innerHTML = "<p>Congratulations! You got all answers correct!</p>";
+                 } else {
+                     answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Please try again.</p>";
+                 }
+             }
+         </script>
+         <br>
+    </italic>
+    
+    
+
+  <div class="code-editor">
+    <h2>Let's practise by example</h2>
+    <pre><code>&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;body&gt;
+        
+        
+         &lt;p&gt; Error Handling Example &lt;/p&gt;
+         
+         &lt;script&gt;
+            // Function to divide two numbers
+            function divideNumbers(a, b) {
+                try {
+                    if (b === 0) {
+                        throw new Error("Division by zero is not allowed.");
+                    }
+                    return a / b;
+                } catch (error) {
+                    // Handle the error gracefully
+                    console.error("An error occurred:", error.message);
+                    // Return a default value or handle the error in an appropriate way
+                    return "N/A";
+                }
+            }
+        
+            // Example usage
+            console.log(divideNumbers(10, 2));  // Output: 5
+            console.log(divideNumbers(8, 0));   // Output: An error occurred: Division by zero is not allowed.
+                                               
+        &lt;/script&gt;
+        
+        &lt;/body&gt;
+        &lt;/html&gt;
+        
+        </code>
+        </pre>
+    <h2>Your JS Code</h2>
+    <div id="userCode" class="code-editor">
+      <textarea id="codeTextarea" rows="23" style="width: 100%; height: 150px;" placeholder="Write your JS code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output-box" id="output"></div>
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the basics of Error Handling in JavaScript. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+</div>
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Introduction to CSS</title>
+            <style>
+                /* CSS styles */
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f0f0f0;
+                    color: #333;
+                    margin: 0;
+                    padding: 0;
+                }
+                .container {
+                    max-width: 800px;
+                    margin: 20px auto;
+                    padding: 20px;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                h1 {
+                    color: #007bff;
+                    text-align: center;
+                }
+                p {
+                    line-height: 1.6;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Introduction to CSS</h1>
+                <p>Welcome to the course on CSS! In this course, we'll explore the fundamentals of Cascading Style Sheets (CSS) and how they are used to enhance the presentation of web pages.</p>
+                <h2>What is CSS?</h2>
+                <p>CSS, short for Cascading Style Sheets, is a style sheet language used for describing the presentation of a document written in HTML. It allows developers to control the layout, colors, fonts, and other visual aspects of web pages.</p>
+                <h2>Why Learn CSS?</h2>
+                <p>Understanding CSS is essential for web development as it enables developers to create visually appealing and user-friendly websites. By mastering CSS, you'll have the skills to customize the appearance of web pages and make them stand out.</p>
+                <h2>Course Objectives</h2>
+                <ul>
+                    <li>Learn the basic syntax and structure of CSS rules</li>
+                    <li>Understand how to link CSS to HTML documents</li>
+                    <li>Explore different types of CSS selectors and how to use them</li>
+                    <li>Apply styles to HTML elements for enhanced presentation</li>
+                </ul>
+            </div>
+        </body>
+        </html>`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    var outputText = isCorrect ? "Output: <!DOCTYPE html> <html lang='en'> <head> <meta charset='UTF-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> <title>Introduction to CSS</title> <style> /* CSS styles */ body { font-family: Arial, sans-serif; background-color: #f0f0f0; color: #333; margin: 0; padding: 0; } .container { max-width: 800px; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); } h1 { color: #007bff; text-align: center; } p { line-height: 1.6; } </style> </head> <body> <div class='container'> <h1>Introduction to CSS</h1> <p>Welcome to the course on CSS! In this course, we'll explore the fundamentals of Cascading Style Sheets (CSS) and how they are used to enhance the presentation of web pages.</p> <h2>What is CSS?</h2> <p>CSS, short for Cascading Style Sheets, is a style sheet language used for describing the presentation of a document written in HTML. It allows developers to control the layout, colors, fonts, and other visual aspects of web pages.</p> <h2>Why Learn CSS?</h2> <p>Understanding CSS is essential for web development as it enables developers to create visually appealing and user-friendly websites. By mastering CSS, you'll have the skills to customize the appearance of web pages and make them stand out.</p> <h2>Course Objectives</h2> <ul> <li>Learn the basic syntax and structure of CSS rules</li> <li>Understand how to link CSS to HTML documents</li> <li>Explore different types of CSS selectors and how to use them</li> <li>Apply styles to HTML elements for enhanced presentation</li> </ul> </div> </body> </html>" : "Error: Syntax is not correct. Please check your code and try again.";
+
+outputDiv.innerHTML = outputText;
+
+  }
+</script>
+
+</body>
+</html>
+) 

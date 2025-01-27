@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=2.0">
+  <title>CodeNub</title>
+  <style>
+    /* CSS styles for the home page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #000000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .menu {
+      margin-top: 20px;
+    }
+
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .menu a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    
+    .cta-buttonn {
+      position: absolute;
+    top: 0;
+    right: 0;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .cta-buttonn:hover {
+      background-color: #0056b3;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #0056b3;
+    }
+
+    .featured-courses {
+      margin-bottom: 30px;
+    }
+
+    .course {
+      margin-bottom: 20px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      padding: 20px;
+    }
+
+    .course h3 {
+      margin-top: 0;
+    }
+
+    .course p {
+      margin-bottom: 0;
+    }
+
+    .about, .contact {
+      margin-bottom: 30px;
+    }
+
+    footer {
+      background-color: #000000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    .social-media {
+      margin-top: 10px;
+    }
+
+    .social-media .icon {
+      display: inline-block;
+      margin: 0 5px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Additional styles for the background image section */
+    .background-image {
+      background-image: url('https://images8.alphacoders.com/289/289989.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh; /* Adjust height as needed */
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-content {
+      position: absolute;
+      top: 59%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #000000;
+    }
+
+    /* Additional styles for the dominoes section */
+    .dominoes {
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: space-between;
+      margin-top: 10%;
+      margin-bottom: 10%;
+      padding: 0 20%;
+    }
+
+    .image-link {
+      display: inline-block;
+      width: calc( 17%);
+      margin-bottom: 5%;
+    }
+
+    .image-link img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 10px 10px 20px rgb(0, 0, 0);
+    }
+
+    /* Styles for the sign-up form */
+    .signup-form {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      z-index: 1001;
+    }
+
+    .signup-form input[type="text"], 
+    .signup-form input[type="email"], 
+    .signup-form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .signup-form button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .signup-form button:hover {
+      background-color: #0056b3;
+    }
+
+    .signup-form .close-btn {
+      background-color: red;
+      margin-top: 10px;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <!-- Logo or website name -->
+  <h1>CodeNub</h1>
+
+  
+  <div class="menu">
+    <a class="active" href="index.html">Home</a>
+    <a href="SWE&COM_Java1.html">Java</a>
+    <a  href="Html-1-SWE&COM.html">HTML</a>
+    <a href="CSS-1-SWE&COM.html">CSS</a>
+    <a href="JS-1-SWE&COM.html">JavaScript</a>
+    <a href="SQL-1-SWE&COM.html">SQL</a>
+    <a href="C-1-SWE&COM.html">C</a>
+    <a href="Python-1-SWE&COM.html">Python</a>
+    <a href="DSA-1-SWE&COM.html">DSA</a>
+  </div>
+  <button onclick="openSignUpForm()" class="cta-buttonn">Sign Up</button>
+ 
+</div>
+<!-- Main content -->
+<div class="content">
+  <!-- Hero section -->
+  <div class="hero">
+    <p>Explore the world of programming with our straightforward courses</p>
+    <!-- Call-to-action button -->
+  </div>
+
+  <!-- Background image section -->
+  <div class="background-image">
+    <!-- Content inside the background image section -->
+    <div class="image-content">
+      <a href="SWE&COM_Java1.html" class="cta-button">Explore Courses</a>
+    </div>
+
+    <!-- Dominoes section -->
+    <div class="dominoes">
+      <a href="SWE&COM_Java1.html" class="image-link"><img src="https://play-lh.googleusercontent.com/gSvS4Npz1pg8C4OFlZtxdPgbOwFgB5xyEh9VhCLCtvYvgqKAY-dPVTMyiDELjwCeQg" alt="Java Logo"></a>
+      <a href="Html-1-SWE&COM.html" class="image-link"><img src="https://play-lh.googleusercontent.com/MPDzYIvnXkFgILeyVYa1ZrBhWrQI6voJQ83R3TGhUvU4jjcV3ClQVlhuWDucmSkSwqc" alt="HTML Logo"></a>
+      <a href="CSS-1-SWE&COM.html" class="image-link"><img src="https://play-lh.googleusercontent.com/TxjQBGYHvMJsBX5dCvxQ4R-_4N-XrVhW6-p7D7TXanXKZMD8L-UkeMBWO1dtubGVNqU" alt="CSS Logo"></a>
+      <a href="JS-1-SWE&COM.html" class="image-link"><img src="https://play-lh.googleusercontent.com/s4AnA0RrLKhVMKDBSBTjNvPBBK2wQk3-4ZP2RONGxK_VqnMNXWTmPy-6f8J64GxDgyU" alt="JavaScript Logo"></a>
+    </div>
+    <div class="dominoes">   
+      <a href="SQL-1-SWE&COM.html" class="image-link"><img src="https://play-lh.googleusercontent.com/_UzkEDYlu4kN4e4kX2r-VuNMaDbDW8UUID_GHQn3-4LeEMG0ZjqdZuShXijtLdUIvw" alt="SQL Logo"></a>
+      <a href="C-1-SWE&COM.html" class="image-link"><img src="https://cdn6.aptoide.com/imgs/c/a/c/cacf7850ac304a3b8be76cc65937ece5_icon.png" alt="C Logo"></a>
+      <a href="Python-1-SWE&COM.html" class="image-link"><img src="https://play-lh.googleusercontent.com/ShO8lmMq5rNQa16SxMCGLZ1w4oS-oM17mPWlxU9UaYSzzonFZ2hY6pdqG1Zo2lyGYQ=w240-h480-rw" alt="Python Logo"></a>
+      <a href="DSA-1-SWE&COM.html" class="image-link"><img src="https://play-lh.googleusercontent.com/iMIDcJoEDi9XZspVs1fvGBYeqNFrizl935kLFC3tVW889_x7bsTYyxCrMZWieaaaV8HW" alt="DSA Logo"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Sign-up form -->
+<div class="overlay" id="overlay"></div>
+<div class="signup-form" id="signupForm">
+  <h2>Sign Up</h2>
+  <input type="text" id="name" placeholder="Name">
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="registerUser()">Register</button>
+  <button class="close-btn" onclick="closeSignUpForm()">Close</button>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2024 My CodeNub Website. All rights reserved.</p>
+  <div class="social-media">
+    <a href="#" class="icon">Facebook</a>
+    <a href="#" class="icon">Twitter</a>
+    <a href="#" class="icon">Instagram</a>
+  </div>
+</footer>
+
+<script>
+  function openSignUpForm() {
+    document.getElementById('signupForm').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+  }
+
+  function closeSignUpForm() {
+    document.getElementById('signupForm').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+  }
+
+  function registerUser() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+
+    if (name && email && password) {
+      alert('User registered successfully!');
+      closeSignUpForm();
+    } else {
+      alert('Please fill in all fields.');
+    }
+  }
+</script>
+
+</body>
+</html>

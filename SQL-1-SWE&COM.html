@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to SQL</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output-box {
+      border: 2px solid #000;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .output-box pre {
+      white-space: pre-wrap;
+    }
+    
+    
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+      padding: 16px;
+      background-color: white; 
+      height: 100%;
+      margin-left: 10%; 
+      margin-top: 3%;
+      color: #000000; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+
+    <div class="header">
+      <a  href="index.html">Home</a>
+      <a href="SWE&COM_Java1.html">Java</a>
+      <a href="Html-1-SWE&COM.html">HTML</a>
+      <a href="CSS-1-SWE&COM.html">CSS</a>
+      <a href="JS-1-SWE&COM.html">JavaScript</a>
+      <a class="active" href="SQL-1-SWE&COM.html">SQL</a>
+      <a href="C-1-SWE&COM.html">C</a>
+      <a href="Python-1-SWE&COM.html">Python</a>
+      <a href="DSA-1-SWE&COM.html">DSA</a>
+    </div>
+    
+    <div class="menu">
+        <a class="active" href="SQL-1-SWE&COM.html">Introduction to SQL`</a> <hr>
+        <a href="#ddddddd">SQL Basics</a> <hr>
+        <a href="#headings_paragraphs">Database Design</a> <hr>
+        <a href="#lists">Data Retrieval</a> <hr>
+        <a href="SQL-5-SWE&COM.html">Joins`</a> <hr>
+        <a href="#images">Data Modification</a> <hr>
+        <a href="#tables">Indexes and Performance</a> <hr>
+        <a href="SQL-8-SWE&COM.html">Constraints`</a> <hr> 
+        <a href="#tables">Views and Stored Procedures</a> <hr>  <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <italic>
+        <h1>SQL</h1>
+        <h2>Introduction to SQL</h2>
+
+        <p>Welcome to our Introduction to SQL course! In this module, we'll provide you with a foundational understanding of SQL (Structured Query Language), which is a powerful tool for managing and manipulating relational databases.</p>
+        
+        <h3>What is SQL?</h3>
+        
+        <i>
+            SQL, or Structured Query Language, is a powerful and standardized language used to manage and manipulate relational databases. It serves as the primary means of communication between applications and database management systems (DBMS), allowing users to retrieve, insert, update, and delete data within a database. SQL's importance lies in its ability to provide efficient and effective data management solutions across various industries and applications. By leveraging SQL, organizations can store vast amounts of data in a structured format, ensuring data integrity and enabling quick and accurate retrieval of information. SQL facilitates complex queries, joins, and data aggregation, empowering businesses to derive insights, make informed decisions, and drive innovation. Furthermore, SQL's widespread adoption and compatibility with different database platforms make it a universal language for database management, enabling seamless integration and interoperability across diverse systems and technologies. Overall, SQL plays a critical role in modern data-driven environments, empowering organizations to effectively store, manage, and leverage data for strategic advantage.</i>
+        
+        <h3>Why Learn SQL?</h3>
+        
+        <p>SQL is essential for anyone working with databases, whether you're a database administrator, a data analyst, or a software developer. Here are some reasons why learning SQL is valuable:</p>
+        
+        <ul>
+            <li><b>Data Manipulation:</b> SQL allows you to retrieve, insert, update, and delete data from databases, making it a crucial skill for managing data.</li>
+            <li><b>Data Analysis:</b> SQL enables you to perform complex queries and aggregations on large datasets, providing valuable insights for decision-making.</li>
+            <li><b>Database Administration:</b> SQL is used for tasks such as creating and managing database structures, defining access permissions, and optimizing database performance.</li>
+            <li><b>Integration with Applications:</b> Many applications interact with databases using SQL, so understanding SQL is essential for building and maintaining applications that rely on data storage.</li>
+        </ul>
+        
+        <h3>Key Concepts in SQL</h3>
+        
+        <p>As you progress through this course, you'll learn about various key concepts in SQL, including:</p>
+        
+        <ul>
+            <li><b>Tables and Databases:</b> Understanding how data is organized into tables within databases.</li>
+            <li><b>Queries:</b> Writing SQL queries to retrieve specific data from databases.</li>
+            <li><b>Data Modification:</b> Using SQL commands to insert, update, and delete data in tables.</li>
+            <li><b>Joins:</b> Joining multiple tables together to retrieve related data.</li>
+            <li><b>Indexes and Performance:</b> Optimizing database performance using indexes.</li>
+            <li><b>Views and Stored Procedures:</b> Creating reusable views and procedures to simplify database operations.</li>
+        </ul>
+      
+    </italic>
+    
+    <div class="code-editor">
+        <h2>Let's try one simple SQL example</h2>
+        <pre><code>-- Create a simple database schema
+            CREATE DATABASE School;
+            
+            -- Create a table to store student information
+            CREATE TABLE Students (
+                StudentID INT PRIMARY KEY,
+                FirstName VARCHAR(50),
+                LastName VARCHAR(50),
+                Age INT,
+                GPA FLOAT
+            );
+            
+            -- Insert some sample data into the Students table
+            INSERT INTO Students (StudentID, FirstName, LastName, Age, GPA)
+            VALUES (1, 'John', 'Doe', 20, 3.5),
+                   (2, 'Jane', 'Smith', 22, 3.8),
+                   (3, 'Michael', 'Johnson', 21, 3.2);
+            
+            -- Retrieve all students from the Students table
+            SELECT * FROM Students;
+            
+        
+            
+        </code></pre>
+        <h2>Your SQL Code</h2>
+        <div id="userCode" class="code-editor">
+            <textarea id="codeTextarea" rows="23" style="width: 100%; height: 150px;" placeholder="Write your SQL code here..."></textarea>
+        </div>
+        <button onclick="toggleCodeEditor()">Test Code</button>
+        <button id="runButton" onclick="runCode()">Run Code</button>
+    </div>
+    
+    <div class="output-box" id="output">
+        <!-- Output will be displayed here -->
+    </div>
+    
+    <b style="color: rgba(8, 11, 12, 0.938);">
+        Congratulations! You've mastered the basics of SQL. Keep pushing yourself to practice and experiment with them.
+        <br>
+        Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.
+    </b>
+    
+    <script>
+        function toggleCodeEditor() {
+            var userCode = document.getElementById("userCode");
+            userCode.style.display = userCode.style.display === "none" ? "block" : "none";
+    
+            var runButton = document.getElementById("runButton");
+            runButton.style.display = userCode.style.display === "block" ? "inline-block" : "none";
+        }
+    
+        function runCode() {
+            var outputDiv = document.getElementById("output");
+            var htmlCode = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Database</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+
+<h2>School Database</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>StudentID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Age</th>
+            <th>GPA</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>John</td>
+            <td>Doe</td>
+            <td>20</td>
+            <td>3.5</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Jane</td>
+            <td>Smith</td>
+            <td>22</td>
+            <td>3.8</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Michael</td>
+            <td>Johnson</td>
+            <td>21</td>
+            <td>3.2</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>`;
+        outputDiv.innerHTML = htmlCode;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays in Java</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red; 
+    }
+
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a href="index.html">Home</a>
+  <a class="active" href="#java">Java</a>
+  <a href="#html">HTML</a>
+  <a href="#css">CSS</a>
+  <a href="#javascript">JavaScript</a>
+  <a href="#sql">SQL</a>
+  <a href="#c">C</a>
+  <a href="#python">Python</a>
+  <a href="#dsa">DSA</a>
+</div>
+
+<div class="menu">
+    <a  href="SWE&COM_Java1.html">Introduction to Java</a>   <hr>
+    <a href="SWE&COM_Java2.html">Variables</a> <hr>
+  <a href="SWE&COM_Java3.html">Operators</a> <hr>
+ 
+  <a class="active" href="SWE&COM_Java4.html">Arrays</a>  <hr>
+  <a href="SWE&COM_Java5.html">Classes and Objects</a>  <hr>
+  <a href="SWE&COM_Java6.html">Inheritance</a>   <hr>
+  <a href="SWE&COM_Java7.html">Polymorphism</a>  <hr>
+  <a href="SWE&COM_Java8.html">Abstraction</a>   <hr>
+  <a href="SWE&COM_Java9.html">Interfaces</a>   <hr>
+  <a href="SWE&COM_Java10.html">Exceptions</a>  <hr>
+  <a href="SWE&COM_Java11.html">File I/O</a>          <hr>
+  <a href="SWE&COM_Java12.html">Collections</a>   <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <h2> JAVA </h2>
+  
+   
+
+    <italic>
+        <h2>Mastering Arrays in Java</h2>
+        
+        <p>Welcome to our comprehensive guide on arrays in Java! In this tutorial, we'll explore arrays, essential data structures that allow you to store and manipulate collections of data efficiently.</p>
+        
+        <h3>Understanding Arrays</h3>
+        
+        <p>Arrays are ordered collections of elements, each identified by an index. They allow you to store multiple values of the same type under a single name. Arrays provide efficient access to elements and are widely used in Java for tasks such as storing data, iterating over elements, and implementing algorithms.</p>
+        
+        <h3>Why Use Arrays?</h3>
+        
+        <p>Arrays offer several benefits:</p>
+        
+        <ul>
+            <li><strong>Efficient Data Storage:</strong> Arrays allow you to organize and store multiple values of the same type efficiently, reducing the need for individual variables.</li>
+            <li><strong>Fast Access:</strong> Elements in an array can be accessed directly using their index, providing fast and efficient access to data.</li>
+            <li><strong>Iteration:</strong> Arrays support iteration, allowing you to loop through all elements and perform operations on each one.</li>
+            <li><strong>Passing Parameters:</strong> Arrays can be passed as parameters to methods, enabling you to work with large sets of data conveniently.</li>
+            <li><strong>Flexible Size:</strong> While the size of an array is fixed after initialization, you can dynamically create and manipulate arrays to accommodate changing data requirements.</li>
+        </ul>
+        
+        <h3>Key Concepts About Arrays</h3>
+        
+        <p>Here are some key concepts to understand about arrays:</p>
+        
+        <ul>
+            <li><strong>Declaration:</strong> Arrays are declared using square brackets [] after the data type. For example, <span style="color: rgba(51, 23, 207, 0.767);">int[] numbers;</span> declares an integer array.</li>
+            <li><strong>Initialization:</strong> Arrays can be initialized using curly braces {} with comma-separated values. For example, <span style="color: rgba(51, 23, 207, 0.767);">int[] numbers = {1, 2, 3, 4, 5};</span> initializes an array of integers.</li>
+            <li><strong>Accessing Elements:</strong> Individual elements in an array are accessed using their index. The index starts from 0. For example, <span style="color: rgba(51, 23, 207, 0.767);">int firstElement = numbers[0];</span> retrieves the first element of the <span style="color: rgba(51, 23, 207, 0.767);">numbers</span> array.</li>
+            <li><strong>Length:</strong> Arrays have a fixed length, which is determined at the time of initialization. You can obtain the length of an array using the <span style="color: rgba(51, 23, 207, 0.767);">length</span> property. For example, <span style="color: rgba(51, 23, 207, 0.767);">int arrayLength = numbers.length;</span> retrieves the length of the <span style="color: rgba(51, 23, 207, 0.767);">numbers</span> array.</li>
+            <li><strong>Iterating:</strong> You can iterate over all elements in an array using loops such as <span style="color: rgba(51, 23, 207, 0.767);">for</span> or <span style="color: rgba(51, 23, 207, 0.767);">foreach</span>. This allows you to perform operations on each element efficiently.</li>
+        </ul>
+        
+        <h3>Example of Array Initialization</h3>
+        
+        <p>Let's initialize an array of integers:</p>
+        
+        <pre style="color: rgba(51, 23, 207, 0.767);">
+        int[] numbers = {1, 2, 3, 4, 5};
+        </pre>
+        
+        <p>This creates an array called <span style="color: rgba(51, 23, 207, 0.767);">numbers</span> containing the values 1, 2, 3, 4, and 5.</p>
+        
+        <h3>Quiz: Fill in the Blanks</h3>
+        
+        <p>Let's test your knowledge of arrays in Java. Fill in the blanks in the following lines of code:</p>
+        
+        <ol>
+            <li>  How to declare and initialize an array in Java:
+                <pre>int[] data = <input type="text" id="q1" style="width: 50px;">;</pre></li>
+            <li> How to access an element at a specific index in an array:
+                <pre>int value = data[<input type="text" id="q2" style="width: 50px;">];</pre></li>
+            <li> How to get the length of an array in Java:
+                <pre>int length = data.<input type="text" id="q3" style="width: 50px;">;</pre></li>
+            <li> ow to iterate through an array using a for loop:
+                <pre>for (int i = 0; i < data.<input type="text" id="q4" style="width: 50px;">; i++) {</pre></li>
+            <li>printing now each element of an array:
+                <pre>&emsp;System.out.println(data[i]);</pre></li>
+            
+        </ol>
+        
+        <button onclick="checkAnswers()">Check Answers</button>
+        
+        <div id="answers"></div>
+        
+        <script>
+            function checkAnswers() {
+                var q1 = document.getElementById('q1').value;
+                var q2 = document.getElementById('q2').value;
+                var q3 = document.getElementById('q3').value;
+                var q4 = document.getElementById('q4').value;
+    
+                var answersDiv = document.getElementById('answers');
+                if (q1 === "new int[SIZE]" && q2 === "INDEX" && q3 === "length" && q4 === "length") {
+                    answersDiv.innerHTML = "<p>Congratulations! You have filled in all the blanks correctly.</p>";
+                } else {
+                    answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Please try again.</p>";
+                }
+            }
+        </script>
+        
+        <!-- Existing content -->
+    </italic>
+    
+    
+    
+    
+    
+    
+    
+ <br>  <br>
+
+
+   <div class="code-editor">
+    <h2>Let's practise your understanding about Arrays </h2>
+    <i>Java code  that demonstrates the declaration and initialization of Arrays:</i>
+    <pre><code>
+        public class ArrayExample {
+            public static void main(String[] args) {
+              
+                System.out.println("Welcome to our Java Arrays tutorial");
+        
+                int[] numbers;
+        
+                numbers = new int[]{1, 2, 3, 4, 5};
+        
+                System.out.println("Elements of the array");
+                for (int i = 0; i < numbers.length; i++) {
+                    System.out.println(numbers[i]);
+                }
+        
+                System.out.println("Thank you for learning with us");
+            }
+        }
+        
+        
+    </code></pre>
+    <h2>Your Java Code</h2>
+    <div id="userCode" class="code-editor">
+        <textarea id="codeTextarea" rows="12" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+  </div>
+  <div class="output" id="output"></div>
+
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the basics of Arrays. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+
+</div> 
+
+
+
+
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode = `public class ArrayExample {
+            public static void main(String[] args) {
+              
+                System.out.println("Welcome to our Java Arrays tutorial");
+        
+                int[] numbers;
+        
+                numbers = new int[]{1, 2, 3, 4, 5};
+        
+                System.out.println("Elements of the array");
+                for (int i = 0; i < numbers.length; i++) {
+                    System.out.println(numbers[i]);
+                }
+        
+                System.out.println("Thank you for learning with us");
+            }
+        }`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerText = ""; 
+
+    var isCorrect = (userCode === exampleCode);
+
+    if (isCorrect) {
+      outputDiv.innerText = "Output: Welcome to our Java Arrays tutorial! \n Elements of the array:\n 1 \n 2 \n3 \n 4 \n 5 \nThank you for learning with us! ";
+
+
+      outputDiv.style.color = "green"; 
+    } else {
+      outputDiv.innerText = "Error: Syntax is not correct. Please check your code and try again.";
+      outputDiv.style.color = "red"; 
+    }
+  }
+
+
+</script>
+
+</body>
+</html>

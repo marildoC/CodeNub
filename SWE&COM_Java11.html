@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Files in Java</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red; 
+    }
+
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a href="index.html">Home</a>
+  <a class="active" href="#java">Java</a>
+  <a href="#html">HTML</a>
+  <a href="#css">CSS</a>
+  <a href="#javascript">JavaScript</a>
+  <a href="#sql">SQL</a>
+  <a href="#c">C</a>
+  <a href="#python">Python</a>
+  <a href="#dsa">DSA</a>
+</div>
+
+<div class="menu">
+    <a class="active" href="SWE&COM_Java1.html">Introduction to Java</a>   <hr>
+    <a href="SWE&COM_Java2.html">Variables</a> <hr>
+  <a href="SWE&COM_Java3.html">Operators</a> <hr>
+ 
+  <a href="SWE&COM_Java4.html">Arrays</a>  <hr>
+  <a href="SWE&COM_Java5.html">Classes and Objects</a>  <hr>
+  <a href="SWE&COM_Java6.html">Inheritance</a>   <hr>
+  <a href="SWE&COM_Java7.html">Polymorphism</a>  <hr>
+  <a href="SWE&COM_Java8.html">Abstraction</a>   <hr>
+  <a href="SWE&COM_Java9.html">Interfaces</a>   <hr>
+  <a href="SWE&COM_Java10.html">Exceptions</a>  <hr>
+  <a class="active" href="SWE&COM_Java11.html">File I/O</a>          <hr>
+  <a href="SWE&COM_Java12.html">Collections</a>   <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <h2> JAVA </h2>
+  
+   
+
+
+    <italic>
+        <h2>Working with Files in Java</h2>
+    
+        <p>Welcome to our course on working with files in Java! In this tutorial, we'll explore how to read from and write to files using Java's built-in file handling capabilities.</p>
+    
+        <h3>Introduction to File Handling</h3>
+    
+        <p>File handling is a crucial aspect of many applications, allowing them to store and retrieve data from external sources. In Java, file handling is achieved through classes and interfaces provided by the java.io package.</p>
+    
+        <h3>Reading from Files</h3>
+    
+        <p>Java provides various classes for reading data from files, such as <span style="color: rgba(51, 23, 207, 0.767);">File</span>, <span style="color: rgba(51, 23, 207, 0.767);">FileReader</span>, <span style="color: rgba(51, 23, 207, 0.767);">BufferedReader</span>, and <span style="color: rgba(51, 23, 207, 0.767);">Scanner</span>. We'll explore how to use these classes to read text and binary files.</p>
+    
+        <h3>Writing to Files</h3>
+    
+        <p>Similarly, Java provides classes like <span style="color: rgba(51, 23, 207, 0.767);">FileWriter</span>, <span style="color: rgba(51, 23, 207, 0.767);">BufferedWriter</span>, and <span style="color: rgba(51, 23, 207, 0.767);">PrintWriter</span> for writing data to files. We'll learn how to create and write to text files as well as handle exceptions that may occur during file operations.</p>
+    
+        <h3>Working with File Streams</h3>
+    
+        <p>File streams are used for reading and writing data to files byte by byte or in chunks. Java provides <span style="color: rgba(51, 23, 207, 0.767);">FileInputStream</span> and <span style="color: rgba(51, 23, 207, 0.767);">FileOutputStream</span> for binary file operations. We'll see how to use these classes to work with binary files effectively.</p>
+    
+        <h3>Handling Exceptions</h3>
+    
+        <p>When working with files, it's essential to handle potential errors gracefully. We'll cover common exceptions that can occur during file handling, such as <span style="color: rgba(51, 23, 207, 0.767);">FileNotFoundException</span> and <span style="color: rgba(51, 23, 207, 0.767);">IOException</span>, and discuss best practices for error handling.</p>
+    
+        
+    
+        <h3>Quiz: Test Your Knowledge!</h3>
+    
+        <p>Let's see how well you understand file handling in Java. Answer the following questions:</p>
+    
+        <ol>
+            <li>Which package provides classes and interfaces for file handling in Java?</li>
+            <ul>
+                <li><input type="radio" name="q1" value="a"> java.util</li>
+                <li><input type="radio" name="q1" value="b"> java.io</li>
+                <li><input type="radio" name="q1" value="c"> java.nio</li>
+            </ul>
+            <li>Which class is commonly used for reading text from a file in Java?</li>
+            <ul>
+                <li><input type="radio" name="q2" value="a"> FileReader</li>
+                <li><input type="radio" name="q2" value="b"> FileWriter</li>
+                <li><input type="radio" name="q2" value="c"> BufferedReader</li>
+            </ul>
+            <!-- Add more questions -->
+        </ol>
+    
+        <button onclick="checkFileHandlingAnswers()">Check Answers</button>
+    
+        <div id="fileHandlingAnswers"></div>
+    
+        <script>
+            function checkFileHandlingAnswers() {
+                var q1 = document.querySelector('input[name="q1"]:checked').value;
+                var q2 = document.querySelector('input[name="q2"]:checked').value;
+    
+                var fileHandlingAnswersDiv = document.getElementById('fileHandlingAnswers');
+                if (q1 == "b" && q2 == "c") {
+                    fileHandlingAnswersDiv.innerHTML = "<p>Congratulations! You have answered both questions correctly.</p>";
+                } else {
+                    fileHandlingAnswersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Please try again.</p>";
+                }
+            }
+        </script>
+    </italic>
+    
+    
+    
+    
+   
+    
+ <br>  <br>
+
+
+   <div class="code-editor">
+    <h2>Let's practise your understanding about Files </h2>
+    <i>Java code  that demonstrates the declaration and initialization of Files: </i>
+    <pre><code>
+public class ExceptionExample{
+import java.io.File;
+import java.io.IOException;
+
+public class FileExample {
+    public static void main(String[] args) {
+        String filePath = "example.txt";
+
+        File file = new File(filePath);
+
+        try {
+            if (file.createNewFile()) {
+                System.out.println("File created: " + file.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}
+    
+        
+   </code></pre>
+    <h2>Your Java Code</h2>
+    <div id="userCode" class="code-editor">
+        <textarea id="codeTextarea" rows="28" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button> 
+  </div>
+  <div class="output" id="output"></div>
+
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the basics of Files. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+
+</div> 
+
+
+
+
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode =`public class ExceptionExample{
+import java.io.File;
+import java.io.IOException;
+
+public class FileExample {
+    public static void main(String[] args) {
+        String filePath = "example.txt";
+
+        File file = new File(filePath);
+
+        try {
+            if (file.createNewFile()) {
+                System.out.println("File created: " + file.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerText = ""; 
+
+    if (userCode === exampleCode) {
+      outputDiv.innerText = "Output:File created: example.txt ";
+      outputDiv.style.color = "green"; 
+    } else {
+      // Check if the user code is empty
+      if (userCode === "") {
+        outputDiv.innerText = "Error: Please write your Java code before running.";
+      } else {
+        outputDiv.innerText = "Error: Syntax is not correct. Please check your code and try again.";
+      }
+      outputDiv.style.color = "red"; 
+    }
+  }
+</script>
+
+
+</body>
+</html>

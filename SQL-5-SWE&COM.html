@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Joins</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output-box {
+      border: 2px solid #000;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .output-box pre {
+      white-space: pre-wrap;
+    }
+    
+    
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+      padding: 16px;
+      background-color: white; 
+      height: 100%;
+      margin-left: 10%; 
+      margin-top: 3%;
+      color: #000000; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+
+    <div class="header">
+        <a  href="index.html">Home</a>
+      <a href="SWE&COM_Java1.html">Java</a>
+      <a href="Html-1-SWE&COM.html">HTML</a>
+      <a href="CSS-1-SWE&COM.html">CSS</a>
+      <a href="JS-1-SWE&COM.html">JavaScript</a>
+      <a class="active" href="SQL-1-SWE&COM.html">SQL</a>
+      <a href="C-1-SWE&COM.html">C</a>
+      <a href="Python-1-SWE&COM.html">Python</a>
+      <a href="DSA-1-SWE&COM.html">DSA</a>
+    </div>
+    
+    <div class="menu">
+        <a  href="SQL-1-SWE&COM.html">Introduction to SQL</a> <hr>
+        <a href="#ddddddd">SQL Basics</a> <hr>
+        <a href="#headings_paragraphs">Database Design</a> <hr>
+        <a href="#lists">Data Retrieval</a> <hr>
+        <a class="active" href="SQL-5-SWE&COM.html">Joins`</a> <hr>
+        <a href="#images">Data Modification</a> <hr>
+        <a href="#tables">Indexes and Performance</a> <hr>
+        <a href="SQL-8-SWE&COM.html">Constraints`</a> <hr> 
+        <a href="#tables">Views and Stored Procedures</a> <hr>  <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <italic>
+        <h1>SQL</h1>
+        <h2>Exploring SQL Joins</h2>
+
+<p>Welcome to our comprehensive course on SQL joins! In this module, we'll dive deep into the world of SQL joins and learn how to effectively combine data from multiple tables to extract meaningful insights.</p>
+
+<h3>Introduction to SQL Joins</h3>
+
+<p>SQL joins are a fundamental aspect of relational databases, allowing you to merge data from different tables based on specified conditions. Understanding SQL joins is essential for anyone working with relational databases.</p>
+
+<h3>Inner Join</h3>
+
+<p>The <code style="color: rgba(51, 23, 207, 0.767);">INNER JOIN</code> clause is used to combine rows from two or more tables based on a related column between them. It returns only the rows that have matching values in both tables.</p>
+
+<h3>Left Join</h3>
+
+<p>The <code style="color: rgba(51, 23, 207, 0.767);">LEFT JOIN</code> (or <code style="color: rgba(51, 23, 207, 0.767);">LEFT OUTER JOIN</code>) clause returns all rows from the left table and the matched rows from the right table. If there are no matches, NULL values are included for the columns from the right table.</p>
+
+<h3>Right Join</h3>
+
+<p>The <code style="color: rgba(51, 23, 207, 0.767);">RIGHT JOIN</code> (or <code style="color: rgba(51, 23, 207, 0.767);">RIGHT OUTER JOIN</code>) clause returns all rows from the right table and the matched rows from the left table. If there are no matches, NULL values are included for the columns from the left table.</p>
+
+<h3>Full Join</h3>
+
+<p>The <code style="color: rgba(51, 23, 207, 0.767);">FULL JOIN</code> (or <code style="color: rgba(51, 23, 207, 0.767);">FULL OUTER JOIN</code>) clause returns all rows when there is a match in either the left or right table. If there are no matches, NULL values are included for the columns from the table without a match.</p>
+
+<h3>Cross Join</h3>
+
+<p>The <code style="color: rgba(51, 23, 207, 0.767);">CROSS JOIN</code> clause returns the Cartesian product of the two tables, i.e., all possible combinations of rows from both tables.</p>
+
+<h3>Using SQL Joins in Practice</h3>
+
+<p>Throughout this course, we'll provide hands-on examples and exercises to illustrate how SQL joins are used in real-world scenarios. You'll learn to write SQL queries that leverage different types of joins to retrieve and analyze data effectively.</p>
+
+<h3>Practical Applications of SQL Joins</h3>
+
+<p>We'll cover a wide range of practical applications of SQL joins, including fetching related information, combining data for reporting, performing data analysis, and database maintenance tasks.</p>
+
+<h3>Conclusion</h3>
+
+<p>By the end of this comprehensive course, you'll have a deep understanding of SQL joins and their practical applications. You'll be equipped with the skills to leverage different types of joins effectively in your database queries and analysis tasks. Let's dive in and master SQL joins!</p>
+  
+
+<br>
+<h3>Quiz: Test Your Knowledge on SQL Joins!</h3>
+
+<ol>
+    <li>What type of SQL join returns only the rows that have matching values in both tables?</li>
+    <ul>
+        <li><input type="radio" name="q1" value="a"> Inner Join</li>
+        <li><input type="radio" name="q1" value="b"> Left Join</li>
+        <li><input type="radio" name="q1" value="c"> Full Join</li>
+    </ul>
+    <li>Which SQL join clause returns all rows from the left table and the matched rows from the right table, with NULL values included for non-matching rows?</li>
+    <ul>
+        <li><input type="radio" name="q2" value="a"> Inner Join</li>
+        <li><input type="radio" name="q2" value="b"> Right Join</li>
+        <li><input type="radio" name="q2" value="c"> Full Join</li>
+    </ul>
+    <li>What does a Cross Join return?</li>
+    <ul>
+        <li><input type="radio" name="q3" value="a"> Only matching rows from both tables</li>
+        <li><input type="radio" name="q3" value="b"> Cartesian product of both tables</li>
+        <li><input type="radio" name="q3" value="c"> Non-matching rows from both tables</li>
+    </ul>
+</ol>
+
+<button onclick="checkAnswers()">Check Answers</button>
+
+<div id="answers"></div>
+
+<script>
+    function checkAnswers() {
+        var q1 = document.querySelector('input[name="q1"]:checked').value;
+        var q2 = document.querySelector('input[name="q2"]:checked').value;
+        var q3 = document.querySelector('input[name="q3"]:checked').value;
+
+        var correctAnswers = ["a", "b", "b"];
+        var userAnswers = [q1, q2, q3];
+
+        var correctCount = 0;
+        for (var i = 0; i < correctAnswers.length; i++) {
+            if (correctAnswers[i] === userAnswers[i]) {
+                correctCount++;
+            }
+        }
+
+        var answersDiv = document.getElementById('answers');
+        if (correctCount === correctAnswers.length) {
+            answersDiv.innerHTML = "<p>Congratulations! You got all answers correct!</p>";
+        } else {
+            answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Please try again.</p>";
+        }
+    }
+</script>
+
+    </italic>
+    
+    <div class="code-editor">
+        <h2>Let's try one  SQL example</h2>
+        <pre><code>-- Create a simple database schema
+            CREATE DATABASE School;
+            
+            -- Create a table to store student information
+            CREATE TABLE Students (
+                StudentID INT PRIMARY KEY,
+                FirstName VARCHAR(50),
+                LastName VARCHAR(50),
+                Age INT,
+                GPA FLOAT
+            );
+            
+            -- Create a table to store department information
+            CREATE TABLE Departments (
+                DepartmentID INT PRIMARY KEY,
+                DepartmentName VARCHAR(50)
+            );
+            
+            -- Create a table to associate students with departments
+            CREATE TABLE StudentDepartments (
+                StudentID INT,
+                DepartmentID INT,
+                FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
+                FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
+            );
+            
+            -- Insert some sample data into the Students table
+            INSERT INTO Students (StudentID, FirstName, LastName, Age, GPA)
+            VALUES 
+                (1, 'John', 'Doe', 20, 3.5),
+                (2, 'Jane', 'Smith', 22, 3.8),
+                (3, 'Michael', 'Johnson', 21, 3.2);
+            
+            -- Insert some sample data into the Departments table
+            INSERT INTO Departments (DepartmentID, DepartmentName)
+            VALUES 
+                (1, 'Engineering'),
+                (2, 'Marketing'),
+                (3, 'Human Resources');
+            
+            -- Associate students with departments
+            INSERT INTO StudentDepartments (StudentID, DepartmentID)
+            VALUES
+                (1, 1), -- John Doe is in Engineering
+                (2, 2), -- Jane Smith is in Marketing
+                (3, 1); -- Michael Johnson is also in Engineering
+            
+            -- Retrieve all students along with their department names using INNER JOIN
+            SELECT s.FirstName, s.LastName, s.Age, s.GPA, d.DepartmentName
+            FROM Students s
+            INNER JOIN StudentDepartments sd ON s.StudentID = sd.StudentID
+            INNER JOIN Departments d ON sd.DepartmentID = d.DepartmentID;
+            
+            
+            
+        </code></pre>
+        <h2>Your SQL Code</h2>
+        <div id="userCode" class="code-editor">
+            <textarea id="codeTextarea" rows="23" style="width: 100%; height: 150px;" placeholder="Write your SQL code here..."></textarea>
+        </div>
+        <button onclick="toggleCodeEditor()">Test Code</button>
+        <button id="runButton" onclick="runCode()">Run Code</button>
+    </div>
+    
+    <div class="output-box" id="output">
+        <!-- Output will be displayed here -->
+    </div>
+    
+    <b style="color: rgba(8, 11, 12, 0.938);">
+        Congratulations! You've mastered the SQL Joins. Keep pushing yourself to practice and experiment with them.
+        <br>
+        Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.
+    </b>
+    
+    <script>
+        function toggleCodeEditor() {
+            var userCode = document.getElementById("userCode");
+            userCode.style.display = userCode.style.display === "none" ? "block" : "none";
+    
+            var runButton = document.getElementById("runButton");
+            runButton.style.display = userCode.style.display === "block" ? "inline-block" : "none";
+        }
+    
+        function runCode() {
+            var outputDiv = document.getElementById("output");
+            var htmlCode = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Students Information</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+
+<h2>Students Information</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>GPA</th>
+            <th>Department Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>20</td>
+            <td>3.5</td>
+            <td>Engineering</td>
+        </tr>
+        <tr>
+            <td>Jane</td>
+            <td>Smith</td>
+            <td>22</td>
+            <td>3.8</td>
+            <td>Marketing</td>
+        </tr>
+        <tr>
+            <td>Michael</td>
+            <td>Johnson</td>
+            <td>21</td>
+            <td>3.2</td>
+            <td>Engineering</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>`; 
+        outputDiv.innerHTML = htmlCode;
+        }
+    </script>
+</body>
+</html>

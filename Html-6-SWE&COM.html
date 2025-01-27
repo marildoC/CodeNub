@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Images</title>
+  <style>
+  
+ 
+
+    .header {
+      background-color: #030102;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a  href="index.html">Home</a>
+  <a href="SWE&COM_Java1.html">Java</a>
+  <a class="active" href="Html-1-SWE&COM.html">HTML</a>
+  <a href="CSS-1-SWE&COM.html">CSS</a>
+  <a href="JS-1-SWE&COM.html">JavaScript</a>
+  <a href="SQL-1-SWE&COM.html">SQL</a>
+  <a href="C-1-SWE&COM.html">C</a>
+  <a href="Python-1-SWE&COM.html">Python</a>
+  <a href="DSA-1-SWE&COM.html">DSA</a>
+</div>
+
+<div class="menu">
+  <a  href="Html-1-SWE&COM.html">Introduction to HTML</a> <hr>
+  <a href="Html-2-SWE&COM.html">HTML Basics</a> <hr>
+  <a href="Html-3-SWE&COM.html">Headings and Paragraphs</a> <hr>
+  <a href="Html-4-SWE&COM.html">Lists</a> <hr>
+  <a href="Html-5-SWE&COM.html">Links and Anchor Tags</a> <hr>
+  <a class="active" href="Html-6-SWE&COM.html">Images</a> <hr>
+  <a href="Html-7-SWE&COM.html">Tables</a> <hr>
+  <a href="Html-8-SWE&COM.html">Forms</a> <hr>
+  <a href="Html-9-SWE&COM.html">Semantic HTML</a> <hr>
+  <a href="Html-10-SWE&COM.html">HTML5 Features</a> <hr>
+ <br> <br> 
+</div>
+
+<div class="content">
+    <h2> HTML </h2>
+   
+    <italic>
+        <h2>Understanding HTML Images</h2>
+        <p>Welcome to the HTML Images course! In this module, you'll learn how to include images in your HTML documents, enhancing the visual appeal and overall user experience of your web pages.</p>
+        
+        <h3>The Basics: Adding Images to Your Web Page</h3>
+        <p>Images are an essential part of web design, helping to convey information and enhance aesthetics. Let's start by understanding how to add images to your HTML documents.</p>
+        
+        <h4>The <code>&lt;img&gt;</code> Tag</h4>
+        <p>The <code>&lt;img&gt;</code> tag is used to embed images directly into an HTML document. It does not have a closing tag and requires certain attributes to specify the image source, dimensions, and alternative text.</p>
+        
+        <pre>&lt;img src="image.jpg" alt="Description of the image" width="200" height="150"&gt;</pre>
+        
+        <h3>Working with Image Attributes</h3>
+        <p>Understanding and utilizing image attributes is crucial for effective image management and presentation on web pages.</p>
+        
+        <h4>The <code>src</code> Attribute</h4>
+        <p>The <code>src</code> attribute specifies the URL or file path of the image to be displayed. It's a required attribute for the <code>&lt;img&gt;</code> tag.</p>
+        
+        <h4>The <code>alt</code> Attribute</h4>
+        <p>The <code>alt</code> attribute provides alternative text for an image, which is displayed if the image fails to load or for accessibility purposes. It's essential for SEO and web accessibility.</p>
+        
+        <h4>Other Attributes</h4>
+        <p>Additional attributes like <code>width</code>, <code>height</code>, <code>title</code>, and <code>style</code> can be used to control the size, appearance, and behavior of images.</p>
+        
+        <h3>Best Practices for Using Images</h3>
+        <p>Optimizing images and following best practices ensure faster loading times, better user experience, and improved search engine rankings.</p>
+        
+        <ul>
+            <li>Choose the right image format (JPEG, PNG, GIF) based on content and quality requirements.</li>
+            <li>Optimize image file sizes to reduce page load times.</li>
+            <li>Use descriptive and meaningful alternative text for accessibility and SEO.</li>
+            <li>Specify image dimensions to prevent layout shifts and improve page rendering.</li>
+            <li>Consider responsive design principles for images to ensure proper display across devices.</li>
+        </ul>
+        
+
+        <br> <br>
+        <h3>Quiz: Test Your Knowledge!</h3>
+<form id="quizForm">
+    <ol>
+        <li>
+            <p>What is the purpose of the <code>alt</code> attribute in the <code>&lt;img&gt;</code> tag?</p>
+            <select name="q1">
+                <option value="">Select an option</option>
+                <option value="provides alternative text">Provides alternative text</option>
+                <option value="specifies image source">Specifies image source</option>
+                <option value="defines image dimensions">Defines image dimensions</option>
+            </select>
+        </li>
+        <li>
+            <p>Which attribute specifies the URL or file path of the image to be displayed?</p>
+            <select name="q2">
+                <option value="">Select an option</option>
+                <option value="href">href</option>
+                <option value="src">src</option>
+                <option value="alt">alt</option>
+            </select>
+        </li>
+        <li>
+            <p>Why is it important to optimize image file sizes?</p>
+            <select name="q3">
+                <option value="">Select an option</option>
+                <option value="to reduce page load times">To reduce page load times</option>
+                <option value="to increase image quality">To increase image quality</option>
+                <option value="to add visual effects">To add visual effects</option>
+            </select>
+        </li>
+    </ol>
+    <button type="button" onclick="checkAnswers()">Check Answers</button>
+</form>
+
+<div id="answers"></div>
+
+<script>
+    function checkAnswers() {
+        var q1 = document.querySelector('select[name="q1"]').value;
+        var q2 = document.querySelector('select[name="q2"]').value;
+        var q3 = document.querySelector('select[name="q3"]').value;
+
+        var answersDiv = document.getElementById('answers');
+        if (q1 === "provides alternative text" && q2 === "src" && q3 === "to reduce page load times") {
+            answersDiv.innerHTML = "<p>Congratulations! You answered all questions correctly.</p>";
+        } else {
+            answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Review the HTML images topic and try again!</p>";
+        }
+    }
+</script>
+ <br> <hr>
+<b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the understanding of Images. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+ 
+    </italic>
+    
+        
+      
+
+
+ <br>  <br>
+
+</body>
+</html>

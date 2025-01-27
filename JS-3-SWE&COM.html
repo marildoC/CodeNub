@@ -1,0 +1,250 @@
+(<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS DOM Manipulation</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output-box {
+      border: 2px solid #000;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .output-box pre {
+      white-space: pre-wrap;
+    }
+    
+    
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+      padding: 16px;
+      background-color: white; 
+      height: 100%;
+      margin-left: 10%; 
+      margin-top: 3%;
+      color: #000000; 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+  </style>
+</head>
+<body>
+
+    <div class="header">
+      <a  href="index.html">Home</a>
+      <a href="SWE&COM_Java1.html">Java</a>
+      <a  href="Html-1-SWE&COM.html">HTML</a>
+      <a href="CSS-1-SWE&COM.html">CSS</a>
+      <a class="active" href="JS-1-SWE&COM.html">JavaScript</a>
+      <a href="SQL-1-SWE&COM.html">SQL</a>
+      <a href="C-1-SWE&COM.html">C</a>
+      <a href="Python-1-SWE&COM.html">Python</a>
+      <a href="DSA-1-SWE&COM.html">DSA</a>
+    </div>
+    
+    <div class="menu">
+      <a href="JS-1-SWE&COM.html">Introduction to JS`</a> <hr>
+      <a href="#ddddddd"> Functions and Scope</a> <hr>
+      <a class="active" href="JS-3-SWE&COM.html">DOM Manipulation`</a> <hr>
+      <a href="#lists"> Asynchronous JavaScript</a> <hr>
+      <a href="#links"> ES6+ Features</a> <hr>
+      <a href="JS-6-SWE&COM.html">Error Handling`</a> <hr>
+      <a href="#tables">Conditional Statements </a> <hr>
+      <a href="#forms">Arrays and Objects</a> <hr>  
+      <a href="#forms">Basic Algorithms and Data Structures</a> <hr>   <hr> 
+ 
+</div>
+
+<div class="content">
+    <italic> 
+        <h1>JavaScript</h1>
+
+        <h2>JavaScript DOM Manipulation</h2>
+
+        <p>Welcome to our comprehensive guide to JavaScript DOM manipulation! In this course, we'll explore the essential concepts and techniques for interacting with the Document Object Model (DOM) using JavaScript.</p>
+        
+        <h3>Understanding the DOM</h3>
+        
+        <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of an HTML document as a hierarchical tree, where each node corresponds to an element or attribute. Understanding the DOM is crucial for dynamic web development, as it allows us to access, modify, and manipulate HTML elements and their attributes using JavaScript.</p>
+        
+        <h3>Selecting DOM Elements</h3>
+        
+        <p>JavaScript provides various methods for selecting HTML elements in the DOM, allowing us to target specific elements based on their IDs, classes, attributes, or relationships with other elements. We'll cover commonly used methods such as <code style="color: rgba(51, 23, 207, 0.767);">getElementById</code>, <code style="color: rgba(51, 23, 207, 0.767);">getElementsByClassName</code>, <code style="color: rgba(51, 23, 207, 0.767);">querySelector</code>, and <code style="color: rgba(51, 23, 207, 0.767);">querySelectorAll</code>.</p>
+        
+        <h3>Modifying DOM Elements</h3>
+        
+        <p>Once we've selected elements, we can dynamically modify their properties, attributes, and content using JavaScript. This enables us to create interactive user interfaces, update page content dynamically, and respond to user actions in real-time.</p>
+        
+        <h3>Creating and Removing DOM Elements</h3>
+        
+        <p>JavaScript allows us to create new HTML elements and add them to the DOM, or remove existing elements from the document. This dynamic manipulation of the DOM tree enables us to build dynamic web applications, generate content on-the-fly, and manage user interfaces efficiently.</p>
+        
+        <h3>Working with Events</h3>
+        
+        <p>Events are actions or occurrences that happen in the DOM, triggered by user interactions or browser actions. JavaScript provides event handling mechanisms to respond to these events, allowing us to execute code in response to user actions like clicks, mouse movements, key presses, and more.</p>
+        
+        <h3>Traversing the DOM</h3>
+        
+        <p>Traversing the DOM involves navigating between elements in the DOM tree structure, moving up, down, or sideways to access different elements or their relationships. This traversal allows us to explore the structure of the document, find specific elements, or iterate over collections of elements efficiently.</p>
+        
+        <h3>Dynamic HTML and CSS Manipulation</h3>
+        
+        <p>With JavaScript DOM manipulation, we can dynamically update the structure and style of HTML elements on a web page, creating dynamic and interactive user experiences. This includes dynamically adding or removing classes, changing CSS styles, and manipulating HTML content based on user actions or application logic.</p>
+        
+        <h3>Conclusion</h3>
+        
+        <p>Congratulations on completing our JavaScript DOM Manipulation course! You now have a solid understanding of how to interact with the Document Object Model using JavaScript and can create dynamic and interactive web applications with ease.</p>
+
+
+         <br> <br>
+        <h3>Quiz: Test Your Knowledge!</h3>
+
+        <ol>
+            <li>What is the primary purpose of the Document Object Model (DOM) in web development?</li>
+            <ul>
+                <li><input type="radio" name="q1" value="a"> To define the structure of CSS stylesheets</li>
+                <li><input type="radio" name="q1" value="b"> To represent the structure of an HTML document as a hierarchical tree</li>
+                <li><input type="radio" name="q1" value="c"> To execute JavaScript code on web pages</li>
+            </ul>
+            <li>Which JavaScript method is commonly used to select an element by its ID?</li>
+            <ul>
+                <li><input type="radio" name="q2" value="a"> getElementByClass</li>
+                <li><input type="radio" name="q2" value="b"> getElementById</li>
+                <li><input type="radio" name="q2" value="c"> querySelector</li>
+            </ul>
+            <li>What event is triggered when a user clicks on an HTML element?</li>
+            <ul>
+                <li><input type="radio" name="q3" value="a"> mouseover</li>
+                <li><input type="radio" name="q3" value="b"> click</li>
+                <li><input type="radio" name="q3" value="c"> keydown</li>
+            </ul>
+            <li>Which JavaScript method is used to create a new HTML element?</li>
+            <ul>
+                <li><input type="radio" name="q4" value="a"> createElement</li>
+                <li><input type="radio" name="q4" value="b"> appendElement</li>
+                <li><input type="radio" name="q4" value="c"> newElement</li>
+            </ul>
+        </ol>
+        
+        <button onclick="checkAnswers()">Check Answers</button>
+        
+        <div id="answers"></div>
+        
+        <script>
+            function checkAnswers() {
+                var q1 = document.querySelector('input[name="q1"]:checked').value;
+                var q2 = document.querySelector('input[name="q2"]:checked').value;
+                var q3 = document.querySelector('input[name="q3"]:checked').value;
+                var q4 = document.querySelector('input[name="q4"]:checked').value;
+        
+                var correctAnswers = ["b", "b", "b", "a"];
+                var userAnswers = [q1, q2, q3, q4];
+        
+                var correctCount = 0;
+                for (var i = 0; i < correctAnswers.length; i++) {
+                    if (correctAnswers[i] === userAnswers[i]) {
+                        correctCount++;
+                    }
+                }
+        
+                var answersDiv = document.getElementById('answers');
+                if (correctCount === correctAnswers.length) {
+                    answersDiv.innerHTML = "<p>Congratulations! You got all answers correct!</p>";
+                } else {
+                    answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Please try again.</p>";
+                }
+            }
+        </script>
+
+        <br> <br>
+        
+        <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the basics of JavaScript DOM Manipulation. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+
+    </italic>
+    
+    
+
+</body>
+</html>
+) 

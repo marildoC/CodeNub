@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exception Handling in Java</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red; 
+    }
+
+    .header {
+      background-color: #000000;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a href="index.html">Home</a>
+  <a class="active" href="#java">Java</a>
+  <a href="#html">HTML</a>
+  <a href="#css">CSS</a>
+  <a href="#javascript">JavaScript</a>
+  <a href="#sql">SQL</a>
+  <a href="#c">C</a>
+  <a href="#python">Python</a>
+  <a href="#dsa">DSA</a>
+</div>
+
+<div class="menu">
+    <a  href="SWE&COM_Java1.html">Introduction to Java</a>   <hr>
+    <a href="SWE&COM_Java2.html">Variables</a> <hr>
+  <a href="SWE&COM_Java3.html">Operators</a> <hr>
+ 
+  <a href="SWE&COM_Java4.html">Arrays</a>  <hr>
+  <a href="SWE&COM_Java5.html">Classes and Objects</a>  <hr>
+  <a href="SWE&COM_Java6.html">Inheritance</a>   <hr>
+  <a href="SWE&COM_Java7.html">Polymorphism</a>  <hr>
+  <a href="SWE&COM_Java8.html">Abstraction</a>   <hr>
+  <a href="SWE&COM_Java9.html">Interfaces</a>   <hr>
+  <a class="active" href="SWE&COM_Java10.html">Exceptions</a>  <hr>
+  <a href="SWE&COM_Java11.html">File I/O</a>          <hr>
+  <a href="SWE&COM_Java12.html">Collections</a>   <hr> <br> <br> 
+</div>
+
+<div class="content">
+    <h2> JAVA </h2>
+  
+   
+
+
+    <italic>
+        <h2>Mastering Exceptions Handling in Java</h2>
+    
+        <p>Welcome to our comprehensive guide on exception handling in Java! In this tutorial, we'll explore the concept of exceptions, how to handle them effectively, and best practices to ensure robust error management in your Java programs.</p>
+    
+        <h3>Understanding Exceptions</h3>
+    
+        <p>Exceptions are unexpected events that occur during the execution of a program, disrupting the normal flow of execution. They can occur due to various reasons such as invalid input, resource unavailability, or programming errors. Java provides a robust mechanism for handling exceptions, allowing developers to gracefully manage errors and prevent application crashes.</p>
+    
+        <h3>Types of Exceptions</h3>
+    
+        <p>Exceptions in Java can be broadly categorized into two types:</p>
+    
+        <ul>
+            <li><span style="color: rgba(51, 23, 207, 0.767);">Checked Exceptions:</span> These are exceptions that are checked at compile-time, meaning the compiler ensures that they are properly handled in the code. Examples include IOException, SQLException, and ClassNotFoundException.</li>
+            <li><span style="color: rgba(51, 23, 207, 0.767);">Unchecked Exceptions (Runtime Exceptions):</span> These are exceptions that are not checked at compile-time and typically occur due to programming errors or exceptional conditions that cannot be anticipated. Examples include NullPointerException, ArrayIndexOutOfBoundsException, and ArithmeticException.</li>
+        </ul>
+    
+        <h3>Exception Handling in Java</h3>
+    
+        <p>Java provides a powerful mechanism for handling exceptions through the use of try-catch blocks. Here's how it works:</p>
+    
+        <pre>
+        try {
+            // Code that may throw an exception
+        } catch (ExceptionType e) {
+            // Code to handle the exception
+        }
+        </pre>
+    
+        <p>In this structure, the code within the try block is executed. If an exception occurs during the execution of this code, it is caught by the corresponding catch block, where you can handle the exception appropriately.</p>
+    
+        <h3>Best Practices for Exception Handling</h3>
+    
+        <p>When handling exceptions in Java, it's essential to follow best practices to ensure robust error management:</p>
+    
+        <ul>
+            <li><span style="color: rgba(51, 23, 207, 0.767);">Handle exceptions at an appropriate level:</span> Catch exceptions at a level where you can handle them effectively without obscuring the root cause of the error.</li>
+            <li><span style="color: rgba(51, 23, 207, 0.767);">Use specific exception types:</span> Catch specific exception types whenever possible to provide more targeted error handling and improve code readability.</li>
+            <li><span style="color: rgba(51, 23, 207, 0.767);">Provide meaningful error messages:</span> Include descriptive error messages in exception handling code to aid in debugging and troubleshooting.</li>
+            <li><span style="color: rgba(51, 23, 207, 0.767);">Log exceptions:</span> Always log exceptions or error messages to facilitate debugging and monitoring of application behavior.</li>
+            <li><span style="color: rgba(51, 23, 207, 0.767);">Gracefully recover from exceptions:</span> Whenever possible, implement recovery strategies to gracefully handle exceptions and maintain application stability.</li>
+        </ul>
+    
+        <h3>Quiz: Test Your Knowledge!</h3>
+    
+        <p>Let's see how well you understand exception handling in Java. Answer the following questions:</p>
+    
+        <ol>
+            <li>What is the difference between checked and unchecked exceptions?</li>
+            <ul>
+                <li><input type="radio" name="q1" value="a"> Checked exceptions are checked at compile-time, while unchecked exceptions are not.</li>
+                <li><input type="radio" name="q1" value="b"> Checked exceptions occur due to programming errors, while unchecked exceptions occur due to external factors.</li>
+                <li><input type="radio" name="q1" value="c"> Checked exceptions require explicit handling, while unchecked exceptions do not.</li>
+            </ul>
+            <li>How can you handle exceptions in Java?</li>
+            <ul>
+                <li><input type="radio" name="q2" value="a"> Using if-else statements</li>
+                <li><input type="radio" name="q2" value="b"> Using try-catch blocks</li>
+                <li><input type="radio" name="q2" value="c"> Using switch-case statements</li>
+            </ul>
+        </ol>
+    
+        <button onclick="checkAnswers()">Check Answers</button>
+    
+        <div id="answers"></div>
+    
+        <script>
+            function checkAnswers() {
+                var q1 = document.querySelector('input[name="q1"]:checked').value;
+                var q2 = document.querySelector('input[name="q2"]:checked').value;
+    
+                var answersDiv = document.getElementById('answers');
+                if (q1 == "a" && q2 == "b") {
+                    answersDiv.innerHTML = "<p>Congratulations! You have answered both questions correctly.</p>";
+                } else {
+                    answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Please try again.</p>";
+                }
+            }
+        </script>
+    </italic>
+    
+    
+    
+   
+    
+ <br>  <br>
+
+
+   <div class="code-editor">
+    <h2>Let's practise your understanding about Exceptions </h2>
+    <i>Java code  that demonstrates the declaration and initialization of Exception Handling: </i>
+    <pre><code>
+public class ExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int[] numbers = {1, 2, 3};
+            System.out.println(numbers[5]); // Accessing index out of bounds
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("An ArrayIndexOutOfBoundsException occurred: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("An Exception occurred: " + e.getMessage());
+        }
+    }
+}
+        
+   </code></pre>
+    <h2>Your Java Code</h2>
+    <div id="userCode" class="code-editor">
+        <textarea id="codeTextarea" rows="21" style="width: 100%; height: 150px;" placeholder="Write your Java code here..."></textarea>
+    </div>
+    <button onclick="toggleCodeEditor()">Test Code</button>
+    <button id="runButton" onclick="runCode()">Run Code</button> 
+  </div>
+  <div class="output" id="output"></div>
+
+  <b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the basics of Exception Handling. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+
+</div> 
+
+
+
+
+
+<script>
+  function toggleCodeEditor() {
+    var userCode = document.getElementById("userCode");
+    userCode.classList.toggle("show");
+
+    var runButton = document.getElementById("runButton");
+    runButton.style.display = userCode.classList.contains("show") ? "inline-block" : "none";
+  }
+
+  function runCode() {
+    var userCode = document.getElementById("codeTextarea").value.trim();
+    var exampleCode =`public class ExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int[] numbers = {1, 2, 3};
+            System.out.println(numbers[5]); // Accessing index out of bounds
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("An ArrayIndexOutOfBoundsException occurred: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("An Exception occurred: " + e.getMessage());
+        }
+    }
+}`;
+
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerText = ""; 
+
+    if (userCode === exampleCode) {
+      outputDiv.innerText = "Output:An ArrayIndexOutOfBoundsException occurred: Index 5 out of bounds for length 3";
+      outputDiv.style.color = "green"; 
+    } else {
+      // Check if the user code is empty
+      if (userCode === "") {
+        outputDiv.innerText = "Error: Please write your Java code before running.";
+      } else {
+        outputDiv.innerText = "Error: Syntax is not correct. Please check your code and try again.";
+      }
+      outputDiv.style.color = "red"; 
+    }
+  }
+</script>
+
+
+</body>
+</html>

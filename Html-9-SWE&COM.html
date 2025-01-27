@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sematic Html</title>
+  <style>
+  
+    .code-editor {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .output {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red;
+    }
+
+    .header {
+      background-color: #030102;
+      overflow: hidden;
+      height: 6%;
+      position: fixed; 
+      width: 100%; 
+      top: 0; 
+      z-index: 1000; 
+    }
+
+    .header a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .header a:hover {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .header a.active {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .menu {
+      width: 10%;
+      height: 100%;
+      background-color: #f1f1f1;
+      overflow-y: scroll;
+      position: fixed;
+      left: 0;
+      top: 9%;
+    }
+
+    .menu a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu a:hover {
+      background-color: lightblue;
+    }
+
+    .content {
+  padding: 16px;
+  background-color: white; 
+  height: 100%;
+  margin-left: 10%; 
+  margin-top: 3%;
+  color: #000000; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px; 
+  line-height: 1.5; 
+}
+
+
+    #userCode {
+      display: none; 
+      width: 50%; 
+      resize: vertical; 
+      min-height: 10px;
+    }
+
+    #userCode.show {
+      display: block; 
+    }
+
+    #runButton {
+      display: none;
+    }
+
+    #userCode.show + #runButton {
+      display: inline-block; 
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <a  href="index.html">Home</a>
+  <a href="SWE&COM_Java1.html">Java</a>
+  <a class="active" href="Html-1-SWE&COM.html">HTML</a>
+  <a href="CSS-1-SWE&COM.html">CSS</a>
+  <a href="JS-1-SWE&COM.html">JavaScript</a>
+  <a href="SQL-1-SWE&COM.html">SQL</a>
+  <a href="C-1-SWE&COM.html">C</a>
+  <a href="Python-1-SWE&COM.html">Python</a>
+  <a href="DSA-1-SWE&COM.html">DSA</a>
+</div>
+
+<div class="menu">
+   
+    <a  href="Html-1-SWE&COM.html">Introduction to HTML</a> <hr>
+    <a href="Html-2-SWE&COM.html">HTML Basics</a> <hr>
+    <a href="Html-3-SWE&COM.html">Headings and Paragraphs</a> <hr>
+    <a href="Html-4-SWE&COM.html">Lists</a> <hr>
+    <a href="Html-5-SWE&COM.html">Links and Anchor Tags</a> <hr>
+    <a href="Html-6-SWE&COM.html">Images</a> <hr>
+    <a href="Html-7-SWE&COM.html">Tables</a> <hr>
+    <a href="Html-8-SWE&COM.html">Forms</a> <hr>
+    <a class="active" href="Html-9-SWE&COM.html">Semantic HTML</a> <hr>
+    <a href="Html-10-SWE&COM.html">HTML5 Features</a> <hr>
+   <br> <br> 
+</div>
+
+<div class="content">
+    <h2> HTML </h2>
+   
+    <italic>
+        <h2>Understanding HTML Semantic Elements</h2>
+        <p>Welcome to the section on HTML semantic elements! In this part of the course, you'll learn about the importance of using semantic HTML to improve the structure and accessibility of your web pages.</p>
+        
+        <h3>What are Semantic Elements?</h3>
+        <p>Semantic HTML elements are those that clearly describe their meaning in a human-readable way. Instead of using generic <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> elements, you should use semantic elements to provide more context and meaning to your content.</p>
+        
+        <h3>Common Semantic Elements</h3>
+        <p>Here are some common semantic elements and their purposes:</p>
+        
+        <ul>
+            <li><code>&lt;header&gt;</code>: Represents a header section of a document or a section of a page.</li>
+            <li><code>&lt;footer&gt;</code>: Defines a footer for a document or a section of a page.</li>
+            <li><code>&lt;nav&gt;</code>: Represents a navigation section.</li>
+            <li><code>&lt;main&gt;</code>: Represents the main content of a document.</li>
+            <li><code>&lt;article&gt;</code>: Represents an independent piece of content that can be reused and syndicated.</li>
+            <li><code>&lt;section&gt;</code>: Represents a thematic grouping of content.</li>
+            <li><code>&lt;aside&gt;</code>: Represents content that is tangentially related to the content around it.</li>
+            <li><code>&lt;figure&gt;</code>: Represents self-contained content, such as images, diagrams, photos, code listings, etc.</li>
+            <li><code>&lt;figcaption&gt;</code>: Represents a caption or legend for a <code>&lt;figure&gt;</code> element.</li>
+        </ul>
+        
+        <h3>Advantages of Semantic HTML</h3>
+        <p>Using semantic HTML elements offers several benefits:</p>
+        
+        <ul>
+            <li>Improved accessibility: Semantic elements help screen readers and other assistive technologies understand the structure of a page, making it more accessible to users with disabilities.</li>
+            <li>Enhanced SEO: Search engines prioritize semantic content, so using semantic elements can improve your website's search engine rankings.</li>
+            <li>Better readability: Semantic elements make your code more readable and understandable, both for developers and other stakeholders.</li>
+            <li>Future-proofing: Semantic HTML is less likely to become obsolete as web standards evolve, ensuring your content remains relevant over time.</li>
+        </ul>
+        
+        <h3>Quiz: Test Your Knowledge!</h3>
+        <form id="quizForm">
+            <ol>
+                <li>
+                    <p>Which HTML element represents the main content of a document?</p>
+                    <select name="q1">
+                        <option value="">Select an option</option>
+                        <option value="header">&lt;header&gt;</option>
+                        <option value="footer">&lt;footer&gt;</option>
+                        <option value="main">&lt;main&gt;</option>
+                        <option value="section">&lt;section&gt;</option>
+                    </select>
+                </li>
+                <li>
+                    <p>Which semantic element represents content that is tangentially related to the content around it?</p>
+                    <select name="q2">
+                        <option value="">Select an option</option>
+                        <option value="nav">&lt;nav&gt;</option>
+                        <option value="aside">&lt;aside&gt;</option>
+                        <option value="article">&lt;article&gt;</option>
+                        <option value="figure">&lt;figure&gt;</option>
+                    </select>
+                </li>
+            </ol>
+            <button type="button" onclick="checkAnswers()">Check Answers</button>
+        </form>
+        
+        <div id="answers"></div>
+    </italic>
+    
+    <script>
+        function checkAnswers() {
+            var q1 = document.querySelector('select[name="q1"]').value;
+            var q2 = document.querySelector('select[name="q2"]').value;
+    
+            var answersDiv = document.getElementById('answers');
+            if (q1 === "main" && q2 === "aside") {
+                answersDiv.innerHTML = "<p>Congratulations! You answered both questions correctly.</p>";
+            } else {
+                answersDiv.innerHTML = "<p>Oops! At least one of your answers is incorrect. Review the HTML semantic elements topic and try again!</p>";
+            }
+        }
+    </script>
+    
+    
+    
+ <br> <hr>
+<b style="color: rgba(8, 11, 12, 0.938);">Congratulations! You've mastered the understanding of Sematics. Keep pushing yourself to practice and experiment with them. <br> Remember, coding is not just about learning concepts but also about experimenting and applying them creatively.</b>
+ 
+    </italic>
+    
+        
+      
+
+
+ <br>  <br>
+
+</body>
+</html>
